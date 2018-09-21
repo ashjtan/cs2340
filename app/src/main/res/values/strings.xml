@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DoughNation</string>
+    <string name="button_label_DoughNation">DoughNation</string>
+    <string name="button_label_Login">Login</string>
+    <string name="register_button_text">Register Here</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="noAccount_text">Don\'t have an account?</string>
+    <string name="password_editText_text">password</string>
+    <string name="password_textView_text">Password:</string>
+    <string name="user_editText_text">user</string>
+    <string name="username_textView_text">Username:</string>
+    <string name="title_login_text">Login</string>
+</resources>

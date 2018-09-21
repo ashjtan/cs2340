@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <!--You can change primary, secondary, and background colors in the colors.xml file-->
+    <!--The colors.xml file is under the values folder-->
+    <!--Match parent in width is referring to the Linear Layout,
+        which spans fully across the screen-->
+
+    <!--This is the TextView with the Application Name "DoughNation"-->
+    <TextView
+        android:id="@+id/welcome-textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp"
+        android:text="@string/button_label_DoughNation"
+        android:textSize="@dimen/title_textview_size"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"
+        android:layout_gravity="center"/>
+
+    <!--This is the login button to take you to the login screen-->
+    <Button
+        android:id="@+id/login-launch-button"
+        android:layout_width="170sp"
+        android:layout_height="70sp"
+        android:text="@string/button_label_Login"
+        android:textSize="@dimen/largeButton_font_size"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40sp"
+        android:onClick="goToLogin"/>
+
+</LinearLayout>
