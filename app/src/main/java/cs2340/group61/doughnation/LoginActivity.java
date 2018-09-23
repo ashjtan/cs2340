@@ -1,5 +1,6 @@
 package cs2340.group61.doughnation;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -46,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
         }
         else {
-            //TODO: add error message
+            showInvalidLoginError();
         }
     }
 
@@ -64,5 +65,13 @@ public class LoginActivity extends AppCompatActivity {
 
         return userText.equals("admin") && passText.equals("pw");   //currently checks for admin:pw credentials
     }
+
+    private void showInvalidLoginError() {                          //shows error when invalid login credentials
+        AlertDialog.Builder alert  = new AlertDialog.Builder(this);
+        alert.setMessage("Wrong username or password.");
+        alert.setTitle("Invalid Login");
+        alert.setPositiveButton("OK", null);
+
+        alert.create().show();
     }
 }
