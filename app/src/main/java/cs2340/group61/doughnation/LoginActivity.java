@@ -52,4 +52,13 @@ public class LoginActivity extends AppCompatActivity {
     public void switchToRegister(View v) {      //switches to register page
         startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
     }
+
+
+
+
+    //HELPER METHODS
+    private boolean validLogin() {
+        return userField.getText().toString().equals("admin") &&        //currently checks for admin:pw credentials
+                passField.getText().toString().equals("pw");
+    }
 }
