@@ -82,7 +82,7 @@
 
         <TextView
             android:id="@+id/no_account"
-            android:layout_width="169dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
@@ -95,15 +95,11 @@
 
         <Button
             android:id="@+id/register_Button"
-            android:layout_width="143dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/no_account"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="157dp"
-            android:layout_marginStart="157dp"
+            android:layout_marginEnd="34dp"
             android:background="@android:color/transparent"
             android:gravity="left|center_vertical"
             android:onClick="switchToRegister"
