@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     private ActionBar actionbar;
     Button loginButton, registerButton;
     EditText userField, passField;
+    String userText = "", passText = "";    //prevents null pointer
 
 
     @Override
@@ -58,7 +59,10 @@ public class LoginActivity extends AppCompatActivity {
 
     //HELPER METHODS
     private boolean validLogin() {
-        return userField.getText().toString().equals("admin") &&        //currently checks for admin:pw credentials
-                passField.getText().toString().equals("pw");
+        userText = userField.getText().toString();
+        passText = passField.getText().toString();
+
+        return userText.equals("admin") && passText.equals("pw");   //currently checks for admin:pw credentials
+    }
     }
 }
