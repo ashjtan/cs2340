@@ -1,13 +1,11 @@
 <resources>
     <string name="app_name">DoughNation</string>
-    <string name="button_label_DoughNation">DoughNation</string>
-    <string name="button_label_Login">Login</string>
-    <string name="register_button_text">Register Here</string>
-    <string name="cancel_button_text">Cancel</string>
-    <string name="noAccount_text">Don\'t have an account?</string>
-    <string name="password_editText_text">password</string>
-    <string name="password_textView_text">Password:</string>
-    <string name="user_editText_text">user</string>
-    <string name="username_textView_text">Username:</string>
-    <string name="title_login_text">Login</string>
+    <string name="title_activity_home_page">HomePageActivity</string>
+    <string name="password_here">password here</string>
+    <string name="password">password</string>
+    <string name="username_here">username here</string>
+    <string name="username">username</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="register_here">Register here</string>
 </resources>

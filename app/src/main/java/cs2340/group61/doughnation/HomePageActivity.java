@@ -3,26 +3,21 @@ package cs2340.group61.doughnation;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
+import android.app.Activity;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class LoginActivity extends AppCompatActivity {
+public class HomePageActivity extends AppCompatActivity {
 
     private ActionBar actionbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        //Instantiating loginButton
-        Button loginButton = (Button)findViewById(R.id.login_button);
-
-        //Instantiating registerButton
-        Button registerButton = (Button) findViewById(R.id.register_Button);
+        setContentView(R.layout.activity_home_page);
 
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
@@ -30,18 +25,14 @@ public class LoginActivity extends AppCompatActivity {
         actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
         actionbar.setTitle("DoughNation");
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
-            }
-        });
+        //Instantiating toLogin button to return to login from Reg. page
+        Button toLogin = (Button) findViewById(R.id.return_login_Button);
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
+        //Method to return to main login screen
+        toLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,
-                        RegistrationActivity.class));
+                startActivity(new Intent(HomePageActivity.this, LoginActivity.class));
             }
         });
     }

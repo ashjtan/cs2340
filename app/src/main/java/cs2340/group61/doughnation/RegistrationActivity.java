@@ -9,20 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegistrationActivity extends AppCompatActivity {
 
     private ActionBar actionbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        //Instantiating loginButton
-        Button loginButton = (Button)findViewById(R.id.login_button);
-
-        //Instantiating registerButton
-        Button registerButton = (Button) findViewById(R.id.register_Button);
+        setContentView(R.layout.activity_registration);
 
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
@@ -30,20 +24,14 @@ public class LoginActivity extends AppCompatActivity {
         actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
         actionbar.setTitle("DoughNation");
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
-            }
-        });
+        //Instantiating toLogin button to return to login from Reg. page
+        Button toLogin = (Button) findViewById(R.id.return_login_Button);
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
+        toLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,
-                        RegistrationActivity.class));
+                startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
             }
         });
     }
-
 }
