@@ -29,7 +29,7 @@
             android:id="@+id/user_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/user-editText"
+            android:layout_above="@+id/username"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="-210dp"
@@ -39,7 +39,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/user-editText"
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -47,7 +47,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="210dp"
             android:ems="10"
-            android:hint="@string/username_here"
+            android:hint="@string/username"
             android:inputType="textImeMultiLine|textPersonName" />
 
         <TextView
@@ -63,15 +63,15 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/password_editText"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/password-textView"
             android:ems="10"
-            android:hint="@string/password_here"
-            android:inputType="textPersonName" />
+            android:hint="@string/password"
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/login_button"
@@ -82,6 +82,7 @@
             android:layout_alignParentStart="true"
             android:layout_marginBottom="132dp"
             android:background="@drawable/round_button"
+            android:onClick="login"
             android:text="@string/login"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
@@ -90,7 +91,7 @@
 
         <TextView
             android:id="@+id/no_account"
-            android:layout_width="169dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
@@ -103,17 +104,14 @@
 
         <Button
             android:id="@+id/register_Button"
-            android:layout_width="143dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/no_account"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="157dp"
-            android:layout_marginStart="157dp"
+            android:layout_marginEnd="34dp"
             android:background="@android:color/transparent"
             android:gravity="left|center_vertical"
+            android:onClick="switchToRegister"
             android:text="@string/register_here"
             android:textAllCaps="false"
             android:textColor="@color/primary"
@@ -128,6 +126,7 @@
             android:layout_marginTop="34dp"
             app:srcCompat="@drawable/doughnation_img"
             android:layout_alignParentLeft="true" />
+
     </RelativeLayout>
 
 </RelativeLayout>
