@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         //Instantiating xml elements
         loginButton = (Button)findViewById(R.id.login_button);
         registerButton = (Button) findViewById(R.id.register_Button);
-        userField = (EditText) findViewById(R.id.username);
+        userField = (EditText) findViewById(R.id.email);
         passField = (EditText) findViewById(R.id.password);
 
 
