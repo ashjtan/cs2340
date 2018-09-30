@@ -50,3 +50,64 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
 }
+    //HELPER METHODS
+
+    private boolean validForm() {
+        return allFieldsComplete() && validName() && validEmail() && validPassword();
+    }
+
+    private boolean allFieldsComplete() {
+        return isNotEmpty(firstText, lastText, emailText, pwText, confPwText); //&& !acctType.getSelectedItem().equals(null);
+    }
+
+    private boolean anyFieldsComplete() {
+        return isNotEmpty(firstText) || isNotEmpty(lastText) || isNotEmpty(emailText) || isNotEmpty(pwText) || isNotEmpty(confPwText);
+    }
+
+    private boolean validName() {
+        return firstText.matches("[a-zA-Z]+") && lastText.matches("[a-zA-Z]+");
+    }
+
+    private boolean validEmail() {
+        return emailText.contains("@");
+    }
+
+    private boolean validPassword() {
+        return confPwText.equals(pwText); //TODO: add password char requirements
+    }
+
+    private void createUser() {
+        AccountType acctSelect = (AccountType) acctType.getSelectedItem();
+        String name = firstText.trim() + " " + lastText.trim();
+
+        switch(acctSelect) {
+            case ADMIN:
+                AppData.addAccount(new Admin(name, emailText.trim(), pwText));
+                break;
+            case GENERAL_USER:
+                AppData.addAccount(new User(name, emailText.trim(), pwText));
+                break;
+            case LOCATION_EMPLOYEE:
+                AppData.addAccount(new LocationEmployee(name, emailText.trim(), pwText));
+                break;
+            case ORGANIZATION_MANAGER:
+                AppData.addAccount(new OrganizationManager(name, emailText.trim(), pwText));
+                break;
+                default:
+                    showCreateAccountError();
+                    break;
+        }
+    }
+
+    private void showCreateAccountError() {
+        Utils.showDialog("One of the fields is invalid. Please check form before submitting.", "Unable to Create Account", this);
+    }
+
+    private void loadFormVals() {
+        firstText = firstName.getText().toString();
+        lastText = lastName.getText().toString();
+        emailText = email.getText().toString();
+        pwText = pw.getText().toString();
+        confPwText = confirmPw.getText().toString();
+    }
+}
