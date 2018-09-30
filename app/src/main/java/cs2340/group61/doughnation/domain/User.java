@@ -19,14 +19,7 @@ public class User {
         this.locked = false;
     }
 
-    //Overloaded Constructors
-    public User(String name, String email, String password, boolean locked) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.locked = locked;
-    }
-
+    //Overloaded Constructor
     public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
