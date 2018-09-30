@@ -21,7 +21,8 @@ import static cs2340.group61.doughnation.domain.Utils.isNotEmpty;
 public class RegistrationActivity extends AppCompatActivity {
 
     private ActionBar actionbar;
-    private Button toLogin;
+    private Button toLogin, register;
+    private Spinner acctType;
     private EditText firstName, lastName, email, pw, confirmPw;
 
     String firstText, lastText, emailText , pwText, confPwText; //populated w/ form values
@@ -30,6 +31,18 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
+        //Instantiating xml elements
+        toLogin = findViewById(R.id.return_login_Button);
+        register = findViewById(R.id.register_Button);
+        acctType = findViewById(R.id.acctType_spinner);
+
+        firstName = findViewById(R.id.firstName_editText);
+        lastName = findViewById(R.id.lastName_editText);
+        email = findViewById(R.id.email_editText);
+        pw = findViewById(R.id.pickPassword_editText);
+        confirmPw = findViewById(R.id.confirmPassword_editText);
+
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
         actionbar = getSupportActionBar();
