@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
         }
         else {
-            Utils.showError("Wrong username or password.", "Invalid Login", this);
+            Utils.showDialog("Wrong username or password.", "Invalid Login", this);
         }
     }
 
