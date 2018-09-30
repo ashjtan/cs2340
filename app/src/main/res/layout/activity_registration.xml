@@ -46,12 +46,12 @@
             android:id="@+id/name_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="91dp"
-            android:text="name + user id"
-            android:theme="@style/TextView_for_EnterTextStyle"
-            android:layout_alignParentLeft="true" />
+            android:text="name + email"
+            android:theme="@style/TextView_for_EnterTextStyle" />
 
         <EditText
             android:id="@+id/firstName_editText"
@@ -81,7 +81,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/firstName_editText"
             android:hint="email"
-            android:inputType="text" />
+            android:inputType="textEmailAddress" />
 
         <TextView
             android:id="@+id/pickPassword_textView"
@@ -101,18 +101,18 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/pickPassword_textView"
-            android:hint="password here"
-            android:inputType="text" />
+            android:hint="password"
+            android:inputType="textPassword" />
 
         <EditText
             android:id="@+id/confirmPassword_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/pickPassword_editText"
             android:hint="confirm password"
-            android:inputType="text"
-            android:layout_alignParentLeft="true" />
+            android:inputType="textPassword" />
 
         <TextView
             android:id="@+id/pickUserType_textView"
