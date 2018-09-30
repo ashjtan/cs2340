@@ -26,4 +26,20 @@ public class User {
         this.password = password;
         this.locked = false;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public boolean isLocked() {
+        return locked;
+    }
 }
