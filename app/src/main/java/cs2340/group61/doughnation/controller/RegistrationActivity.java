@@ -49,7 +49,21 @@ public class RegistrationActivity extends AppCompatActivity {
         startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
     }
 
-}
+    public void register(View v) {
+        Utils.clearTextVals(firstText, lastText, emailText, pwText, confPwText);
+        loadFormVals();
+
+        if (validForm()) {
+            createUser();
+            Utils.showDialog("Successfully created account for " + emailText + ".", "Account Created", this);
+            startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
+        }
+        else {
+            Utils.showDialog("One of the fields is invalid. Please check form before submitting.", "Unable to Create Account", this);
+        }
+    }
+
+
     //HELPER METHODS
 
     private boolean validForm() {
