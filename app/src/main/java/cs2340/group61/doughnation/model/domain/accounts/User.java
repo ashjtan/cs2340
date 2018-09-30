@@ -1,4 +1,4 @@
-package cs2340.group61.doughnation.domain;
+package cs2340.group61.doughnation.model.domain.accounts;
 
 /**
  * General user that can view locations and location info.

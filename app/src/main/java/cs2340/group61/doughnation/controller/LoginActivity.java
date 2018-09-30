@@ -1,6 +1,5 @@
 package cs2340.group61.doughnation.controller;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -12,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import cs2340.group61.doughnation.R;
-import cs2340.group61.doughnation.domain.Utils;
+import cs2340.group61.doughnation.model.Utils;
 
 public class LoginActivity extends AppCompatActivity {
 
