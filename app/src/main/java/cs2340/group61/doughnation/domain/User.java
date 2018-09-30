@@ -6,10 +6,10 @@ package cs2340.group61.doughnation.domain;
  */
 public class User {
     //Fields
-    private String name;
-    private String email;
-    private String password;
-    private boolean locked;
+    protected String name;
+    protected String email;
+    protected String password;
+    protected boolean locked;
 
     //Default Constructor
     public User() {
