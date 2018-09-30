@@ -13,10 +13,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import cs2340.group61.doughnation.R;
-import cs2340.group61.doughnation.domain.AccountType;
-import cs2340.group61.doughnation.domain.Utils;
+import cs2340.group61.doughnation.model.domain.AccountType;
+import cs2340.group61.doughnation.model.domain.accounts.Admin;
+import cs2340.group61.doughnation.model.domain.accounts.LocationEmployee;
+import cs2340.group61.doughnation.model.domain.accounts.OrganizationManager;
+import cs2340.group61.doughnation.model.domain.accounts.User;
+import cs2340.group61.doughnation.model.AppData;
+import cs2340.group61.doughnation.model.Utils;
 
-import static cs2340.group61.doughnation.domain.Utils.isNotEmpty;
+import static cs2340.group61.doughnation.model.Utils.isNotEmpty;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -58,7 +63,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
     //EVENT HANDLERS
-    public void switchToLogin(View v) {      //switches to register page
+    public void switchToLogin(View v) {      //switches to login page
+        if(anyFieldsComplete()) {
+            //TODO:show confirm dialog
+        }
         startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
     }
 
