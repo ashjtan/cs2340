@@ -136,12 +136,13 @@
             app:srcCompat="@drawable/register_img" />
 
         <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/acctType_spinner"
             android:layout_width="match_parent"
             android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/pickUserType_textView"
-            android:layout_marginTop="-200dp"
-            android:layout_alignParentLeft="true">
+            android:layout_marginTop="-200dp">
 
         </android.support.v7.widget.AppCompatSpinner>
 
