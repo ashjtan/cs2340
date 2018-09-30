@@ -1,6 +1,5 @@
-package cs2340.group61.doughnation;
+package cs2340.group61.doughnation.controller;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -10,6 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import cs2340.group61.doughnation.R;
+import cs2340.group61.doughnation.model.AppData;
+import cs2340.group61.doughnation.model.Utils;
+import cs2340.group61.doughnation.model.domain.accounts.User;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -27,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         //Instantiating xml elements
         loginButton = (Button)findViewById(R.id.login_button);
         registerButton = (Button) findViewById(R.id.register_Button);
-        userField = (EditText) findViewById(R.id.username);
+        userField = (EditText) findViewById(R.id.email);
         passField = (EditText) findViewById(R.id.password);
 
 
@@ -44,10 +48,11 @@ public class LoginActivity extends AppCompatActivity {
     //EVENT HANDLERS
     public void login(View v) {     //logs in if valid credentials
         if (validLogin()) {
+            //TODO: needs to custom load for specific acct
             startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
         }
         else {
-            showInvalidLoginError();
+            Utils.showDialog("Wrong username or password.", "Invalid Login", this);
         }
     }
 
@@ -63,15 +68,8 @@ public class LoginActivity extends AppCompatActivity {
         userText = userField.getText().toString();
         passText = passField.getText().toString();
 
-        return userText.equals("admin") && passText.equals("pw");   //currently checks for admin:pw credentials
-    }
+        User user = AppData.findUserByEmail(userText);
 
-    private void showInvalidLoginError() {                          //shows error when invalid login credentials
-        AlertDialog.Builder alert  = new AlertDialog.Builder(this);
-        alert.setMessage("Wrong username or password.");
-        alert.setTitle("Invalid Login");
-        alert.setPositiveButton("OK", null);
-
-        alert.create().show();
+        return user!=null && passText.equals(user.getPassword());
     }
 }
