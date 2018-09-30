@@ -1,4 +1,4 @@
-package cs2340.group61.doughnation;
+package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,30 +8,39 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+
+import cs2340.group61.doughnation.R;
+import cs2340.group61.doughnation.domain.Utils;
+
+import static cs2340.group61.doughnation.domain.Utils.isNotEmpty;
 
 public class RegistrationActivity extends AppCompatActivity {
 
     private ActionBar actionbar;
+    private Button toLogin;
+    private EditText firstName, lastName, email, pw, confirmPw;
+
+    String firstText, lastText, emailText , pwText, confPwText; //populated w/ form values
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
         actionbar = getSupportActionBar();
         actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
         actionbar.setTitle("DoughNation");
 
-        //Instantiating toLogin button to return to login from Reg. page
-        Button toLogin = (Button) findViewById(R.id.return_login_Button);
 
-        toLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
-            }
-        });
+
     }
+
+
+    //EVENT HANDLERS
+    public void switchToLogin(View v) {      //switches to register page
+        startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
+    }
+
 }
