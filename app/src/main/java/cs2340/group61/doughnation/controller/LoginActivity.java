@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import cs2340.group61.doughnation.R;
+import cs2340.group61.doughnation.model.AppData;
 import cs2340.group61.doughnation.model.Utils;
+import cs2340.group61.doughnation.model.domain.accounts.User;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -46,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
     //EVENT HANDLERS
     public void login(View v) {     //logs in if valid credentials
         if (validLogin()) {
+            //TODO: needs to custom load for specific acct
             startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
         }
         else {
@@ -65,6 +68,8 @@ public class LoginActivity extends AppCompatActivity {
         userText = userField.getText().toString();
         passText = passField.getText().toString();
 
-        return userText.equals("admin") && passText.equals("pw");   //currently checks for admin:pw credentials
+        User user = AppData.findUserByEmail(userText);
+
+        return user!=null && passText.equals(user.getPassword());
     }
 }
