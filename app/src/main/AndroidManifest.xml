@@ -19,7 +19,8 @@
         <activity
             android:name=".HomePageActivity"
             android:label="@string/title_activity_home_page" />
-        <activity android:name=".RegistrationActivity"></activity>
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".ViewLocationsActivity"></activity>
     </application>
 
 </manifest>

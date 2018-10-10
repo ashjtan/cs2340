@@ -14,4 +14,13 @@
         <item name="android:textSize">20sp</item>
         <item name="android:layout_width">match_parent</item>
     </style>
+
+    <style name="TextView_for_title" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/secondary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
 </resources>
