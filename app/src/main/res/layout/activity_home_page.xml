@@ -86,7 +86,8 @@
             android:background="@drawable/round_button"
             android:text="Option 4"
             android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true" />
 
     </RelativeLayout>
 

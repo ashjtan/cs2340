@@ -65,12 +65,11 @@ public class LoginActivity extends AppCompatActivity {
 
     //HELPER METHODS
     private boolean validLogin() {
-//        userText = userField.getText().toString();
-//        passText = passField.getText().toString();
-//
-//        User user = AppData.findUserByEmail(userText);
-//
-//        return user!=null && passText.equals(user.getPassword());
-        return true;
+        userText = userField.getText().toString();
+        passText = passField.getText().toString();
+
+        User user = AppData.findUserByEmail(userText);
+
+        return user!=null && passText.equals(user.getPassword());
     }
 }

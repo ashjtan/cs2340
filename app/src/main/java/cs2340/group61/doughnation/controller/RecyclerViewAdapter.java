@@ -1,6 +1,7 @@
 package cs2340.group61.doughnation.controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -47,6 +48,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick: clicked on: " + lTitles.get(i));
+
+                Intent intent = new Intent(context, LocationDetailsActivity.class);
+                intent.putExtra("location_name", lTitles.get(i));
+                context.startActivity(intent);
             }
         });
     }
@@ -67,6 +72,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
             locName = itemView.findViewById(R.id.location_name);
             parentLayout = itemView.findViewById(R.id.ItemLayout);
+
         }
     }
     

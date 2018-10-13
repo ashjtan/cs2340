@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.LocationDetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="300sp"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/return_login_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="21dp"
+            android:background="@android:color/transparent"
+            android:gravity="right"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/location_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="86dp"
+            android:text="LOCATION NAME"
+            android:theme="@style/TextView_for_title"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/type_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="130dp"
+            android:padding="10dp"
+            android:text="Location Type:"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/type_description"
+            style="@style/info_description_text"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="160dp"
+            android:padding="10dp"
+            android:textColor="@android:color/black"
+            android:text="This is where you put location type."
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/longitude_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="200dp"
+            android:padding="10dp"
+            android:text="Longitude + Latitude:"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/longitude_description"
+            style="@style/info_description_text"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="230dp"
+            android:padding="10dp"
+            android:textColor="@android:color/black"
+            android:text="This is where you put longitude location."
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/address_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="270dp"
+            android:padding="10dp"
+            android:text="Address:"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/address_description"
+            style="@style/info_description_text"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="300dp"
+            android:padding="10dp"
+            android:textColor="@android:color/black"
+            android:text="This is where you put address location."
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/phone_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="340dp"
+            android:padding="10dp"
+            android:text="Phone:"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/phone_description"
+            style="@style/info_description_text"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="370dp"
+            android:padding="10dp"
+            android:textColor="@android:color/black"
+            android:text="This is where you put longitude location."
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:id="@+id/back_Locations_View_button"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="22dp"
+            android:background="@android:color/transparent"
+            android:gravity="right"
+            android:text="Back"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

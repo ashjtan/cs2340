@@ -25,8 +25,6 @@ public class ViewLocationsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_locations);
 
-        Log.d(TAG, "onCreate: Started");
-
         fillLocationNames();
         Log.d(TAG, "onCreate: Location Names added to array");
 
@@ -45,7 +43,7 @@ public class ViewLocationsActivity extends AppCompatActivity {
             }
         });
 
-        //Method to return to homeScreen
+        //Method to logout
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,18 +74,11 @@ public class ViewLocationsActivity extends AppCompatActivity {
 
     //Method to set up RecyclerView
     private void initRecyclerView() {
-        Log.d(TAG, "initRecyclerView: init recycler view");
         RecyclerView recyclerview = findViewById(R.id.mylocations_View);
-        Log.d(TAG, "initRecyclerView: recyclerview initiated");
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(locationNames, this);
-        Log.d(TAG, "initRecyclerView: Recyclerview adapter initiated");
         recyclerview.setAdapter(adapter);
-        Log.d(TAG, "initRecyclerView: Recyclerview adapter set");
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        Log.d(TAG, "initRecyclerView: Layout manager created");
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        Log.d(TAG, "initRecyclerView: orientation set");
         recyclerview.setLayoutManager(layoutManager);
-        Log.d(TAG, "initRecyclerView: layout manager set");
     }
 }
