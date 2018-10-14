@@ -14,27 +14,81 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tempText"
-            android:layout_width="wrap_content"
+            android:id="@+id/coName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="102dp"
-            android:text="This is holder text. Put main page app things here."
+            android:layout_marginTop="86dp"
+            android:text="COMPANY NAME"
+            android:theme="@style/TextView_for_title"
             android:layout_alignParentLeft="true" />
 
         <Button
             android:id="@+id/return_login_Button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="21dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/round_button"
+            android:layout_marginTop="21dp"
+            android:background="@android:color/transparent"
+            android:gravity="right"
             android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true" />
+
+        <Button
+            android:id="@+id/locationsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/round_button"
+            android:text="My Locations"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:id="@+id/option2Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/round_button"
+            android:text="Option 2"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:id="@+id/option3Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="320dp"
+            android:background="@drawable/round_button"
+            android:text="Option 3"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true" />
+
+        <Button
+            android:id="@+id/option4Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="390dp"
+            android:background="@drawable/round_button"
+            android:text="Option 4"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true" />
+
     </RelativeLayout>
 
 </RelativeLayout>
