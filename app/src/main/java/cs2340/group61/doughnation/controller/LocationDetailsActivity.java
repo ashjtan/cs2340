@@ -91,7 +91,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
         type.setText(loc.Type);
 
         TextView longitude = findViewById(R.id.longitude_description);
-        longitude.setText(loc.Longitude + loc.Latitude);
+        longitude.setText(loc.Longitude + ", " + loc.Latitude);
 
         TextView address = findViewById(R.id.address_description);
         address.setText(loc.Address);
