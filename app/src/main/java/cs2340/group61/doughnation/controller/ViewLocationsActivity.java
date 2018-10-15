@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import cs2340.group61.doughnation.DatabaseAccess;
+import cs2340.group61.doughnation.model.Location;
 
 import java.util.ArrayList;
 
@@ -55,19 +57,13 @@ public class ViewLocationsActivity extends AppCompatActivity {
 
     //Method to fill recycler view with names
     private void fillLocationNames() {
-        locationNames.add("Nantucket");
-        locationNames.add("Canada");
-        locationNames.add("London");
-        locationNames.add("Alabama");
-        locationNames.add("California");
-        locationNames.add("Romania");
-        locationNames.add("Thailand");
-        locationNames.add("Japan");
-        locationNames.add("Paris");
-        locationNames.add("Seven Eleven");
-        locationNames.add("Taco Bell");
-        locationNames.add("The Louvre");
-        locationNames.add("Eiffel Tower");
+        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
+        databaseAccess.open();
+        ArrayList<Location> locations = databaseAccess.getLocations();
+        for (Location location : locations) {
+            locationNames.add(location.Name);
+        }
+        databaseAccess.close();
 
         initRecyclerView();
     }
