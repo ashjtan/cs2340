@@ -78,8 +78,8 @@ public class DatabaseAccess {
      *
      * @return a List of locations
      */
-    public List<Location> getLocations() {
-        List<Location> list = new ArrayList<>();
+    public ArrayList<Location> getLocations() {
+        ArrayList<Location> list = new ArrayList<>();
         Cursor cursor = database.rawQuery("SELECT * FROM locations", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
