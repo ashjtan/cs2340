@@ -29,11 +29,23 @@ public class HomePageActivity extends AppCompatActivity {
         //Instantiating toLogin button to return to login from Reg. page
         Button toLogin = (Button) findViewById(R.id.return_login_Button);
 
+        //Instantiating myLocations button to go to Locations RecyclerView page
+        Button myLocations = (Button) findViewById(R.id.locationsButton);
+
         //Method to return to main login screen
         toLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomePageActivity.this, LoginActivity.class));
+            }
+        });
+
+        //Method to go to Recycler View page containing list of locations
+        myLocations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePageActivity.this,
+                        ViewLocationsActivity.class));
             }
         });
     }
