@@ -64,7 +64,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/back_Home_button"
+            android:id="@+id/back_view_location"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
             android:layout_alignParentBottom="true"

@@ -125,7 +125,7 @@
             android:layout_alignParentLeft="true" />
 
         <Button
-            android:id="@+id/login_button"
+            android:id="@+id/view_donations_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -140,7 +140,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/back_Locations_View_button"
+            android:id="@+id/back_location_button"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
             android:layout_alignParentBottom="true"

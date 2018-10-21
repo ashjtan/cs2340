@@ -23,7 +23,8 @@
         <activity android:name=".controller.ViewLocationsActivity" />
         <activity android:name=".controller.LocationDetailsActivity" />
         <activity android:name=".controller.AddDonationActivity" />
-        <activity android:name=".controller.ViewDonationsActivity"></activity>
+        <activity android:name=".controller.ViewDonationsActivity" />
+        <activity android:name=".controller.DonationDetailsActivity"></activity>
     </application>
 
 </manifest>

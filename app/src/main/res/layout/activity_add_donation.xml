@@ -41,28 +41,11 @@
             android:layout_alignParentLeft="true" />
 
         <TextView
-            android:id="@+id/image_title"
-            style="@style/info_display_title"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="70dp"
-            android:padding="10dp"
-            android:text="Add Image"
-            android:layout_alignParentLeft="true" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="60dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/image_title"
-            android:src="@mipmap/ic_launcher_round" />
-
-        <TextView
             android:id="@+id/value_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="100dp"
             android:padding="10dp"
             android:text="Value:"
             android:layout_alignParentLeft="true" />
@@ -73,29 +56,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="190dp"
+            android:layout_marginTop="130dp"
             android:hint="Dollar value here."
-            android:padding="10dp"
-            android:textColor="@android:color/black" />
-
-        <TextView
-            android:id="@+id/description_title"
-            style="@style/info_display_title"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="220dp"
-            android:padding="10dp"
-            android:text="Description:"
-            android:layout_alignParentLeft="true" />
-
-        <EditText
-            android:id="@+id/add_description"
-            style="@style/info_description_text"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="250dp"
-            android:hint="Donation Description here."
             android:padding="10dp"
             android:textColor="@android:color/black" />
 
@@ -104,7 +66,7 @@
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="170dp"
             android:padding="10dp"
             android:text="Type:"
             android:layout_alignParentLeft="true" />
@@ -115,28 +77,28 @@
             android:layout_height="31dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="310dp">
+            android:layout_marginTop="200dp">
 
         </android.support.v7.widget.AppCompatSpinner>
 
         <TextView
-            android:id="@+id/comments_title"
+            android:id="@+id/description_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="230dp"
             android:padding="10dp"
-            android:text="Additional Comments:"
+            android:text="Description:"
             android:layout_alignParentLeft="true" />
 
         <EditText
-            android:id="@+id/phone_description"
+            android:id="@+id/add_description"
             style="@style/info_description_text"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="370dp"
-            android:hint="Additional comments here."
+            android:layout_marginTop="260dp"
+            android:hint="Donation Description here."
             android:padding="10dp"
             android:textColor="@android:color/black" />
 
@@ -157,7 +119,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/back_Home_button"
+            android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
             android:layout_alignParentBottom="true"
