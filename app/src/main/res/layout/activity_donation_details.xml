@@ -116,7 +116,7 @@ that they could beat the system. But they can't. This ain't the matrix BABAY. By
 
 
         <Button
-            android:id="@+id/back_location_button"
+            android:id="@+id/back_donation_view_button"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
             android:layout_alignParentBottom="true"
