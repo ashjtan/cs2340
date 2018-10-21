@@ -49,16 +49,16 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
         //On click listener to listen for clicks from an individual RecyclerView item!
         //Commented out for now because I've not created a donation details page to display
         //Details for each individual donation
-//        viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Log.d(TAG, "onClick: clicked on: " + donationDisplay.get(i));
-//
-//                Intent intent = new Intent(mContext, DonationDetailsActivity.class);
-//                intent.putExtra("location_name", donationDisplay.get(i));
-//                mContext.startActivity(intent);
-//            }
-//        });
+        viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: clicked on: " + mdonationDisplay.get(i));
+
+                Intent intent = new Intent(mContext, DonationDetailsActivity.class);
+                intent.putExtra("location_name", mdonationDisplay.get(i));
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
