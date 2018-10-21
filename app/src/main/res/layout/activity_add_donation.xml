@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.LocationDetailsActivity">
+    tools:context=".controller.HomePageActivity"
+    android:id="@+id/parent_layout">
 
     <RelativeLayout
         android:layout_width="300sp"
@@ -30,102 +30,119 @@
             android:layout_alignParentRight="true" />
 
         <TextView
-            android:id="@+id/location_name"
+            android:id="@+id/newDonation_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="86dp"
-            android:text="LOCATION NAME"
+            android:layout_marginTop="50dp"
+            android:text="NEW DONATION"
             android:theme="@style/TextView_for_title"
             android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/image_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="70dp"
+            android:padding="10dp"
+            android:text="Add Image"
+            android:layout_alignParentLeft="true" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/image_title"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/value_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="160dp"
+            android:padding="10dp"
+            android:text="Value:"
+            android:layout_alignParentLeft="true" />
+
+        <EditText
+            android:id="@+id/add_value"
+            style="@style/info_description_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="190dp"
+            android:hint="Dollar value here."
+            android:padding="10dp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/description_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="220dp"
+            android:padding="10dp"
+            android:text="Description:"
+            android:layout_alignParentLeft="true" />
+
+        <EditText
+            android:id="@+id/add_description"
+            style="@style/info_description_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="250dp"
+            android:hint="Donation Description here."
+            android:padding="10dp"
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/type_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="280dp"
             android:padding="10dp"
-            android:text="Location Type:"
+            android:text="Type:"
             android:layout_alignParentLeft="true" />
 
-        <TextView
-            android:id="@+id/type_description"
-            style="@style/info_description_text"
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/donation_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="160dp"
-            android:padding="10dp"
-            android:textColor="@android:color/black"
-            android:text="This is where you put location type."
-            android:layout_alignParentLeft="true" />
+            android:layout_marginTop="310dp">
+
+        </android.support.v7.widget.AppCompatSpinner>
 
         <TextView
-            android:id="@+id/longitude_title"
-            style="@style/info_display_title"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="200dp"
-            android:padding="10dp"
-            android:text="Longitude + Latitude:"
-            android:layout_alignParentLeft="true" />
-
-        <TextView
-            android:id="@+id/longitude_description"
-            style="@style/info_description_text"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="230dp"
-            android:padding="10dp"
-            android:textColor="@android:color/black"
-            android:text="This is where you put longitude location."
-            android:layout_alignParentLeft="true" />
-
-        <TextView
-            android:id="@+id/address_title"
-            style="@style/info_display_title"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="270dp"
-            android:padding="10dp"
-            android:text="Address:"
-            android:layout_alignParentLeft="true" />
-
-        <TextView
-            android:id="@+id/address_description"
-            style="@style/info_description_text"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="300dp"
-            android:padding="10dp"
-            android:textColor="@android:color/black"
-            android:text="This is where you put address location."
-            android:layout_alignParentLeft="true" />
-
-        <TextView
-            android:id="@+id/phone_title"
+            android:id="@+id/comments_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="340dp"
             android:padding="10dp"
-            android:text="Phone:"
+            android:text="Additional Comments:"
             android:layout_alignParentLeft="true" />
 
-        <TextView
+        <EditText
             android:id="@+id/phone_description"
             style="@style/info_description_text"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="370dp"
+            android:hint="Additional comments here."
             android:padding="10dp"
-            android:textColor="@android:color/black"
-            android:text="This is where you put longitude location."
-            android:layout_alignParentLeft="true" />
+            android:textColor="@android:color/black" />
+
 
         <Button
-            android:id="@+id/login_button"
+            android:id="@+id/done_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -133,14 +150,14 @@
             android:layout_alignParentStart="true"
             android:layout_marginBottom="70dp"
             android:background="@drawable/round_button"
-            android:text="View Donations"
+            android:text="Add"
             android:textAllCaps="false"
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/back_Locations_View_button"
+            android:id="@+id/back_Home_button"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
             android:layout_alignParentBottom="true"

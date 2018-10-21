@@ -21,7 +21,9 @@
             android:label="@string/title_activity_home_page" />
         <activity android:name=".controller.RegistrationActivity" />
         <activity android:name=".controller.ViewLocationsActivity" />
-        <activity android:name=".controller.LocationDetailsActivity"></activity>
+        <activity android:name=".controller.LocationDetailsActivity" />
+        <activity android:name=".controller.AddDonationActivity" />
+        <activity android:name=".controller.ViewDonationsActivity"></activity>
     </application>
 
 </manifest>
