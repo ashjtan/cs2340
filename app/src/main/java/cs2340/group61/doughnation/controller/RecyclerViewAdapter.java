@@ -41,7 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
         //Log.d(TAG, "onBindViewHolder: called.");
 
-        viewHolder.locName.setText(lTitles.get(i));
+        viewHolder.locName.setText(lTitles.get(i).toUpperCase());
         //Log.d(TAG, "onBindViewHolder: Titles set for recycler view");
 
         //On click listener to listen for clicks from an individual RecyclerView item!

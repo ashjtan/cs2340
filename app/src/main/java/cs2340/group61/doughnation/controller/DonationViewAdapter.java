@@ -23,11 +23,14 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
     //ArrayList of strings that will hold the string information you want to display
     //Maybe a good display would be Timestamp: Short piece of the description.
     private ArrayList<String> mdonationDisplay = new ArrayList<>();
+    private ArrayList<String> mdonationTitles = new ArrayList<>();
 
     private Context mContext;
 
-    public DonationViewAdapter(Context context, ArrayList<String> donationDisplay){
+    public DonationViewAdapter(Context context, ArrayList<String> donationDisplay,
+                               ArrayList<String> donationTitles){
         mdonationDisplay = donationDisplay;
+        mdonationTitles = donationTitles;
         mContext = context;
     }
 
@@ -45,6 +48,7 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
 
         //Here is where you can fill recycler view textfield.
         viewHolder.donationText.setText(mdonationDisplay.get(i));
+        viewHolder.donationTitle.setText(mdonationTitles.get(i));
 
         //On click listener to listen for clicks from an individual RecyclerView item!
         //Commented out for now because I've not created a donation details page to display
@@ -71,12 +75,14 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView donationText;
+        TextView donationTitle;
         RelativeLayout parentLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             donationText = itemView.findViewById(R.id.donation_preview);
+            donationTitle = itemView.findViewById(R.id.donation_title);
             parentLayout = itemView.findViewById(R.id.DonationView);
         }
     }

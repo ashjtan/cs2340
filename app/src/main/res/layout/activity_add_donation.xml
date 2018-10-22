@@ -41,11 +41,32 @@
             android:layout_alignParentLeft="true" />
 
         <TextView
-            android:id="@+id/value_title"
+            android:id="@+id/name_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="100dp"
+            android:padding="10dp"
+            android:text="Title:"
+            android:layout_alignParentLeft="true" />
+
+        <EditText
+            android:id="@+id/add_name"
+            style="@style/info_description_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="130dp"
+            android:hint="Write title here."
+            android:padding="10dp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/value_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="160dp"
             android:padding="10dp"
             android:text="Value:"
             android:layout_alignParentLeft="true" />
@@ -56,7 +77,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="190dp"
             android:hint="Dollar value here."
             android:padding="10dp"
             android:textColor="@android:color/black" />
@@ -66,7 +87,7 @@
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="220dp"
             android:padding="10dp"
             android:text="Type:"
             android:layout_alignParentLeft="true" />
@@ -77,7 +98,7 @@
             android:layout_height="31dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="200dp">
+            android:layout_marginTop="250dp">
 
         </android.support.v7.widget.AppCompatSpinner>
 
@@ -86,7 +107,7 @@
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="280dp"
             android:padding="10dp"
             android:text="Description:"
             android:layout_alignParentLeft="true" />

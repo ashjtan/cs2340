@@ -97,7 +97,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
         Location loc = locations.get(index);
 
         TextView name = findViewById(R.id.location_name);
-        name.setText(locationName);
+        name.setText(locationName.toUpperCase());
 
         TextView type = findViewById(R.id.type_description);
         type.setText(loc.Type);
