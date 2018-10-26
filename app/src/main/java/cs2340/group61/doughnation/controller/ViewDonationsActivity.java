@@ -5,12 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.content.Context;
 
 import java.util.ArrayList;
 
+import cs2340.group61.doughnation.DatabaseAccess;
 import cs2340.group61.doughnation.R;
+import cs2340.group61.doughnation.model.domain.Donation;
 
 public class ViewDonationsActivity extends AppCompatActivity {
 
@@ -21,6 +26,7 @@ public class ViewDonationsActivity extends AppCompatActivity {
     //should be replaced with database
     private ArrayList<String> donationDesc = new ArrayList<>();
     private ArrayList<String> donationTitles = new ArrayList<>();
+    private String locationName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,8 @@ public class ViewDonationsActivity extends AppCompatActivity {
 
         //Button to go back to locationDetailActivity page
         Button backbutton = (Button) findViewById(R.id.back_view_location);
+
+        TextView title = (TextView) findViewById(R.id.donation_location_textView);
 
         //Button to logout
         Button logoutButton = (Button) findViewById(R.id.return_login_Button);
@@ -40,8 +48,11 @@ public class ViewDonationsActivity extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ViewDonationsActivity.this,
-                        LocationDetailsActivity.class));
+                //startActivity(new Intent(ViewDonationsActivity.this,
+                        //LocationDetailsActivity.class));
+                Intent intent = new Intent(ViewDonationsActivity.this, LocationDetailsActivity.class);
+                intent.putExtra("location_name", locationName);
+                ViewDonationsActivity.this.startActivity(intent);
             }
         });
 
@@ -63,44 +74,40 @@ public class ViewDonationsActivity extends AppCompatActivity {
             }
         });
 
+        getIncomingIntent();
+        title.setText(locationName);
         initDonationDescriptions();
     }
+
+    //Get information passed in from RecyclerViewAdapter
+    private void getIncomingIntent(){
+        Log.d(TAG, "getIncomingIntent: Checking for incoming intent.");
+        if(getIntent().hasExtra("location_name")) {
+            Log.d(TAG, "getIncomingIntent: Found intent extras");
+
+            String locationName = getIntent().getStringExtra("location_name");
+
+            this.locationName= locationName;
+        }
+    }
+
 
     //Using this method to fill up my temporary array that holds Donation Descriptions
     //These faux descriptions should be replaced with actual data
     private void initDonationDescriptions() {
-        donationDesc.add("18:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("15:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("14:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("13:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("12:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("20:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("08:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("04:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("03:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("18:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("15:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("14:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("13:00 - Here is a short excerpt of a description of...");
-        donationDesc.add("12:00 - Here is a short excerpt of a description of...");
+        //Method to fill recycler view with details
+            DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
+            databaseAccess.open();
+            ArrayList<Donation> donations = databaseAccess.getDonations();
+            for (Donation donation : donations) {
+                    donationTitles.add(donation.title);
+                    donationDesc.add(donation.shortDescription);
+            }
+            databaseAccess.close();
 
-        donationTitles.add("Teddy Bear 12");
-        donationTitles.add("Soup Can 78");
-        donationTitles.add("Mom's left shoe 7");
-        donationTitles.add("My old cat");
-        donationTitles.add("My new cat");
-        donationTitles.add("Hairbrush");
-        donationTitles.add("Ugly doll");
-        donationTitles.add("Possessed doll");
-        donationTitles.add("A sock");
-        donationTitles.add("Space heater");
-        donationTitles.add("Tire iron");
-        donationTitles.add("Suspicious briefcase");
-        donationTitles.add("Business-y briefcase");
-        donationTitles.add("Raisin");
+            initRecyclerView();
+        }
 
-        initRecyclerView();
-    }
 
     //Method to set up RecyclerView
     private void initRecyclerView(){

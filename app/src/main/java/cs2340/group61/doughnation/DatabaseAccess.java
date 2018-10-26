@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import cs2340.group61.doughnation.model.domain.Donation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +75,25 @@ public class DatabaseAccess {
     }
 
     /**
+     * Insert a donation into the database.
+     *
+     * @param donation the donation to be inserted
+     */
+    public void insertDonation(Donation donation) {
+        ContentValues values = new ContentValues();
+        values.put("title", donation.title);
+        values.put("timestamp", donation.timestamp);
+        values.put("location", donation.location);
+        values.put("shortDescription", donation.shortDescription);
+        values.put("fullDescription", donation.fullDescription);
+        values.put("value", donation.value);
+        values.put("category", donation.category);
+        values.put("comments", donation.comments);
+        values.put("organization", donation.organization);
+        database.insert("donations", null, values);
+    }
+
+    /**
      * Read all locations from the database.
      *
      * @return a List of locations
@@ -102,6 +122,33 @@ public class DatabaseAccess {
     }
 
     /**
+     * Read all Donations from the database.
+     *
+     * @return a List of Donations
+     */
+    public ArrayList<Donation> getDonations() {
+        ArrayList<Donation> list = new ArrayList<>();
+        Cursor cursor = database.rawQuery("SELECT * FROM donations", null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            Donation donation = new Donation();
+            donation.setTitle(cursor.getString(1));
+            donation.setTimestamp(cursor.getString(2));
+            donation.setLocation(cursor.getString(3));
+            donation.setShortDescription(cursor.getString(4));
+            donation.setFullDescription(cursor.getString(5));
+            donation.setValue(cursor.getString(6));
+            donation.setCategory(cursor.getString(7));
+            donation.setComments(cursor.getString(8));
+            donation.setOrganization(cursor.getString(9));
+            list.add(donation);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return list;
+    }
+
+    /**
      * Update the Location details.
      *
      * @param oldLocation the old contact to be replaced
@@ -123,12 +170,42 @@ public class DatabaseAccess {
     }
 
     /**
+     * Update the Donation details.
+     *
+     * @param oldDonation the old donation to be replaced
+     * @param newDonation the new donation to replace
+     */
+    public void updateDonation(Donation oldDonation, Donation newDonation) {
+        ContentValues values = new ContentValues();
+        values.put("title", newDonation.title);
+        values.put("timestamp", newDonation.timestamp);
+        values.put("location", newDonation.location);
+        values.put("shortDescription", newDonation.shortDescription);
+        values.put("fullDescription", newDonation.fullDescription);
+        values.put("value", newDonation.value);
+        values.put("category", newDonation.category);
+        values.put("comments", newDonation.comments);
+        values.put("organization", newDonation.organization);
+        database.update("donations", values, "title = ?", new String[]{oldDonation.title});
+    }
+
+    /**
      * Delete the provided Location.
      *
      * @param location the Location to delete
      */
     public void deleteLocation(Location location) {
         database.delete("locations", "Name = ?", new String[]{location.Name});
+        database.close();
+    }
+
+    /**
+     * Delete the provided Donation.
+     *
+     * @param donation the Donation to delete
+     */
+    public void deleteDonation(Donation donation) {
+        database.delete("donations", "title = ?", new String[]{donation.title});
         database.close();
     }
 }
