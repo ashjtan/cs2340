@@ -44,11 +44,13 @@ public class AddDonationActivity extends AppCompatActivity {
             }
         });
 
-        //Method to logout
+        //Method to add donation
         addDonationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //add method here to add new donation to recyclerview
+                //logic here to set credentials and add info to database
+                startActivity(new Intent(AddDonationActivity.this,
+                        ViewDonationsActivity.class));
             }
         });
     }
