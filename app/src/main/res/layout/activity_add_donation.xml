@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.HomePageActivity"
+    android:id="@+id/parent_layout">
+
+    <RelativeLayout
+        android:layout_width="300sp"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/return_login_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="21dp"
+            android:background="@android:color/transparent"
+            android:gravity="right"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/newDonation_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:text="NEW DONATION"
+            android:theme="@style/TextView_for_title"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/name_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="100dp"
+            android:padding="10dp"
+            android:text="Title:"
+            android:layout_alignParentLeft="true" />
+
+        <EditText
+            android:id="@+id/add_name"
+            style="@style/info_description_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="130dp"
+            android:hint="Write title here."
+            android:padding="10dp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/value_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="160dp"
+            android:padding="10dp"
+            android:text="Value:"
+            android:layout_alignParentLeft="true" />
+
+        <EditText
+            android:id="@+id/add_value"
+            style="@style/info_description_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="190dp"
+            android:hint="Dollar value here."
+            android:padding="10dp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/type_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="220dp"
+            android:padding="10dp"
+            android:text="Type:"
+            android:layout_alignParentLeft="true" />
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/donation_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="250dp">
+
+        </android.support.v7.widget.AppCompatSpinner>
+
+        <TextView
+            android:id="@+id/description_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="280dp"
+            android:padding="10dp"
+            android:text="Description:"
+            android:layout_alignParentLeft="true" />
+
+        <ScrollView
+            android:id="@+id/description_scroller"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/description_title"
+            android:isScrollContainer="false">
+
+        <EditText
+            android:id="@+id/add_description"
+            style="@style/info_description_text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
+            android:hint="Donation Description here."
+            android:padding="10dp"
+            android:textColor="@android:color/black" />
+
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/done_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="70dp"
+            android:background="@drawable/round_button"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="22dp"
+            android:background="@android:color/transparent"
+            android:gravity="right"
+            android:text="Back"
+            android:textAllCaps="false"
+            android:textColor="@color/primary"
+            android:textSize="15sp"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
