@@ -26,10 +26,13 @@ public class LocationDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_location_details);
 
         //Create button to go back to location list screen
-        Button backButton = (Button) findViewById(R.id.back_Locations_View_button);
+        Button backButton = (Button) findViewById(R.id.back_location_button);
 
         //Create button to logout
         Button logout = (Button) findViewById(R.id.return_login_Button);
+
+        //Button to view Donation List
+        Button viewDonations = (Button) findViewById(R.id.view_donations_button);
 
         //Click listener to go back to previous screen
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +49,15 @@ public class LocationDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(LocationDetailsActivity.this,
                         LoginActivity.class));
+            }
+        });
+
+        //Click listener to go to view donations page
+        viewDonations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LocationDetailsActivity.this,
+                        ViewDonationsActivity.class));
             }
         });
 
@@ -85,7 +97,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
         Location loc = locations.get(index);
 
         TextView name = findViewById(R.id.location_name);
-        name.setText(locationName);
+        name.setText(locationName.toUpperCase());
 
         TextView type = findViewById(R.id.type_description);
         type.setText(loc.Type);
