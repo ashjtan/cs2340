@@ -46,7 +46,7 @@ public class AddDonationActivity extends AppCompatActivity {
 
         final EditText description = (EditText) findViewById(R.id.add_description);
 
-        
+
         //Method to go back to LocationDetailActivity
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
