@@ -123,7 +123,7 @@ public class DonationDetailsActivity extends AppCompatActivity {
         name.setText(selected.title);
         time.setText("TIME: " + selected.timestamp);
         location.setText("LOCATION: " + selected.location);
-        value.setText("VALUE: " + selected.value);
+        value.setText("VALUE: $" + selected.value);
         type.setText("TYPE: " + selected.category);
         description.setText(selected.fulldescription);
 
