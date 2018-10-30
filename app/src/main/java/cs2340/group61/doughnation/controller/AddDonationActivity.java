@@ -93,7 +93,7 @@ public class AddDonationActivity extends AppCompatActivity {
         Button addDonationButton = (Button) findViewById(R.id.done_button);
 
 
-        
+
         //Method to go back to LocationDetailActivity
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
