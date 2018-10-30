@@ -65,15 +65,6 @@ public class LocationDetailsActivity extends AppCompatActivity {
             }
         });
 
-        //Click listener to go to view donations page
-//        viewDonations.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LocationDetailsActivity.this,
-//                        ViewDonationsActivity.class));
-//            }
-//        });
-
     }
 
     @Override

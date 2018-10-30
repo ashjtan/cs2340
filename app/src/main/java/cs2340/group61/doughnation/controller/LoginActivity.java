@@ -46,7 +46,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
     //EVENT HANDLERS
-    public void login(View v) {     //logs in if valid credentials
+    public void login(View v) {
+        //logs in if valid credentials
         if (validLogin()) {
             //TODO: needs to custom load for specific acct
             startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
