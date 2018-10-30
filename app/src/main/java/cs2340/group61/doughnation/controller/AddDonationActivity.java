@@ -33,6 +33,10 @@ public class AddDonationActivity extends AppCompatActivity {
 <<<<<<< HEAD
         databaseDonations = FirebaseDatabase.getInstance().getReference("donations");
 =======
+        //Arraylist to fill Locations spinner
+        //Bri add code here
+
+        //Arraylist to fill categories spinner
 
 >>>>>>> origin/UI-Design
 
