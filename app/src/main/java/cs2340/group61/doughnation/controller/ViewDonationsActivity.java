@@ -33,15 +33,12 @@ public class ViewDonationsActivity extends AppCompatActivity {
         //Button to logout
         Button logoutButton = (Button) findViewById(R.id.return_login_Button);
 
-        //Button to go to AddDonationActivity
-        Button addDonationButton = (Button) findViewById(R.id.add_donation_button);
-
         //Method to go back to LocationDetailActivity
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ViewDonationsActivity.this,
-                        LocationDetailsActivity.class));
+                        HomePageActivity.class));
             }
         });
 
@@ -51,15 +48,6 @@ public class ViewDonationsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(ViewDonationsActivity.this,
                         LoginActivity.class));
-            }
-        });
-
-        //Method to logout
-        addDonationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ViewDonationsActivity.this,
-                        AddDonationActivity.class));
             }
         });
 

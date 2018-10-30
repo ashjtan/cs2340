@@ -31,8 +31,8 @@ public class LocationDetailsActivity extends AppCompatActivity {
         //Create button to logout
         Button logout = (Button) findViewById(R.id.return_login_Button);
 
-        //Button to view Donation List
-        Button viewDonations = (Button) findViewById(R.id.view_donations_button);
+//        //Button to view Donation List
+//        Button viewDonations = (Button) findViewById(R.id.view_donations_button);
 
         //Click listener to go back to previous screen
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -53,13 +53,13 @@ public class LocationDetailsActivity extends AppCompatActivity {
         });
 
         //Click listener to go to view donations page
-        viewDonations.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LocationDetailsActivity.this,
-                        ViewDonationsActivity.class));
-            }
-        });
+//        viewDonations.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LocationDetailsActivity.this,
+//                        ViewDonationsActivity.class));
+//            }
+//        });
 
         getIncomingIntent();
     }

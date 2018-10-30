@@ -31,7 +31,7 @@ public class AddDonationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AddDonationActivity.this,
-                        ViewDonationsActivity.class));
+                        HomePageActivity.class));
             }
         });
 
@@ -50,7 +50,7 @@ public class AddDonationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //logic here to set credentials and add info to database
                 startActivity(new Intent(AddDonationActivity.this,
-                        ViewDonationsActivity.class));
+                        HomePageActivity.class));
             }
         });
     }
