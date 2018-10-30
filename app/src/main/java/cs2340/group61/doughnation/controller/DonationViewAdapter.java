@@ -59,7 +59,7 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
                 Log.d(TAG, "onClick: clicked on: " + mdonationDisplay.get(i));
 
                 Intent intent = new Intent(mContext, DonationDetailsActivity.class);
-                intent.putExtra("location_name", mdonationDisplay.get(i));
+                intent.putExtra("donation_title", mdonationDisplay.get(i));
                 mContext.startActivity(intent);
             }
         });
@@ -67,6 +67,7 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
 
     @Override
     public int getItemCount() {
+        Log.d(TAG, "donation display is of size " + mdonationDisplay.size());
         return mdonationDisplay.size();
     }
 

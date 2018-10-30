@@ -1,17 +1,21 @@
 package cs2340.group61.doughnation.model.domain;
 
 public class Donation {
+    public String id;
     public String title;
     public String timestamp;
     public String location;
-    public String shortDescription;
-    public String fullDescription;
+    public String shortdescription;
+    public String fulldescription;
     public String value;
     public String category;
-    public String comments;
-    public String organization;
 
-    public Donation() {}
+    public Donation() {
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public void setTitle(String title) {
         this.title = title;
@@ -26,11 +30,11 @@ public class Donation {
     }
 
     public void setShortDescription(String shortDescription) {
-        this.shortDescription = shortDescription;
+        this.shortdescription = shortDescription;
     }
 
     public void setFullDescription(String fullDescription) {
-        this.fullDescription = fullDescription;
+        this.fulldescription = fullDescription;
     }
 
     public void setValue(String value) {
@@ -41,11 +45,4 @@ public class Donation {
         this.category = category;
     }
 
-    public void setComments(String comments) {
-        this.comments = comments;
-    }
-
-    public void setOrganization(String organization) {
-        this.organization = organization;
-    }
 }

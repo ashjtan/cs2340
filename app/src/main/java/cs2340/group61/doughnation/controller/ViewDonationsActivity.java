@@ -9,13 +9,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.content.Context;
 
 import java.util.ArrayList;
 
-import cs2340.group61.doughnation.DatabaseAccess;
 import cs2340.group61.doughnation.R;
-import cs2340.group61.doughnation.model.domain.Donation;
 
 public class ViewDonationsActivity extends AppCompatActivity {
 
@@ -96,14 +93,8 @@ public class ViewDonationsActivity extends AppCompatActivity {
     //These faux descriptions should be replaced with actual data
     private void initDonationDescriptions() {
         //Method to fill recycler view with details
-            DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
-            databaseAccess.open();
-            ArrayList<Donation> donations = databaseAccess.getDonations();
-            for (Donation donation : donations) {
-                    donationTitles.add(donation.title);
-                    donationDesc.add(donation.shortDescription);
-            }
-            databaseAccess.close();
+
+
 
             initRecyclerView();
         }

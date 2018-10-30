@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import cs2340.group61.doughnation.R;
 
@@ -26,6 +27,13 @@ public class AddDonationActivity extends AppCompatActivity {
         //Button to go to AddDonationActivity
         Button addDonationButton = (Button) findViewById(R.id.done_button);
 
+        final EditText name = (EditText) findViewById(R.id.add_name);
+
+        final EditText description = (EditText) findViewById(R.id.add_description);
+
+
+
+
         //Method to go back to LocationDetailActivity
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,13 +52,17 @@ public class AddDonationActivity extends AppCompatActivity {
             }
         });
 
+
+
         //Method to add donation
         addDonationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //logic here to set credentials and add info to database
+
                 startActivity(new Intent(AddDonationActivity.this,
                         ViewDonationsActivity.class));
+
             }
         });
     }

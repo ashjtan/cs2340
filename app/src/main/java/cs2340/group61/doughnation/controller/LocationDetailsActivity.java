@@ -8,10 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
-import cs2340.group61.doughnation.DatabaseAccess;
-import cs2340.group61.doughnation.controller.ViewLocationsActivity;
 import cs2340.group61.doughnation.model.Location;
 
 import cs2340.group61.doughnation.R;
@@ -82,37 +78,25 @@ public class LocationDetailsActivity extends AppCompatActivity {
     private void setLocationDetails(String locationName) {
         Log.d(TAG, "setLocationDetails: Setting Location name and details");
 
-        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
-        databaseAccess.open();
-        ArrayList<Location> locations = databaseAccess.getLocations();
-        int index = 0;
-        for (Location location : locations) {
-            String foundName = location.Name;
-            if (foundName.equals(locationName)) {
-                index = locations.indexOf(location);
-            }
-        }
-        databaseAccess.close();
-
-        Location loc = locations.get(index);
+        Location loc = new Location();
 
         TextView name = findViewById(R.id.location_name);
         name.setText(locationName.toUpperCase());
 
         TextView type = findViewById(R.id.type_description);
-        type.setText(loc.Type);
+        type.setText(loc.type);
 
         TextView longitude = findViewById(R.id.longitude_description);
-        longitude.setText(loc.Longitude + ", " + loc.Latitude);
+        longitude.setText(loc.longitude + ", " + loc.latitude);
 
         TextView address = findViewById(R.id.address_description);
-        address.setText(loc.Address);
+        address.setText(loc.address);
 
         TextView addr = findViewById(R.id.address_description);
-        addr.setText(loc.Address);
+        addr.setText(loc.address);
 
         TextView phone = findViewById(R.id.phone_description);
-        phone.setText(loc.Phone);
+        phone.setText(loc.phone);
 
     }
 }
