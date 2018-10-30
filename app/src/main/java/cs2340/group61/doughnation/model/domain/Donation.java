@@ -29,11 +29,11 @@ public class Donation {
         this.location = location;
     }
 
-    public void setShortDescription(String shortDescription) {
+    public void setShortdescription(String shortDescription) {
         this.shortdescription = shortDescription;
     }
 
-    public void setFullDescription(String fullDescription) {
+    public void setFulldescription(String fullDescription) {
         this.fulldescription = fullDescription;
     }
 

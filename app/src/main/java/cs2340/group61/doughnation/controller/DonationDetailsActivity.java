@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import cs2340.group61.doughnation.controller.ViewDonationsActivity;
 
 import cs2340.group61.doughnation.R;
 
