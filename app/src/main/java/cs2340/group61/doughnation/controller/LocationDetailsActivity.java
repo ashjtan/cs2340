@@ -56,7 +56,7 @@ public class LocationDetailsActivity extends AppCompatActivity {
 //                        ViewDonationsActivity.class));
 //            }
 //        });
-
+        
         getIncomingIntent();
     }
 
