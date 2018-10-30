@@ -99,6 +99,8 @@ public class ViewDonationsActivity extends AppCompatActivity {
             @Override
              public void onClick(View v) {
                 Spinner locationItems = (Spinner) findViewById(R.id.sort_location_spinner);
+                donationDesc = new ArrayList<>();
+                donationTitles = new ArrayList<>();
                 for (Donation donation: donationList) {
                     if (donation.location.equals(locationItems.getSelectedItem().toString())) {
                         donationDesc.add(donation.timestamp + " - " + donation.shortdescription);
@@ -186,10 +188,11 @@ public class ViewDonationsActivity extends AppCompatActivity {
     }
 
     //Method to set up RecyclerView
-    private void initRecyclerView(){
+    public void initRecyclerView(){
         RecyclerView recyclerView = findViewById(R.id.donations_View);
         DonationViewAdapter adapter = new DonationViewAdapter(this, donationDesc,
                 donationTitles);
+        adapter.updateList(donationDesc,donationTitles);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

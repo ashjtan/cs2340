@@ -21,12 +21,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import cs2340.group61.doughnation.model.AppData;
+import cs2340.group61.doughnation.model.Utils;
 import cs2340.group61.doughnation.model.domain.Donation;
 import cs2340.group61.doughnation.model.Location;
 
 import java.util.ArrayList;
 
 import cs2340.group61.doughnation.R;
+import cs2340.group61.doughnation.model.domain.accounts.User;
 
 public class AddDonationActivity extends AppCompatActivity {
 
@@ -116,10 +119,19 @@ public class AddDonationActivity extends AppCompatActivity {
         addDonationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addDonation();
+                EditText name = (EditText) findViewById(R.id.add_name);
+                EditText value = (EditText) findViewById(R.id.add_value);
+                EditText description = (EditText) findViewById(R.id.add_description);
+                if (validDonation(name, value, description)) {
+                    addDonation();
+                    startActivity(new Intent(AddDonationActivity.this,
+                            HomePageActivity.class));
+                } else {
+                    Utils.showDialog("Empty or invalid inputs somewhere.", "Invalid Donation", AddDonationActivity.this);
+                }
                 //logic here to set credentials and add info to database
-                startActivity(new Intent(AddDonationActivity.this,
-                        HomePageActivity.class));
+                //startActivity(new Intent(AddDonationActivity.this,
+                //        HomePageActivity.class));
             }
         });
     }
@@ -185,5 +197,19 @@ public class AddDonationActivity extends AppCompatActivity {
         donation.setId(id);
 
         databaseDonations.child(id).setValue(donation);
+    }
+
+    //HELPER METHODS
+    private boolean validDonation(EditText name, EditText value, EditText description) {
+        String nameInput = name.getText().toString();
+        String valueInput = value.getText().toString();
+        String descriptionInput = description.getText().toString();
+
+
+        boolean validName = (!nameInput.isEmpty());
+        boolean validLength = valueInput.length() == 5;
+        boolean validValue = valueInput.contains(".");
+        boolean validDescription = (!descriptionInput.isEmpty());
+        return validName && validLength && validValue && validDescription;
     }
 }

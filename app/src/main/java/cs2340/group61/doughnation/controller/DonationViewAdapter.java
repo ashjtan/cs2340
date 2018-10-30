@@ -59,7 +59,7 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
                 Log.d(TAG, "onClick: clicked on: " + mdonationDisplay.get(i));
 
                 Intent intent = new Intent(mContext, DonationDetailsActivity.class);
-                intent.putExtra("donation_title", mdonationDisplay.get(i));
+                intent.putExtra("donation_title", mdonationTitles.get(i));
                 mContext.startActivity(intent);
             }
         });
