@@ -37,6 +37,13 @@ public class AddDonationActivity extends AppCompatActivity {
         //Bri add code here
 
         //Arraylist to fill categories spinner
+        ArrayList<String> cat_array = new ArrayList<String>();
+        cat_array.add("Clothing");
+        cat_array.add("Electronics");
+        cat_array.add("Kitchen");
+        cat_array.add("Household");
+        cat_array.add("Hat");
+        cat_array.add("Other");
 
 >>>>>>> origin/UI-Design
 
