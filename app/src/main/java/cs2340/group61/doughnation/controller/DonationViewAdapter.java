@@ -87,4 +87,13 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
             parentLayout = itemView.findViewById(R.id.DonationView);
         }
     }
+
+    public void updateList(ArrayList<String> newDisplayList, ArrayList<String> newTitlesList) {
+        mdonationDisplay = new ArrayList<>();
+        mdonationTitles = new ArrayList<>();
+        mdonationDisplay.addAll(newDisplayList);
+        mdonationTitles.addAll(newTitlesList);
+        notifyDataSetChanged();
+
+    }
 }
