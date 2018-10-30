@@ -38,5 +38,28 @@ public class DonationDetailsActivity extends AppCompatActivity {
                         LoginActivity.class));
             }
         });
+
+        getIncomingIntent();
+    }
+
+    //Get information passed in from RecyclerViewAdapter
+    private void getIncomingIntent(){
+        //Log.d(TAG, "getIncomingIntent: Checking for incoming intent.");
+        if(getIntent().hasExtra("donation_title")) {
+            //Log.d(TAG, "getIncomingIntent: Found intent extras");
+
+            String donationtitle = getIntent().getStringExtra("donation_title");
+
+            setDonationDetails(donationtitle);
+        }
+    }
+
+    //Set details from information passed in from RecyclerViewAdapter
+    private void setDonationDetails(String donationTitle) {
+        //Log.d(TAG, "setDonationDetails: Setting Donation name and details");
+
+
+
+
     }
 }
