@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+
 import cs2340.group61.doughnation.R;
 
 public class AddDonationActivity extends AppCompatActivity {
@@ -17,6 +19,19 @@ public class AddDonationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_donation);
+
+        //Arraylist to fill Locations spinner
+        //Bri add code here
+
+        //Arraylist to fill categories spinner
+        ArrayList<String> cat_array = new ArrayList<String>();
+        cat_array.add("Clothing");
+        cat_array.add("Electronics");
+        cat_array.add("Kitchen");
+        cat_array.add("Household");
+        cat_array.add("Hat");
+        cat_array.add("Other");
+
 
         //Button to go back to locationDetailActivity page
         Button backbutton = (Button) findViewById(R.id.back_button);
@@ -31,9 +46,7 @@ public class AddDonationActivity extends AppCompatActivity {
 
         final EditText description = (EditText) findViewById(R.id.add_description);
 
-
-
-
+        
         //Method to go back to LocationDetailActivity
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
