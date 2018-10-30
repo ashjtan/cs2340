@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import cs2340.group61.doughnation.model.domain.Donation;
 
+import java.util.ArrayList;
+
 import cs2340.group61.doughnation.R;
 
 public class AddDonationActivity extends AppCompatActivity {
@@ -28,7 +30,11 @@ public class AddDonationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_donation);
 
+<<<<<<< HEAD
         databaseDonations = FirebaseDatabase.getInstance().getReference("donations");
+=======
+
+>>>>>>> origin/UI-Design
 
         //Button to go back to locationDetailActivity page
         Button backbutton = (Button) findViewById(R.id.back_button);
@@ -43,9 +49,7 @@ public class AddDonationActivity extends AppCompatActivity {
 
         final EditText description = (EditText) findViewById(R.id.add_description);
 
-
-
-
+        
         //Method to go back to LocationDetailActivity
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override

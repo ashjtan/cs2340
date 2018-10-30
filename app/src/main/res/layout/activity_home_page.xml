@@ -20,7 +20,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="86dp"
-            android:text="COMPANY NAME"
+            android:text="OPTIONS"
             android:theme="@style/TextView_for_title"
             android:layout_alignParentLeft="true" />
 
