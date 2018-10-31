@@ -207,7 +207,7 @@ public class AddDonationActivity extends AppCompatActivity {
 
 
         boolean validName = (!nameInput.isEmpty());
-        boolean validLength = valueInput.length() == 5;
+        boolean validLength = valueInput.length() > 4;
         boolean validValue = valueInput.contains(".");
         boolean validDescription = (!descriptionInput.isEmpty());
         return validName && validLength && validValue && validDescription;
