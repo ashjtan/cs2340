@@ -1,23 +1,30 @@
 package cs2340.group61.doughnation.model.domain.accounts;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import cs2340.group61.doughnation.model.domain.AccountType;
+
 /**
  * General user that can view locations and location info.
  * Parent class to specific account types with more application options/abilities.
  */
-public class User {
+public abstract class User {
     //Fields
-    protected String id;
+    //protected String id;
     protected String name;
     protected String email;
     protected String password;
     protected boolean locked;
+    protected String acctType;
 
-    //Default Constructor
+/*    //Default Constructor
     public User() {
         this.name = "";
         this.email = "";
         this.password = "";
         this.locked = false;
+        this.acctType = AccountType.GENERAL_USER.toString();
     }
 
     //Overloaded Constructor
@@ -26,7 +33,8 @@ public class User {
         this.email = email;
         this.password = password;
         this.locked = false;
-    }
+        this.acctType = AccountType.GENERAL_USER.toString();
+    }*/
 
     public String getName() {
         return name;
@@ -42,5 +50,9 @@ public class User {
 
     public boolean isLocked() {
         return locked;
+    }
+
+    public String getAcctType() {
+        return acctType;
     }
 }
