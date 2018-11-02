@@ -12,16 +12,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import cs2340.group61.doughnation.R;
-import cs2340.group61.doughnation.model.domain.AccountType;
-import cs2340.group61.doughnation.model.domain.accounts.Admin;
-import cs2340.group61.doughnation.model.domain.accounts.LocationEmployee;
-import cs2340.group61.doughnation.model.domain.accounts.OrganizationManager;
-import cs2340.group61.doughnation.model.domain.accounts.User;
-import cs2340.group61.doughnation.model.AppData;
-import cs2340.group61.doughnation.model.Utils;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-import static cs2340.group61.doughnation.model.Utils.isNotEmpty;
+import cs2340.group61.doughnation.R;
+import cs2340.group61.doughnation.model.AppData;
+import cs2340.group61.doughnation.model.domain.AccountType;
+import cs2340.group61.doughnation.model.domain.accounts.GeneralUser;
+import cs2340.group61.doughnation.model.utils.Utils;
+import cs2340.group61.doughnation.model.domain.accounts.Admin;
+
+import static cs2340.group61.doughnation.model.domain.accounts.Admin.createAdmin;
+import static cs2340.group61.doughnation.model.domain.accounts.GeneralUser.createGeneralUser;
+import static cs2340.group61.doughnation.model.utils.Utils.isNotEmpty;
 
 public class RegistrationActivity extends AppCompatActivity {
 

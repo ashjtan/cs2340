@@ -12,7 +12,6 @@ import android.widget.EditText;
 
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.AppData;
-import cs2340.group61.doughnation.model.Utils;
 import cs2340.group61.doughnation.model.domain.accounts.User;
 
 public class LoginActivity extends AppCompatActivity {

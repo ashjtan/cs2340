@@ -1,6 +1,5 @@
 package cs2340.group61.doughnation.controller;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import java.util.Date;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
@@ -21,15 +19,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import cs2340.group61.doughnation.model.AppData;
-import cs2340.group61.doughnation.model.Utils;
+import cs2340.group61.doughnation.model.utils.Utils;
 import cs2340.group61.doughnation.model.domain.Donation;
 import cs2340.group61.doughnation.model.Location;
 
 import java.util.ArrayList;
 
 import cs2340.group61.doughnation.R;
-import cs2340.group61.doughnation.model.domain.accounts.User;
 
 public class AddDonationActivity extends AppCompatActivity {
 
