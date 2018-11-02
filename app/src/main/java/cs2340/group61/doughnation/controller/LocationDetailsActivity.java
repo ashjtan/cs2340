@@ -17,9 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import cs2340.group61.doughnation.controller.ViewLocationsActivity;
-
-import cs2340.group61.doughnation.model.Location;
+import cs2340.group61.doughnation.model.domain.Location;
 
 import cs2340.group61.doughnation.R;
 

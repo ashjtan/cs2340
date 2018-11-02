@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import cs2340.group61.doughnation.model.Location;
+import cs2340.group61.doughnation.model.domain.Location;
 
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;

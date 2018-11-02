@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import cs2340.group61.doughnation.model.utils.Utils;
 import cs2340.group61.doughnation.model.domain.Donation;
-import cs2340.group61.doughnation.model.Location;
+import cs2340.group61.doughnation.model.domain.Location;
 
 import java.util.ArrayList;
 

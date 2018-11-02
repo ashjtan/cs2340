@@ -1,7 +1,7 @@
 package cs2340.group61.doughnation.model.domain.accounts;
 
 import cs2340.group61.doughnation.model.AppData;
-import cs2340.group61.doughnation.model.Location;
+import cs2340.group61.doughnation.model.domain.Location;
 import cs2340.group61.doughnation.model.domain.AccountType;
 
 public class LocationEmployee extends User {
