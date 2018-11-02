@@ -46,11 +46,14 @@ public class ViewDonationsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_donations);
 
-        nameList.add("NO LOCATION SELECTED");
+        //Creating spinners for locations and categories to sort
+        nameList.add("ALL LOCATIONS");
 
+        //Creating database reference for donations and locations
         databaseDonations = FirebaseDatabase.getInstance().getReference("donations");
         databaseLocations = FirebaseDatabase.getInstance().getReference("locations");
 
+        //Creating array for donation categories to fill category spinner
         ArrayList<String> cat_array = new ArrayList<String>();
         cat_array.add("NO CATEGORY SELECTED");
         cat_array.add("Clothing");
@@ -60,13 +63,14 @@ public class ViewDonationsActivity extends AppCompatActivity {
         cat_array.add("Hat");
         cat_array.add("Other");
 
+        //Creating spinner for categories and filling it
         ArrayAdapter<String> adapterCat = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, cat_array);
         adapterCat.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        Spinner catItems = (Spinner) findViewById(R.id.sort_category_spinner);
+        final Spinner catItems = (Spinner) findViewById(R.id.sort_category_spinner);
         catItems.setAdapter(adapterCat);
 
-        Spinner locationItems = (Spinner) findViewById(R.id.sort_location_spinner);
+        //Initializing UI views
 
         //Button to go back to locationDetailActivity page
         Button backbutton = (Button) findViewById(R.id.back_view_location);
@@ -75,6 +79,8 @@ public class ViewDonationsActivity extends AppCompatActivity {
         Button logoutButton = (Button) findViewById(R.id.return_login_Button);
 
         Button sortButton = (Button) findViewById(R.id.sort_button);
+
+        //Creating onClick methods for views
 
         //Method to go back to LocationDetailActivity
         backbutton.setOnClickListener(new View.OnClickListener() {
@@ -94,15 +100,29 @@ public class ViewDonationsActivity extends AppCompatActivity {
             }
         });
 
-
+        //Method to sort Donations on click SortButton
         sortButton.setOnClickListener(new View.OnClickListener() {
             @Override
              public void onClick(View v) {
+                //Spinner for location Items
                 Spinner locationItems = (Spinner) findViewById(R.id.sort_location_spinner);
+
+                //New sorted arrays to go in recycler view
                 donationDesc = new ArrayList<>();
                 donationTitles = new ArrayList<>();
+
+                //sorting logic
                 for (Donation donation: donationList) {
-                    if (donation.location.equals(locationItems.getSelectedItem().toString())) {
+//                    if (locationItems.getSelectedItem().toString().equals("ALL LOCATIONS")) {
+//                        donationDesc.add(donation.timestamp + " - " + donation.shortdescription);
+//                        donationTitles.add(donation.title);
+//                    }
+//                    else if (donation.location.equals(locationItems.getSelectedItem().toString())) {
+//                        donationDesc.add(donation.timestamp + " - " + donation.shortdescription);
+//                        donationTitles.add(donation.title);
+//                    }
+                    if (isLocationTrue(donation, locationItems.getSelectedItem().toString())
+                            & isCategoryTrue(donation, catItems.getSelectedItem().toString())){
                         donationDesc.add(donation.timestamp + " - " + donation.shortdescription);
                         donationTitles.add(donation.title);
                     }
@@ -111,6 +131,24 @@ public class ViewDonationsActivity extends AppCompatActivity {
               }
         });
 
+    }
+
+    //Helper method to see if location in spinner matches location of donation item in recyclerView
+    private boolean isLocationTrue(Donation donation, String location_item) {
+        if (location_item.equals("ALL LOCATIONS")
+                || (donation.location.equals(location_item))) {
+            return true;
+        }
+        return false;
+    }
+
+    //Helper method to see if category in spinner matches category of donation item in recyclerVew
+    private boolean isCategoryTrue(Donation donation, String category_item) {
+        if (category_item.equals("NO CATEGORY SELECTED")
+                || (donation.category.equals(category_item))) {
+            return true;
+        }
+        return false;
     }
 
     @Override

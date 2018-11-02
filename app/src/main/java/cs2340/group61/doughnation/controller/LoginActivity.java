@@ -48,14 +48,14 @@ public class LoginActivity extends AppCompatActivity {
     //EVENT HANDLERS
     public void login(View v) {
         //logs in if valid credentials
-        if (validLogin()) {
-            //TODO: needs to custom load for specific acct
-            startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
-        }
-        else {
-            Utils.showDialog("Wrong username or password.", "Invalid Login", this);
-        }
-        //startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+//        if (validLogin()) {
+//            //TODO: needs to custom load for specific acct
+//            startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+//        }
+//        else {
+//            Utils.showDialog("Wrong username or password.", "Invalid Login", this);
+//        }
+        startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
     }
 
     public void switchToRegister(View v) {      //switches to register page
