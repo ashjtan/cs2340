@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "516659067438",
+    "firebase_url": "https://doughnation-a398c.firebaseio.com",
+    "project_id": "doughnation-a398c",
+    "storage_bucket": "doughnation-a398c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516659067438:android:6d828a2e4b475555",
+        "android_client_info": {
+          "package_name": "cs2340.group61.doughnation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516659067438-3d6a07853ed8jraiaup714fl7otnifgc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cs2340.group61.doughnation",
+            "certificate_hash": "48ce4945cdb020494bff1a8f6a18972c34929e51"
+          }
+        },
+        {
+          "client_id": "516659067438-21thps7a68faotigi3h7mknre1402gpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDalBN8lp3Pqpmfh-lKFwuubqXxXJEaZBQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516659067438-21thps7a68faotigi3h7mknre1402gpg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

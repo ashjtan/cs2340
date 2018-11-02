@@ -6,6 +6,7 @@ package cs2340.group61.doughnation.model.domain.accounts;
  */
 public class User {
     //Fields
+    protected String id;
     protected String name;
     protected String email;
     protected String password;

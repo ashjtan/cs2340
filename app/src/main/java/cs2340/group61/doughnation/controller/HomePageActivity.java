@@ -32,6 +32,12 @@ public class HomePageActivity extends AppCompatActivity {
         //Instantiating myLocations button to go to Locations RecyclerView page
         Button myLocations = (Button) findViewById(R.id.locationsButton);
 
+        //Instantiating toAddDonation button to go to add donations page
+        Button toAddDonations = (Button) findViewById(R.id.add_donation_button);
+
+        //Instantiating toSearchDonations button to go to view donations page
+        Button toSearchDonations = (Button) findViewById(R.id.search_donations_button);
+
         //Method to return to main login screen
         toLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +52,24 @@ public class HomePageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(HomePageActivity.this,
                         ViewLocationsActivity.class));
+            }
+        });
+
+        //Method to go to Add Donation Activity
+        toAddDonations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePageActivity.this,
+                        AddDonationActivity.class));
+            }
+        });
+
+        //Method to go to Search Donations Activity
+        toSearchDonations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePageActivity.this,
+                        ViewDonationsActivity.class));
             }
         });
     }

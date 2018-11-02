@@ -125,21 +125,6 @@
             android:layout_alignParentLeft="true" />
 
         <Button
-            android:id="@+id/view_donations_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="70dp"
-            android:background="@drawable/round_button"
-            android:text="View Donations"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
             android:id="@+id/back_location_button"
             android:layout_width="wrap_content"
             android:layout_height="21dp"

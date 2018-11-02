@@ -12,18 +12,19 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/return_login_Button"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="21dp"
             android:background="@android:color/transparent"
-            android:gravity="right"
-            android:text="Logout"
+            android:gravity="end"
+            android:text="@string/logout"
             android:textAllCaps="false"
             android:textColor="@color/primary"
             android:textSize="15sp"
@@ -34,63 +35,73 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="86dp"
-            android:text="DONATION DETAILS:"
-            android:theme="@style/TextView_for_title"
-            android:layout_alignParentLeft="true" />
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/donation_details"
+            android:theme="@style/TextView_for_title" />
+
+        <TextView
+            android:id="@+id/time_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="112dp"
+            android:padding="10dp"
+            android:text="@string/timestamp_xx_xx" />
+
+        <TextView
+            android:id="@+id/location_title"
+            style="@style/info_display_title"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="155dp"
+            android:padding="10dp"
+            android:text="@string/location_here_is_an_example" />
 
         <TextView
             android:id="@+id/value_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="130dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="199dp"
             android:padding="10dp"
-            android:text="Value:"
-            android:layout_alignParentLeft="true" />
-
-        <TextView
-            android:id="@+id/value_description"
-            style="@style/info_description_text"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="160dp"
-            android:padding="10dp"
-            android:textColor="@android:color/black"
-            android:text="This is where we display value."
-            android:layout_alignParentLeft="true" />
+            android:text="@string/value_xx_xx" />
 
         <TextView
             android:id="@+id/type_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="200dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="244dp"
             android:padding="10dp"
-            android:text="Category:"
-            android:layout_alignParentLeft="true" />
-
-        <TextView
-            android:id="@+id/type_description"
-            style="@style/info_description_text"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="230dp"
-            android:padding="10dp"
-            android:textColor="@android:color/black"
-            android:text="Show donation category here."
-            android:layout_alignParentLeft="true" />
+            android:text="@string/category_put_category_here" />
 
         <TextView
             android:id="@+id/description_title_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="270dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="287dp"
             android:padding="10dp"
-            android:text="Description:"
-            android:layout_alignParentLeft="true" />
+            android:text="@string/description" />
 
         <ScrollView
             android:id="@+id/description_scroller"
@@ -101,16 +112,12 @@
             <TextView
                 android:id="@+id/address_description"
                 style="@style/info_description_text"
-                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/type_title"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="3dp"
                 android:padding="10dp"
-                android:text="Put description here. Here is a very long example of a description.
-Why? Because IDK maybe some people want to write a super long description. Who knows. Point is that
-I've cleverly used a scrollbox to contain someone's annoyingly long description. They thought
-that they could beat the system. But they can't. This ain't the matrix BABAY. Bye ho."
-                android:textColor="@android:color/black" />
+                android:text="@string/put_description_here_here_is_a_very_long_example_of_a_description_why_because_idk_maybe_some_people_want_to_write_a_super_long_description_who_knows_point_is_that_i_ve_cleverly_used_a_scrollbox_to_contain_someone_s_annoyingly_long_description_they_thought_that_they_could_beat_the_system_but_they_can_t_this_ain_t_the_matrix_babay_bye_ho"
+                android:textColor="@android:color/black"
+                android:layout_alignParentLeft="true" />
 
         </ScrollView>
 
@@ -119,16 +126,16 @@ that they could beat the system. But they can't. This ain't the matrix BABAY. By
             android:id="@+id/back_donation_view_button"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginBottom="22dp"
             android:background="@android:color/transparent"
             android:gravity="right"
             android:text="Back"
             android:textAllCaps="false"
             android:textColor="@color/primary"
-            android:textSize="15sp"
-            android:layout_alignParentRight="true" />
+            android:textSize="15sp" />
 
     </RelativeLayout>
 

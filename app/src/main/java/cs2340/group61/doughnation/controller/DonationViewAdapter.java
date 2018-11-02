@@ -59,7 +59,7 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
                 Log.d(TAG, "onClick: clicked on: " + mdonationDisplay.get(i));
 
                 Intent intent = new Intent(mContext, DonationDetailsActivity.class);
-                intent.putExtra("location_name", mdonationDisplay.get(i));
+                intent.putExtra("donation_title", mdonationTitles.get(i));
                 mContext.startActivity(intent);
             }
         });
@@ -67,6 +67,7 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
 
     @Override
     public int getItemCount() {
+        Log.d(TAG, "donation display is of size " + mdonationDisplay.size());
         return mdonationDisplay.size();
     }
 
@@ -85,5 +86,14 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
             donationTitle = itemView.findViewById(R.id.donation_title);
             parentLayout = itemView.findViewById(R.id.DonationView);
         }
+    }
+
+    public void updateList(ArrayList<String> newDisplayList, ArrayList<String> newTitlesList) {
+        mdonationDisplay = new ArrayList<>();
+        mdonationTitles = new ArrayList<>();
+        mdonationDisplay.addAll(newDisplayList);
+        mdonationTitles.addAll(newTitlesList);
+        notifyDataSetChanged();
+
     }
 }
