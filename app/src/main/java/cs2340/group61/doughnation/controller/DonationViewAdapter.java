@@ -12,9 +12,11 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import cs2340.group61.doughnation.R;
+import cs2340.group61.doughnation.model.domain.Donation;
 
 public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapter.ViewHolder>{
 
@@ -24,15 +26,21 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
     //Maybe a good display would be Timestamp: Short piece of the description.
     private ArrayList<String> mdonationDisplay = new ArrayList<>();
     private ArrayList<String> mdonationTitles = new ArrayList<>();
+    private ArrayList<String> mdonationDisplayCopy = new ArrayList<>();
+    private ArrayList<String> mdonationTitlesCopy = new ArrayList<>();
 
     private Context mContext;
 
-    public DonationViewAdapter(Context context, ArrayList<String> donationDisplay,
-                               ArrayList<String> donationTitles){
+    public DonationViewAdapter(Context context, ArrayList<String> donationDisplay, ArrayList<String> donationTitles){
         mdonationDisplay = donationDisplay;
+        mdonationDisplayCopy.addAll(donationDisplay);
         mdonationTitles = donationTitles;
+        mdonationTitlesCopy.addAll(donationTitles);
         mContext = context;
     }
+
+
+
 
     @NonNull
     @Override
@@ -45,7 +53,6 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
-
         //Here is where you can fill recycler view textfield.
         viewHolder.donationText.setText(mdonationDisplay.get(i));
         viewHolder.donationTitle.setText(mdonationTitles.get(i));
@@ -74,7 +81,6 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
     //Holds items in memory for each individual entry
     //In this case, that would be the list items and the Donation Descriptions
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         TextView donationText;
         TextView donationTitle;
         RelativeLayout parentLayout;
@@ -88,6 +94,10 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
         }
     }
 
+
+
+
+    //HELPER METHODS
     public void updateList(ArrayList<String> newDisplayList, ArrayList<String> newTitlesList) {
         mdonationDisplay = new ArrayList<>();
         mdonationTitles = new ArrayList<>();
@@ -95,5 +105,26 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
         mdonationTitles.addAll(newTitlesList);
         notifyDataSetChanged();
 
+    }
+    
+    public void filter(String text) {
+        mdonationDisplay.clear();
+        mdonationTitles.clear();
+        if (text.trim().isEmpty()){
+            mdonationDisplay.addAll(mdonationDisplayCopy);
+            mdonationTitles.addAll(mdonationTitlesCopy);
+        } else {
+            for(String d : mdonationTitlesCopy){
+                if(matchesSearch(d, text)){
+                    mdonationDisplay.add(d);
+                    mdonationTitles.add(d);
+                }
+            }
+        }
+        notifyDataSetChanged();
+    }
+
+    private boolean matchesSearch(String d, String text) {
+        return d.contains(text.toLowerCase());
     }
 }

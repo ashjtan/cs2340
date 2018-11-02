@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.Spinner;
 
 import com.google.firebase.database.DatabaseError;
@@ -39,6 +40,10 @@ public class ViewDonationsActivity extends AppCompatActivity {
     private Button btnLogout;
     private Button btnBack;
     private Button btnSort;
+
+    private SearchView search;
+    private RecyclerView donationsView;
+    private DonationViewAdapter donationViewAdapter;
     private Spinner donationCategories;
     private Spinner locations;
 
@@ -54,9 +59,9 @@ public class ViewDonationsActivity extends AppCompatActivity {
         btnLogout = (Button) findViewById(R.id.btnLogout);
         btnSort = (Button) findViewById(R.id.btnSort);
 
+        search = (SearchView) findViewById(R.id.search);
         donationCategories = (Spinner) findViewById(R.id.categoryFilter);
         locations = (Spinner) findViewById(R.id.locationFilter);
-
     }
 
     @Override
@@ -77,6 +82,20 @@ public class ViewDonationsActivity extends AppCompatActivity {
         locationAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         locations = (Spinner) findViewById(R.id.locationFilter);
         locations.setAdapter(locationAdapter);
+
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                donationViewAdapter.filter(newText);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                donationViewAdapter.filter(query);
+                return true;
+            }
+        });
     }
 
     @Override
@@ -163,7 +182,7 @@ public class ViewDonationsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 donationList.clear();
-                for(DataSnapshot donationSnapshot : dataSnapshot.getChildren()) {
+                for (DataSnapshot donationSnapshot : dataSnapshot.getChildren()) {
                     Donation donation = donationSnapshot.getValue(Donation.class);
                     donationList.add(donation);
                 }
@@ -177,16 +196,23 @@ public class ViewDonationsActivity extends AppCompatActivity {
         });
     }
 
+/*    private boolean matchesSearch(Donation d, String text) {
+        String query = search.getQuery().toString();
+        return d.category.toLowerCase().contains(query.toLowerCase()) || d.title.toLowerCase().contains(query.toLowerCase());
+    }*/
+
+
+
 
 
 
     //INITIALIZE METHODS
     public void initDonationsView(){
-        RecyclerView recyclerView = findViewById(R.id.donationsView);
-        DonationViewAdapter adapter = new DonationViewAdapter(this, donationDesc, donationTitles);
-        adapter.updateList(donationDesc,donationTitles);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        donationsView = findViewById(R.id.donationsView);
+        donationViewAdapter = new DonationViewAdapter(this, donationDesc, donationTitles);
+        donationViewAdapter.updateList(donationDesc,donationTitles);
+        donationsView.setAdapter(donationViewAdapter);
+        donationsView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     private void initDonationDescriptions() {
