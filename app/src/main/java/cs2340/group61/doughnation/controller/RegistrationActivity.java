@@ -32,6 +32,8 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button toLogin, register;
     private Spinner acctType;
     private EditText firstName, lastName, email, pw, confirmPw;
+    private DatabaseReference dbUsers = FirebaseDatabase.getInstance().getReference("users");
+
 
     String firstText, lastText, emailText , pwText, confPwText; //populated w/ form values
 
@@ -117,19 +119,24 @@ public class RegistrationActivity extends AppCompatActivity {
     private void createUser() {
         AccountType acctSelect = (AccountType) acctType.getSelectedItem();
         String name = firstText.trim() + " " + lastText.trim();
+        String email = emailText.trim();
 
         switch(acctSelect) {
             case ADMIN:
                 AppData.addAccount(new Admin(name, emailText.trim(), pwText));
+                //createAdmin(name, email, pwText);
                 break;
             case GENERAL_USER:
-                AppData.addAccount(new User(name, emailText.trim(), pwText));
+                AppData.addAccount(new GeneralUser(name, emailText.trim(), pwText));
+                //createGeneralUser(name, email, pwText);
                 break;
             case LOCATION_EMPLOYEE:
-                AppData.addAccount(new LocationEmployee(name, emailText.trim(), pwText));
+                //AppData.addAccount(new LocationEmployee(name, emailText.trim(), pwText));
+                //TODO: add create method
                 break;
             case ORGANIZATION_MANAGER:
-                AppData.addAccount(new OrganizationManager(name, emailText.trim(), pwText));
+                //AppData.addAccount(new OrganizationManager(name, emailText.trim(), pwText));
+                //TODO: add create method
                 break;
                 default:
                     showCreateAccountError();
