@@ -1,4 +1,4 @@
-package cs2340.group61.doughnation.model;
+package cs2340.group61.doughnation.model.domain;
 
 public class Location {
     public String id;
