@@ -20,6 +20,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.ValueEventListener;
 
 import cs2340.group61.doughnation.model.Location;
+import cs2340.group61.doughnation.model.Utils;
 import cs2340.group61.doughnation.model.domain.Donation;
 
 
@@ -134,6 +135,10 @@ public class ViewDonationsActivity extends AppCompatActivity {
                     }
                 }
                 initRecyclerView();
+                if (donationTitles.isEmpty()) {
+                    Utils.showDialog("No valid donations match search criteria.", "No Results",
+                            ViewDonationsActivity.this);
+                }
               }
         });
 
