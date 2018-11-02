@@ -1,14 +1,8 @@
 package cs2340.group61.doughnation.model.domain;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import cs2340.group61.doughnation.model.AppData;
-import cs2340.group61.doughnation.model.Location;
-import cs2340.group61.doughnation.model.domain.accounts.GeneralUser;
 import cs2340.group61.doughnation.model.domain.accounts.OrganizationManager;
 
 public class Organization {

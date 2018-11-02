@@ -50,7 +50,7 @@ public class HomePageActivity extends AppCompatActivity {
         startActivity(new Intent(HomePageActivity.this, AddDonationActivity.class));
     }
 
-    public void switchToSearchDonations(View v) {      //switches to search donations page
+    public void switchToSearchDonations(View v) {  //switches to search donations page
         startActivity(new Intent(HomePageActivity.this, ViewDonationsActivity.class));
     }
 }
