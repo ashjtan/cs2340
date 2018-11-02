@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import com.google.firebase.database.DatabaseError;
@@ -46,6 +47,8 @@ public class ViewDonationsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_donations);
 
+        //Initializing UI views
+
         //Creating spinners for locations and categories to sort
         nameList.add("ALL LOCATIONS");
 
@@ -70,15 +73,17 @@ public class ViewDonationsActivity extends AppCompatActivity {
         final Spinner catItems = (Spinner) findViewById(R.id.sort_category_spinner);
         catItems.setAdapter(adapterCat);
 
-        //Initializing UI views
-
         //Button to go back to locationDetailActivity page
         Button backbutton = (Button) findViewById(R.id.back_view_location);
 
         //Button to logout
         Button logoutButton = (Button) findViewById(R.id.return_login_Button);
 
+        //Button to sort recyclerview
         Button sortButton = (Button) findViewById(R.id.sort_button);
+
+        //SearchView to sort RecyclerView
+        final SearchView stringSearch = (SearchView) findViewById(R.id.string_searchView);
 
         //Creating onClick methods for views
 
@@ -122,7 +127,8 @@ public class ViewDonationsActivity extends AppCompatActivity {
 //                        donationTitles.add(donation.title);
 //                    }
                     if (isLocationTrue(donation, locationItems.getSelectedItem().toString())
-                            & isCategoryTrue(donation, catItems.getSelectedItem().toString())){
+                            & isCategoryTrue(donation, catItems.getSelectedItem().toString())
+                            & isSearchTrue(donation, stringSearch.getQuery())){
                         donationDesc.add(donation.timestamp + " - " + donation.shortdescription);
                         donationTitles.add(donation.title);
                     }
@@ -142,10 +148,22 @@ public class ViewDonationsActivity extends AppCompatActivity {
         return false;
     }
 
-    //Helper method to see if category in spinner matches category of donation item in recyclerVew
+    //Helper method to see if category in spinner matches category of donation item in recyclerView
     private boolean isCategoryTrue(Donation donation, String category_item) {
         if (category_item.equals("NO CATEGORY SELECTED")
                 || (donation.category.equals(category_item))) {
+            return true;
+        }
+        return false;
+    }
+
+    //Helper method to see if string in searchView matches title of donation item in recyclerView
+    private boolean isSearchTrue(Donation donation, CharSequence chars){
+        String tempString = chars.toString();
+        if (chars.equals(null)) {
+            return true;
+        }
+        if (tempString.equals("") || donation.title.contains(chars)) {
             return true;
         }
         return false;
