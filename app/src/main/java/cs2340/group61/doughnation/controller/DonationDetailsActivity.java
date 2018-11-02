@@ -57,6 +57,7 @@ public class DonationDetailsActivity extends AppCompatActivity {
             }
         });
 
+        
     }
 
     @Override
