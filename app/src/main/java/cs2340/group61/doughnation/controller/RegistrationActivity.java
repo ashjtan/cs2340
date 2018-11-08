@@ -28,7 +28,11 @@ public class RegistrationActivity extends AppCompatActivity {
     private Spinner acctType;
     private EditText firstName, lastName, email, pw, confirmPw;
 
-    String firstText, lastText, emailText , pwText, confPwText; //populated w/ form values
+    private String firstText;
+    String lastText;
+    String emailText;
+    String pwText;
+    String confPwText; //populated w/ form values
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

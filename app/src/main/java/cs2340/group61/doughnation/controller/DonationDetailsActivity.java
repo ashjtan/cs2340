@@ -22,7 +22,7 @@ import cs2340.group61.doughnation.model.domain.Donation;
 
 public class DonationDetailsActivity extends AppCompatActivity {
 
-    private List<Donation> donationList = new ArrayList<>();
+    private final List<Donation> donationList = new ArrayList<>();
     private DatabaseReference databaseDonations;
 
     @Override

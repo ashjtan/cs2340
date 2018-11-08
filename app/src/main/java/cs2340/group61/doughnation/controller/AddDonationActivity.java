@@ -32,8 +32,8 @@ public class AddDonationActivity extends AppCompatActivity {
     private DatabaseReference databaseLocations;
     private DatabaseReference databaseDonations;
     @SuppressWarnings("TypeMayBeWeakened")
-    private List<Location> locationList = new ArrayList<>();
-    private List<String> nameList = new ArrayList<>();
+    private final List<Location> locationList = new ArrayList<>();
+    private final List<String> nameList = new ArrayList<>();
 
 
     @Override

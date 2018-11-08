@@ -23,7 +23,7 @@ import cs2340.group61.doughnation.model.Location;
 
 public class LocationDetailsActivity extends AppCompatActivity {
 
-    public List<Location> locationList = new ArrayList<>();
+    private final List<Location> locationList = new ArrayList<>();
     public DatabaseReference databaseLocations;
     public String locationName;
 

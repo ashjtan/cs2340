@@ -16,9 +16,12 @@ import cs2340.group61.doughnation.model.domain.accounts.User;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button loginButton, registerButton;
-    EditText userField, passField;
-    String userText = "", passText = "";    //prevents null pointer
+    private Button loginButton;
+    private Button registerButton;
+    private EditText userField;
+    private EditText passField;
+    private String userText = "";
+    private String passText = "";    //prevents null pointer
 
 
     @Override

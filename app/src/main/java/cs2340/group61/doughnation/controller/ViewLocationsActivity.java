@@ -27,8 +27,8 @@ public class ViewLocationsActivity extends AppCompatActivity {
 
     //variables
     private ArrayList<String> locationNames = new ArrayList<>();
-    public ArrayList<Location> locationList = new ArrayList<>();
-    public DatabaseReference databaseLocations;
+    private ArrayList<Location> locationList = new ArrayList<>();
+    private DatabaseReference databaseLocations;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -27,7 +27,7 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
     private List<String> mDonationDisplay;
     private List<String> mDonationTitles;
 
-    private Context mContext;
+    private final Context mContext;
 
     DonationViewAdapter(Context context, List<String> donationDisplay,
                         List<String> donationTitles){
