@@ -68,6 +68,7 @@ public class RegistrationActivity extends AppCompatActivity {
         startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
     }
 
+    @SuppressWarnings("FeatureEnvy")
     public void register(View v) {
         Utils.clearTextVals(firstText, lastText, emailText, pwText, confPwText);
         loadFormVals();
@@ -96,6 +97,7 @@ public class RegistrationActivity extends AppCompatActivity {
         return isNotEmpty(firstText, lastText, emailText, pwText, confPwText); //&& !acctType.getSelectedItem().equals(null);
     }
 
+    @SuppressWarnings("FeatureEnvy")
     private boolean anyFieldsComplete() {
         return isNotEmpty(firstText) || isNotEmpty(lastText) || isNotEmpty(emailText) || isNotEmpty(pwText) || isNotEmpty(confPwText);
     }
@@ -112,6 +114,7 @@ public class RegistrationActivity extends AppCompatActivity {
         return confPwText.equals(pwText); //TODO: add password char requirements
     }
 
+    @SuppressWarnings("FeatureEnvy")
     private void createUser() {
         AccountType acctSelect = (AccountType) acctType.getSelectedItem();
         String name = firstText.trim() + " " + lastText.trim();

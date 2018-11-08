@@ -26,6 +26,7 @@ import cs2340.group61.doughnation.model.Location;
 import cs2340.group61.doughnation.model.Utils;
 import cs2340.group61.doughnation.model.domain.Donation;
 
+@SuppressWarnings("FeatureEnvy")
 public class AddDonationActivity extends AppCompatActivity {
 
     private DatabaseReference databaseLocations;
