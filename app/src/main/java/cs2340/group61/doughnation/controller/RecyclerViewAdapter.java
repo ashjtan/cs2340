@@ -24,7 +24,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
 
-    public RecyclerViewAdapter(ArrayList<String> lTitles, Context context) {
+    public RecyclerViewAdapter(List<String> lTitles, Context context) {
         this.lTitles = lTitles;
         this.context = context;
     }
