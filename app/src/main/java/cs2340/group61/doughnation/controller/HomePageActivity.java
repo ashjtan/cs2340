@@ -32,11 +32,11 @@ public class HomePageActivity extends AppCompatActivity {
         actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
         actionbar.setTitle("DoughNation");
 
-        toLogin = (Button) findViewById(R.id.btnLogout);
-        myLocations = (Button) findViewById(R.id.btnLocations);
-        toAddDonations = (Button) findViewById(R.id.btnAddDonations);
-        toSearchDonations = (Button) findViewById(R.id.btnSearchDonations);
-        toMapView = (Button) findViewById(R.id.btnLocationsMap);
+        toLogin = findViewById(R.id.btnLogout);
+        myLocations = findViewById(R.id.btnLocations);
+        toAddDonations = findViewById(R.id.btnAddDonations);
+        toSearchDonations = findViewById(R.id.btnSearchDonations);
+        toMapView = findViewById(R.id.btnLocationsMap);
     }
 
     //EVENT HANDLERS
