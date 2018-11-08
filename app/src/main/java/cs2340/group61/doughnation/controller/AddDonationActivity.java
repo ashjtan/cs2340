@@ -138,7 +138,7 @@ public class AddDonationActivity extends AppCompatActivity {
 
 
                 ArrayAdapter<String> adapterLoc
-                        = new ArrayAdapter<String>(AddDonationActivity.this,
+                        = new ArrayAdapter<>(AddDonationActivity.this,
                         android.R.layout.simple_spinner_item, nameList);
                 adapterLoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 Spinner locationItems = findViewById(R.id.location_selection_spinner);
