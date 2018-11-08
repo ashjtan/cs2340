@@ -156,8 +156,6 @@ public class AddDonationActivity extends AppCompatActivity {
                     nameList.add(lo.name);
                 }
 
-                ArrayAdapter<String> adapterLoc = new ArrayAdapter<String>(AddDonationActivity.this, android.R.layout.simple_spinner_item, nameList);
-
                 ArrayAdapter<String> adapterLoc
                         = new ArrayAdapter<String>(AddDonationActivity.this,
                         android.R.layout.simple_spinner_item, nameList);
