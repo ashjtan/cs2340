@@ -8,10 +8,18 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 
 import cs2340.group61.doughnation.R;
 
 public class HomePageActivity extends AppCompatActivity {
+
+    private ActionBar actionbar;
+    private Button toLogin;
+    private Button myLocations;
+    private Button toAddDonations;
+    private Button toSearchDonations;
+    private Button toMapView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,68 +28,35 @@ public class HomePageActivity extends AppCompatActivity {
 
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
-        ActionBar actionbar = getSupportActionBar();
+        actionbar = getSupportActionBar();
         actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
         actionbar.setTitle("DoughNation");
 
-        //Instantiating toLogin button to return to login from Reg. page
-        Button toLogin = findViewById(R.id.return_login_Button);
-
-        //Instantiating myLocations button to go to Locations RecyclerView page
-        Button myLocations = findViewById(R.id.locationsButton);
-
-        //Instantiating toAddDonation button to go to add donations page
-        Button toAddDonations = findViewById(R.id.add_donation_button);
-
-        //Instantiating toSearchDonations button to go to view donations page
-        Button toSearchDonations = findViewById(R.id.search_donations_button);
-
-        //Instantiating toMapView button to go to MapViewActivity
-        Button toMapView = findViewById(R.id.map_view_button);
-
-        //Method to return to main login screen
-        toLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomePageActivity.this, LoginActivity.class));
-            }
-        });
-
-        //Method to go to Recycler View page containing list of locations
-        myLocations.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomePageActivity.this,
-                        ViewLocationsActivity.class));
-            }
-        });
-
-        //Method to go to Add Donation Activity
-        toAddDonations.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomePageActivity.this,
-                        AddDonationActivity.class));
-            }
-        });
-
-        //Method to go to Search Donations Activity
-        toSearchDonations.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomePageActivity.this,
-                        ViewDonationsActivity.class));
-            }
-        });
-
-        //Method to go to Map View Activity
-        toMapView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(HomePageActivity.this,
-                        MapViewActivity.class));
-            }
-        });
+        toLogin = (Button) findViewById(R.id.btnLogout);
+        myLocations = (Button) findViewById(R.id.btnLocations);
+        toAddDonations = (Button) findViewById(R.id.btnAddDonations);
+        toSearchDonations = (Button) findViewById(R.id.btnSearchDonations);
+        toMapView = (Button) findViewById(R.id.btnLocationsMap);
     }
 
+    //EVENT HANDLERS
+    public void switchToLogin(View v) {             //switches to login page
+        startActivity(new Intent(HomePageActivity.this, LoginActivity.class));
+    }
+
+    public void switchToMyLocations(View v) {      //switches to my locations page
+        startActivity(new Intent(HomePageActivity.this, ViewLocationsActivity.class));
+    }
+
+    public void switchToAddDonation(View v) {      //switches to add donation page
+        startActivity(new Intent(HomePageActivity.this, AddDonationActivity.class));
+    }
+
+    public void switchToSearchDonations(View v) {  //switches to search donations page
+        startActivity(new Intent(HomePageActivity.this, ViewDonationsActivity.class));
+    }
+
+    public void switchToLocationsMap(View v) {      //switches to locations map
+        startActivity(new Intent(HomePageActivity.this, MapViewActivity.class));
+    }
 }
