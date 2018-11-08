@@ -127,8 +127,8 @@ public class ViewDonationsActivity extends AppCompatActivity {
                     if (isLocationTrue(donation, locationItems.getSelectedItem().toString())
                             & isCategoryTrue(donation, catItems.getSelectedItem().toString())
                             & isSearchTrue(donation, stringSearch.getQuery())){
-                        donationDesc.add(donation.timestamp + " - " + donation.shortdescription);
-                        donationTitles.add(donation.title);
+                        donationDesc.add(donation.getTimestamp() + " - " + donation.getShortdescription());
+                        donationTitles.add(donation.getTitle());
                     }
                 }
                 initRecyclerView();
@@ -144,19 +144,19 @@ public class ViewDonationsActivity extends AppCompatActivity {
     //Helper method to see if location in spinner matches location of donation item in recyclerView
     private boolean isLocationTrue(Donation donation, String location_item) {
         return location_item.equals("ALL LOCATIONS")
-                || (donation.location.equals(location_item));
+                || (donation.getLocation().equals(location_item));
     }
 
     //Helper method to see if category in spinner matches category of donation item in recyclerView
     private boolean isCategoryTrue(Donation donation, String category_item) {
         return category_item.equals("NO CATEGORY SELECTED")
-                || (donation.category.equals(category_item));
+                || (donation.getCategory().equals(category_item));
     }
 
     //Helper method to see if string in searchView matches title of donation item in recyclerView
     private boolean isSearchTrue(Donation donation, CharSequence chars){
         String tempString = chars.toString();
-        return tempString.equals("") || donation.title.contains(chars);
+        return tempString.equals("") || donation.getTitle().contains(chars);
     }
 
     @Override
@@ -227,8 +227,8 @@ public class ViewDonationsActivity extends AppCompatActivity {
     private void initDonationDescriptions() {
 
         for (Donation donation: donationList) {
-            donationDesc.add(donation.timestamp + " - " + donation.shortdescription);
-            donationTitles.add(donation.title);
+            donationDesc.add(donation.getTimestamp() + " - " + donation.getShortdescription());
+            donationTitles.add(donation.getTitle());
         }
             initRecyclerView();
     }
