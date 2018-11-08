@@ -38,6 +38,9 @@ public class HomePageActivity extends AppCompatActivity {
         //Instantiating toSearchDonations button to go to view donations page
         Button toSearchDonations = (Button) findViewById(R.id.search_donations_button);
 
+        //Instantiating toMapView button to go to MapViewActivity
+        Button toMapView = (Button) findViewById(R.id.map_view_button);
+
         //Method to return to main login screen
         toLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +73,15 @@ public class HomePageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(HomePageActivity.this,
                         ViewDonationsActivity.class));
+            }
+        });
+
+        //Method to go to Map View Activity
+        toMapView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePageActivity.this,
+                        MapViewActivity.class));
             }
         });
     }
