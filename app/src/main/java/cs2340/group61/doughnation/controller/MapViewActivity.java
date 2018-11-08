@@ -13,6 +13,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import cs2340.group61.doughnation.R;
 
+@SuppressWarnings("ChainedMethodCall")
 public class MapViewActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private MapView mapView;

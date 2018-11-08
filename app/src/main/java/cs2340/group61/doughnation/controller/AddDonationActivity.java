@@ -27,10 +27,13 @@ import cs2340.group61.doughnation.model.Location;
 import cs2340.group61.doughnation.model.Utils;
 import cs2340.group61.doughnation.model.domain.Donation;
 
+@SuppressWarnings("ChainedMethodCall")
 public class AddDonationActivity extends AppCompatActivity {
 
-    private DatabaseReference databaseLocations;
-    private DatabaseReference databaseDonations;
+    private DatabaseReference databaseLocations
+            = FirebaseDatabase.getInstance().getReference("locations");
+    private DatabaseReference databaseDonations
+            = FirebaseDatabase.getInstance().getReference("donations");
     @SuppressWarnings("TypeMayBeWeakened")
     private final List<Location> locationList = new ArrayList<>();
     private final List<String> nameList = new ArrayList<>();
@@ -40,9 +43,6 @@ public class AddDonationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_donation);
-
-        databaseLocations = FirebaseDatabase.getInstance().getReference("locations");
-        databaseDonations = FirebaseDatabase.getInstance().getReference("donations");
 
         //ArrayList to fill Locations spinner
         //Bri add code here
@@ -192,7 +192,7 @@ public class AddDonationActivity extends AppCompatActivity {
 
 
         boolean validName = (!nameInput.isEmpty());
-        boolean validLength = valueInput.length() > 4;
+        boolean validLength = valueInput.length() >= 4;
         boolean validValue = valueInput.contains(".");
         boolean validDescription = (!descriptionInput.isEmpty());
         return validName && validLength && validValue && validDescription;

@@ -3,6 +3,7 @@ package cs2340.group61.doughnation.model;
 import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
+@SuppressWarnings("ChainedMethodCall")
 public class Utils {
 
     /**

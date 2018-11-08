@@ -39,7 +39,7 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.donation_view_item,
+        @SuppressWarnings("ChainedMethodCall") View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.donation_view_item,
                 viewGroup, false);
         return new ViewHolder(view);
     }
