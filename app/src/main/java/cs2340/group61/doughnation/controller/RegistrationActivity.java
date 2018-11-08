@@ -25,6 +25,8 @@ import static cs2340.group61.doughnation.model.Utils.isNotEmpty;
 
 public class RegistrationActivity extends AppCompatActivity {
 
+    private ActionBar actionbar;
+    private Button toLogin, register;
     private Spinner acctType;
     private EditText firstName, lastName, email, pw, confirmPw;
 
@@ -36,8 +38,8 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         //Instantiating xml elements
-        //Button toLogin = findViewById(R.id.return_login_Button);
-        //Button register = findViewById(R.id.register_Button);
+        toLogin = findViewById(R.id.return_login_Button);
+        register = findViewById(R.id.register_Button);
         acctType = findViewById(R.id.acctType_spinner);
 
         firstName = findViewById(R.id.firstName_editText);
@@ -48,7 +50,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
-        ActionBar actionbar = getSupportActionBar();
+        actionbar = getSupportActionBar();
         actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
         actionbar.setTitle("DoughNation");
 
@@ -74,14 +76,11 @@ public class RegistrationActivity extends AppCompatActivity {
 
         if (validForm()) {
             createUser();
-            Utils.showDialog("Successfully created account for "
-                    + emailText + ".", "Account Created", this);
+            Utils.showDialog("Successfully created account for " + emailText + ".", "Account Created", this);
             startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
         }
         else {
-            Utils.showDialog("One of the fields is invalid." +
-                            "Please check form before submitting.",
-                    "Unable to Create Account", this);
+            Utils.showDialog("One of the fields is invalid. Please check form before submitting.", "Unable to Create Account", this);
         }
     }
 
