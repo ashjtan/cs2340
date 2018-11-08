@@ -12,12 +12,10 @@ import android.widget.EditText;
 
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.AppData;
-import cs2340.group61.doughnation.model.Utils;
 import cs2340.group61.doughnation.model.domain.accounts.User;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private ActionBar actionbar;
     Button loginButton, registerButton;
     EditText userField, passField;
     String userText = "", passText = "";    //prevents null pointer
@@ -29,15 +27,15 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //Instantiating xml elements
-        loginButton = (Button)findViewById(R.id.login_button);
-        registerButton = (Button) findViewById(R.id.register_Button);
-        userField = (EditText) findViewById(R.id.email);
-        passField = (EditText) findViewById(R.id.password);
+        loginButton = findViewById(R.id.login_button);
+        registerButton = findViewById(R.id.register_Button);
+        userField = findViewById(R.id.email);
+        passField = findViewById(R.id.password);
 
 
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
-        actionbar = getSupportActionBar();
+        ActionBar actionbar = getSupportActionBar();
         actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
         actionbar.setTitle("DoughNation");
     }

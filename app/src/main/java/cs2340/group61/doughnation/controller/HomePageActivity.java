@@ -13,8 +13,6 @@ import cs2340.group61.doughnation.R;
 
 public class HomePageActivity extends AppCompatActivity {
 
-    private ActionBar actionbar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,24 +20,24 @@ public class HomePageActivity extends AppCompatActivity {
 
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
-        actionbar = getSupportActionBar();
+        ActionBar actionbar = getSupportActionBar();
         actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
         actionbar.setTitle("DoughNation");
 
         //Instantiating toLogin button to return to login from Reg. page
-        Button toLogin = (Button) findViewById(R.id.return_login_Button);
+        Button toLogin = findViewById(R.id.return_login_Button);
 
         //Instantiating myLocations button to go to Locations RecyclerView page
-        Button myLocations = (Button) findViewById(R.id.locationsButton);
+        Button myLocations = findViewById(R.id.locationsButton);
 
         //Instantiating toAddDonation button to go to add donations page
-        Button toAddDonations = (Button) findViewById(R.id.add_donation_button);
+        Button toAddDonations = findViewById(R.id.add_donation_button);
 
         //Instantiating toSearchDonations button to go to view donations page
-        Button toSearchDonations = (Button) findViewById(R.id.search_donations_button);
+        Button toSearchDonations = findViewById(R.id.search_donations_button);
 
         //Instantiating toMapView button to go to MapViewActivity
-        Button toMapView = (Button) findViewById(R.id.map_view_button);
+        Button toMapView = findViewById(R.id.map_view_button);
 
         //Method to return to main login screen
         toLogin.setOnClickListener(new View.OnClickListener() {
