@@ -76,7 +76,7 @@ public class RegistrationActivity extends AppCompatActivity {
     @SuppressWarnings("FeatureEnvy")
     public void register(View v) {
         Utils.clearTextValues(firstText, lastText, emailText, pwText, confPwText);
-        loadFormVals();
+        loadFormValues();
 
         if (validForm()) {
             createUser();
@@ -151,7 +151,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 "Unable to Create Account", this);
     }
 
-    private void loadFormVals() {
+    private void loadFormValues() {
         firstText = firstName.getText().toString();
         lastText = lastName.getText().toString();
         emailText = email.getText().toString();

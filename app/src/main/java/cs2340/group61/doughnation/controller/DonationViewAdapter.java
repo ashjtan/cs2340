@@ -48,7 +48,6 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder viewHolder,
                                  @SuppressLint("RecyclerView") final int i) {
 
-        //Here is where you can fill recycler view textfield.
         viewHolder.donationText.setText(mDonationDisplay.get(i));
         viewHolder.donationTitle.setText(mDonationTitles.get(i));
 

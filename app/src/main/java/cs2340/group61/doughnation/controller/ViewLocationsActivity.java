@@ -107,7 +107,7 @@ public class ViewLocationsActivity extends AppCompatActivity {
 
     //Method to set up RecyclerView
     private void initRecyclerView() {
-        RecyclerView recyclerview = findViewById(R.id.mylocations_View);
+        RecyclerView recyclerview = findViewById(R.id.myLocations_View);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(locationNames, this);
         recyclerview.setAdapter(adapter);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);

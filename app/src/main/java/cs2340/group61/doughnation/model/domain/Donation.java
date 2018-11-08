@@ -5,8 +5,8 @@ public class Donation {
     private String title;
     private String timestamp;
     private String location;
-    private String shortdescription;
-    private String fulldescription;
+    private String shortDescription;
+    private String fullDescription;
     private String value;
     private String category;
 
@@ -29,12 +29,12 @@ public class Donation {
         this.location = location;
     }
 
-    public void setShortdescription(String shortDescription) {
-        this.shortdescription = shortDescription;
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
     }
 
-    public void setFulldescription(String fullDescription) {
-        this.fulldescription = fullDescription;
+    public void setFullDescription(String fullDescription) {
+        this.fullDescription = fullDescription;
     }
 
     public void setValue(String value) {
@@ -63,13 +63,13 @@ public class Donation {
         return location;
     }
 
-    public String getShortdescription() {
-        return shortdescription;
+    public String getShortDescription() {
+        return shortDescription;
     }
 
     @SuppressWarnings("TypeMayBeWeakened")
-    public String getFulldescription() {
-        return fulldescription;
+    public String getFullDescription() {
+        return fullDescription;
     }
 
     public String getValue() {

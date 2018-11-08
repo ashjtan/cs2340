@@ -146,7 +146,7 @@ public class DonationDetailsActivity extends AppCompatActivity {
 
         type.setText(typeString);
 
-        description.setText(selected.getFulldescription());
+        description.setText(selected.getFullDescription());
 
 
 

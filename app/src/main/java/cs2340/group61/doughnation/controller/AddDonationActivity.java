@@ -173,8 +173,8 @@ public class AddDonationActivity extends AppCompatActivity {
         donation.setTitle(name.getText().toString());
         donation.setLocation(locationItems.getSelectedItem().toString());
         donation.setCategory(type.getSelectedItem().toString());
-        donation.setFulldescription(description.getText().toString());
-        donation.setShortdescription(description.getText().toString());
+        donation.setFullDescription(description.getText().toString());
+        donation.setShortDescription(description.getText().toString());
         donation.setValue(value.getText().toString());
         donation.setTimestamp(time);
         donation.setId(id);
