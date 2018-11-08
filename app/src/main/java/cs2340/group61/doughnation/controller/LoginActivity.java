@@ -21,7 +21,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText userField, passField;
     String userText = "", passText = "";    //prevents null pointer
 
-
     /**
      * This class creates the login page.
      * @param savedInstanceState The previously saved state.
