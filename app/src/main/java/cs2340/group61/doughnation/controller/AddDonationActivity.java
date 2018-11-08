@@ -20,6 +20,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.Location;
@@ -157,7 +158,7 @@ public class AddDonationActivity extends AppCompatActivity {
     private void addDonation() {
         String id = databaseDonations.push().getKey();
 
-        final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
+        final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss", Locale.US);
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         String time = sdf.format(timestamp);
