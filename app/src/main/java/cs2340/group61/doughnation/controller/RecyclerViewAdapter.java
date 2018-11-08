@@ -20,7 +20,7 @@ import cs2340.group61.doughnation.R;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
-    private List<String> lTitles;
+    private final List<String> lTitles;
     private Context context;
 
 
