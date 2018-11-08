@@ -17,9 +17,7 @@ public class AppData {
     }
 
     public static void deleteAccount(User u) {
-        if (accounts.contains(u)) {
-            accounts.remove(u);
-        }
+        accounts.remove(u);
     }
 
     public static User findUserByEmail(String email) {

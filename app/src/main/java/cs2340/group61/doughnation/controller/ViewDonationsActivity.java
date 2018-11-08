@@ -81,7 +81,7 @@ public class ViewDonationsActivity extends AppCompatActivity {
         Button sortButton = findViewById(R.id.sort_button);
 
         //SearchView to sort RecyclerView
-        final SearchView stringSearch = (SearchView) findViewById(R.id.string_searchView);
+        final SearchView stringSearch = findViewById(R.id.string_searchView);
 
         //Creating onClick methods for views
 
@@ -203,7 +203,7 @@ public class ViewDonationsActivity extends AppCompatActivity {
 
                 ArrayAdapter<String> adapterLoc = new ArrayAdapter<String>(ViewDonationsActivity.this, android.R.layout.simple_spinner_item, nameList);
                 adapterLoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                Spinner locationItems = (Spinner) findViewById(R.id.sort_location_spinner);
+                Spinner locationItems = findViewById(R.id.sort_location_spinner);
                 locationItems.setAdapter(adapterLoc);
 
                 }

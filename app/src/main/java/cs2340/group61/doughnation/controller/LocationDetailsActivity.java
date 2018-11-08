@@ -37,10 +37,10 @@ public class LocationDetailsActivity extends AppCompatActivity {
         databaseLocations = FirebaseDatabase.getInstance().getReference("locations");
 
         //Create button to go back to location list screen
-        Button backButton = (Button) findViewById(R.id.back_location_button);
+        Button backButton = findViewById(R.id.back_location_button);
 
         //Create button to logout
-        Button logout = (Button) findViewById(R.id.return_login_Button);
+        Button logout = findViewById(R.id.return_login_Button);
 
 //        //Button to view Donation List
 //        Button viewDonations = (Button) findViewById(R.id.view_donations_button);
