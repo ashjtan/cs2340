@@ -86,7 +86,9 @@
             android:layout_marginTop="190dp"
             android:hint="@string/write_title_here"
             android:padding="10dp"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:autofillHints=""
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/value_title"
@@ -112,7 +114,8 @@
             android:hint="@string/enter_value"
             android:padding="10dp"
             android:textColor="@android:color/black"
-            android:inputType="number|numberDecimal"/>
+            android:inputType="number|numberDecimal"
+            android:autofillHints="" />
 
         <TextView
             android:id="@+id/type_title"
@@ -169,7 +172,9 @@
                 android:layout_marginTop="0dp"
                 android:hint="@string/donation_description_here"
                 android:padding="10dp"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:autofillHints=""
+                android:inputType="" />
 
         </ScrollView>
 

@@ -39,7 +39,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, @SuppressLint("RecyclerView") final int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder,
+                                 @SuppressLint("RecyclerView") final int i) {
         //Log.d(TAG, "onBindViewHolder: called.");
 
         viewHolder.locName.setText(lTitles.get(i).toUpperCase());

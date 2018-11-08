@@ -49,7 +49,8 @@
                     android:layout_marginTop="210dp"
                     android:ems="10"
                     android:hint="email"
-                    android:inputType="textImeMultiLine|textPersonName" />
+                    android:inputType="textEmailAddress"
+                    tools:ignore="TextFields" />
 
         <TextView
             android:id="@+id/password-textView"

@@ -14,7 +14,7 @@
     <string name="location_here_is_an_example">Location: here is an example</string>
     <string name="value_xx_xx">Value: $XX.XX</string>
     <string name="category_put_category_here">Category: put category here</string>
-    <string name="don_desc">Put description here. Here is a very long example of a description. Why? Because IDK maybe some people want to write a super long description. Who knows. Point is that I\'ve cleverly used a scrollbox to contain someone\'s annoyingly long description. They thought that they could beat the system. But they can\'t. This ain\'t the matrix BABAY. Bye ho.</string>
+    <string name="don_desc">Put description here.</string>
     <string name="new_donation">NEW DONATION</string>
     <string name="location">Location:</string>
     <string name="title">Title:</string>

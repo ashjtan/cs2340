@@ -108,11 +108,9 @@ public class AddDonationActivity extends AppCompatActivity {
                     startActivity(new Intent(AddDonationActivity.this,
                             HomePageActivity.class));
                 } else {
-                    Utils.showDialog("Empty or invalid inputs somewhere.", "Invalid Donation", AddDonationActivity.this);
+                    Utils.showDialog("Empty or invalid inputs somewhere.",
+                            "Invalid Donation",AddDonationActivity.this);
                 }
-                //logic here to set credentials and add info to database
-                //startActivity(new Intent(AddDonationActivity.this,
-                //        HomePageActivity.class));
             }
         });
     }
@@ -138,7 +136,9 @@ public class AddDonationActivity extends AppCompatActivity {
                 }
 
 
-                ArrayAdapter<String> adapterLoc = new ArrayAdapter<String>(AddDonationActivity.this, android.R.layout.simple_spinner_item, nameList);
+                ArrayAdapter<String> adapterLoc
+                        = new ArrayAdapter<String>(AddDonationActivity.this,
+                        android.R.layout.simple_spinner_item, nameList);
                 adapterLoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 Spinner locationItems = findViewById(R.id.location_selection_spinner);
                 locationItems.setAdapter(adapterLoc);

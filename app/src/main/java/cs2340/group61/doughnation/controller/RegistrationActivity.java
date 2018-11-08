@@ -54,7 +54,8 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
         //Populates spinner w/ account types
-        ArrayAdapter<String> acctTypeAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, AccountType.values());
+        ArrayAdapter<String> acctTypeAdapter = new ArrayAdapter(this,
+                android.R.layout.simple_spinner_item, AccountType.values());
         acctTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         acctType.setAdapter(acctTypeAdapter);
     }
@@ -94,12 +95,14 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private boolean allFieldsComplete() {
-        return isNotEmpty(firstText, lastText, emailText, pwText, confPwText); //&& !acctType.getSelectedItem().equals(null);
+        return isNotEmpty(firstText, lastText, emailText, pwText, confPwText);
+        //&& !acctType.getSelectedItem().equals(null);
     }
 
     @SuppressWarnings("FeatureEnvy")
     private boolean anyFieldsComplete() {
-        return isNotEmpty(firstText) || isNotEmpty(lastText) || isNotEmpty(emailText) || isNotEmpty(pwText) || isNotEmpty(confPwText);
+        return isNotEmpty(firstText) || isNotEmpty(lastText) || isNotEmpty(emailText)
+                || isNotEmpty(pwText) || isNotEmpty(confPwText);
     }
 
     private boolean validName() {
@@ -139,7 +142,9 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void showCreateAccountError() {
-        Utils.showDialog("One of the fields is invalid. Please check form before submitting.", "Unable to Create Account", this);
+        Utils.showDialog("One of the fields is invalid."
+                + " Please check form before submitting.",
+                "Unable to Create Account", this);
     }
 
     private void loadFormVals() {
