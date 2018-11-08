@@ -1,3 +1,4 @@
+//This is a class to view the locations.
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
@@ -29,7 +30,11 @@ public class ViewLocationsActivity extends AppCompatActivity {
     private ArrayList<String> locationNames = new ArrayList<>();
     public ArrayList<Location> locationList = new ArrayList<>();
     public DatabaseReference databaseLocations;
-    
+
+    /**
+     * Creates the page.
+     * @param savedInstanceState The previously saved state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,13 +69,20 @@ public class ViewLocationsActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * Method that displays the page to the user.
+     */
     @Override
     protected void onStart() {
         super.onStart();
 
         databaseLocations.addValueEventListener(new ValueEventListener() {
 
-
+            /**
+             * Allows data change.
+             * @param dataSnapshot The data.
+             */
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 locationList.clear();
@@ -84,6 +96,10 @@ public class ViewLocationsActivity extends AppCompatActivity {
                 fillLocationNames();
             }
 
+            /**
+             * Necessary for implementation; unused.
+             * @param databaseError The database error.
+             */
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -91,12 +107,17 @@ public class ViewLocationsActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Stops the page.
+     */
     @Override
     protected void onStop() {
         super.onStop();
     }
 
-    //Method to fill recycler view with names
+    /**
+     * Method to fill recycler view with names.
+     */
     private void fillLocationNames() {
         for (Location location: locationList) {
             locationNames.add(location.name);
@@ -104,7 +125,9 @@ public class ViewLocationsActivity extends AppCompatActivity {
         initRecyclerView();
     }
 
-    //Method to set up RecyclerView
+    /**
+     * Method to set up RecyclerView
+     */
     private void initRecyclerView() {
         RecyclerView recyclerview = findViewById(R.id.mylocations_View);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(locationNames, this);
@@ -114,6 +137,10 @@ public class ViewLocationsActivity extends AppCompatActivity {
         recyclerview.setLayoutManager(layoutManager);
     }
 
+    /**
+     * Method to retrieve location list.
+     * @return the list of locations.
+     */
     protected ArrayList<Location> getLocationList() {
         return locationList;
     }

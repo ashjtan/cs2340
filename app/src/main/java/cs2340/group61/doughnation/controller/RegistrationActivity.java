@@ -1,3 +1,4 @@
+//Allows the user to register a new account.
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
@@ -32,6 +33,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
     String firstText, lastText, emailText , pwText, confPwText; //populated w/ form values
 
+    /**
+     * Creates the registration page.
+     * @param savedInstanceState The previously saved state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,15 +66,21 @@ public class RegistrationActivity extends AppCompatActivity {
         acctType.setAdapter(acctTypeAdapter);
     }
 
-
-    //EVENT HANDLERS
-    public void switchToLogin(View v) {      //switches to login page
+    /**
+     * Allows the user to switch back to the login page.
+     * @param v The page.
+     */
+    public void switchToLogin(View v) {
         if(anyFieldsComplete()) {
             //TODO:show confirm dialog
         }
         startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
     }
 
+    /**
+     * Allows the user to create a new account.
+     * @param v The page.
+     */
     public void register(View v) {
         Utils.clearTextVals(firstText, lastText, emailText, pwText, confPwText);
         loadFormVals();
@@ -84,33 +95,57 @@ public class RegistrationActivity extends AppCompatActivity {
         }
     }
 
-
-    //HELPER METHODS
-
+    /**
+     * Ensures that all information is valid.
+     * @return true is the information is valid; false otherwise.
+     */
     private boolean validForm() {
         return allFieldsComplete() && validName() && validEmail() && validPassword();
     }
 
+    /**
+     * Ensures that all fields have information in them.
+     * @return true if none of the fields are empty; false otherwise.
+     */
     private boolean allFieldsComplete() {
         return isNotEmpty(firstText, lastText, emailText, pwText, confPwText); //&& !acctType.getSelectedItem().equals(null);
     }
 
+    /**
+     * Ensures that at least one of the fields has information.
+     * @return true if there's at least one filled field; false otherwise
+     */
     private boolean anyFieldsComplete() {
         return isNotEmpty(firstText) || isNotEmpty(lastText) || isNotEmpty(emailText) || isNotEmpty(pwText) || isNotEmpty(confPwText);
     }
 
+    /**
+     * Checks if the valid only has appropriate characters.
+     * @return true if the name is valid; false otherwise.
+     */
     private boolean validName() {
         return firstText.matches("[a-zA-Z]+") && lastText.matches("[a-zA-Z]+");
     }
 
+    /**
+     * Checks that the email is valid.
+     * @return true if it's a valid email; false otherwise.
+     */
     private boolean validEmail() {
         return emailText.contains("@");
     }
 
+    /**
+     * Checks that the password is valid.
+     * @return true if it's a valid password; false otherwise
+     */
     private boolean validPassword() {
         return confPwText.equals(pwText); //TODO: add password char requirements
     }
 
+    /**
+     * Creates the account based on type.
+     */
     private void createUser() {
         AccountType acctSelect = (AccountType) acctType.getSelectedItem();
         String name = firstText.trim() + " " + lastText.trim();
@@ -134,10 +169,16 @@ public class RegistrationActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Displays an error message if registration is invalid.
+     */
     private void showCreateAccountError() {
         Utils.showDialog("One of the fields is invalid. Please check form before submitting.", "Unable to Create Account", this);
     }
 
+    /**
+     * Method to display information as Strings.
+     */
     private void loadFormVals() {
         firstText = firstName.getText().toString();
         lastText = lastName.getText().toString();

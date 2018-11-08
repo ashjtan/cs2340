@@ -1,3 +1,4 @@
+//This class creates a page of the location's details.
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
@@ -31,6 +32,10 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "LocationDetailActivity";
 
+    /**
+     * This is a method to create the location details page.
+     * @param savedInstanceState The previously saved state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,13 +72,19 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This is to display the page to the user.
+     */
     @Override
     protected void onStart() {
         super.onStart();
 
         databaseLocations.addValueEventListener(new ValueEventListener() {
 
-
+            /**
+             * This method is to change the data.
+             * @param dataSnapshot the data.
+             */
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 locationList.clear();
@@ -86,6 +97,10 @@ public class LocationDetailsActivity extends AppCompatActivity {
                 getIncomingIntent();
             }
 
+            /**
+             * Necessary for implementation; unused.
+             * @param databaseError The database error.
+             */
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -93,13 +108,17 @@ public class LocationDetailsActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This method is to stop displaying the page
+     */
     @Override
     protected void onStop() {
         super.onStop();
     }
 
-
-    //Get information passed in from RecyclerViewAdapter
+    /**
+     * This method is to get information passed in from RecyclerViewAdapter.
+     */
     private void getIncomingIntent(){
         Log.d(TAG, "getIncomingIntent: Checking for incoming intent.");
         if(getIntent().hasExtra("location_name")) {
@@ -112,7 +131,10 @@ public class LocationDetailsActivity extends AppCompatActivity {
         }
     }
 
-    //Set details from information passed in from RecyclerViewAdapter
+    /**
+     * This is a method to set details from information passed in from RecyclerViewAdapter.
+     * @param locationName The name of the location.
+     */
     private void setLocationDetails(String locationName) {
         Log.d(TAG, "setLocationDetails: Setting Location name and details");
         int index = 0;

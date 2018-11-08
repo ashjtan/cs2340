@@ -1,3 +1,4 @@
+//This is a class to create and display the home page of the app.
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
@@ -13,6 +14,10 @@ import cs2340.group61.doughnation.R;
 
 public class HomePageActivity extends AppCompatActivity {
 
+    /**
+     * This is a method to create the page.
+     * @param savedInstanceState The previously saved state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +46,10 @@ public class HomePageActivity extends AppCompatActivity {
 
         //Method to return to main login screen
         toLogin.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This is a method to return to main login screen.
+             * @param v The page.
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomePageActivity.this, LoginActivity.class));
@@ -49,6 +58,10 @@ public class HomePageActivity extends AppCompatActivity {
 
         //Method to go to Recycler View page containing list of locations
         myLocations.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This is a method to go to Recycler View page containing list of locations.
+             * @param v The page.
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomePageActivity.this,
@@ -58,6 +71,10 @@ public class HomePageActivity extends AppCompatActivity {
 
         //Method to go to Add Donation Activity
         toAddDonations.setOnClickListener(new View.OnClickListener() {
+            /**
+             * The method to go to add donation activity.
+             * @param v The page.
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomePageActivity.this,
@@ -67,6 +84,10 @@ public class HomePageActivity extends AppCompatActivity {
 
         //Method to go to Search Donations Activity
         toSearchDonations.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This method is to go to Search Donations Activity.
+             * @param v The page.
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomePageActivity.this,
@@ -76,6 +97,10 @@ public class HomePageActivity extends AppCompatActivity {
 
         //Method to go to Map View Activity
         toMapView.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This is a method to go to Map View Activity.
+             * @param v The page.
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomePageActivity.this,

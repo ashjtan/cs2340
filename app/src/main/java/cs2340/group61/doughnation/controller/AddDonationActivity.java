@@ -1,3 +1,4 @@
+//This is a class to add a donation to the list of donations.
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
@@ -32,7 +33,10 @@ public class AddDonationActivity extends AppCompatActivity {
     private ArrayList<Location> locationList = new ArrayList<>();
     private ArrayList<String> nameList = new ArrayList<>();
 
-
+    /**
+     * This method is what the add donation page looks like upon creation.
+     * @param savedInstanceState the object's previously saved state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,10 +78,12 @@ public class AddDonationActivity extends AppCompatActivity {
         //Button to go to AddDonationActivity
         Button addDonationButton = findViewById(R.id.done_button);
 
-
-
         //Method to go back to LocationDetailActivity
         backButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This is a method to go back to LocationDetailActivity.
+             * @param v The page itself.
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AddDonationActivity.this,
@@ -87,6 +93,10 @@ public class AddDonationActivity extends AppCompatActivity {
 
         //Method to logout
         logoutButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This is a method to logout.
+             * @param v The page.
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(AddDonationActivity.this,
@@ -96,6 +106,10 @@ public class AddDonationActivity extends AppCompatActivity {
 
         //Method to add donation
         addDonationButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This is a method to add a donation.
+             * @param v The page.
+             */
             @Override
             public void onClick(View v) {
                 EditText name = findViewById(R.id.add_name);
@@ -114,20 +128,26 @@ public class AddDonationActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * This method is what the page looks like when it becomes visible to the user.
+     */
     @Override
     protected void onStart() {
         super.onStart();
 
         databaseLocations.addValueEventListener(new ValueEventListener() {
 
-
+            /**
+             * This method is to change data.
+             * @param dataSnapshot The data.
+             */
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 locationList.clear();
 
                 for(DataSnapshot locationSnapshot : dataSnapshot.getChildren()) {
                     Location location = locationSnapshot.getValue(Location.class);
-
                     locationList.add(location);
                 }
 
@@ -135,22 +155,26 @@ public class AddDonationActivity extends AppCompatActivity {
                     nameList.add(lo.name);
                 }
 
-
                 ArrayAdapter<String> adapterLoc = new ArrayAdapter<String>(AddDonationActivity.this, android.R.layout.simple_spinner_item, nameList);
                 adapterLoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 Spinner locationItems = findViewById(R.id.location_selection_spinner);
                 locationItems.setAdapter(adapterLoc);
-
             }
 
             @Override
+            /**
+             * Necessary for implementation; unused.
+             * @param databaseError The database error.
+             */
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
     }
 
-
+    /**
+     * This method allows users to enter information in order to create a donation.
+     */
     public void addDonation() {
         String id = databaseDonations.push().getKey();
 
@@ -178,12 +202,17 @@ public class AddDonationActivity extends AppCompatActivity {
         databaseDonations.child(id).setValue(donation);
     }
 
-    //HELPER METHODS
+    /**
+     * This is a helper method to check whether the information that the user enters for the donation is valid.
+     * @param name The name of the donation.
+     * @param value The price of the donation.
+     * @param description The description of the donation.
+     * @return A boolean -- true if the donation information is valid; false otherwise.
+     */
     private boolean validDonation(EditText name, EditText value, EditText description) {
         String nameInput = name.getText().toString();
         String valueInput = value.getText().toString();
         String descriptionInput = description.getText().toString();
-
 
         boolean validName = (!nameInput.isEmpty());
         boolean validLength = valueInput.length() > 4;

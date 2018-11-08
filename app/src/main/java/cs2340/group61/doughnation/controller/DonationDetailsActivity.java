@@ -1,3 +1,4 @@
+//This class is to display the details of the donation when it's clicked.
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
@@ -25,13 +26,16 @@ public class DonationDetailsActivity extends AppCompatActivity {
     private ArrayList<Donation> donationList = new ArrayList<>();
     public DatabaseReference databaseDonations;
 
+    /**
+     * This method is to create the page of the donation details.
+     * @param savedInstanceState The object's previously saved state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donation_details);
 
         databaseDonations = FirebaseDatabase.getInstance().getReference("donations");
-
 
         //Button to go back to donation recyclerview page
         Button backbutton = (Button) findViewById(R.id.back_donation_view_button);
@@ -41,6 +45,10 @@ public class DonationDetailsActivity extends AppCompatActivity {
 
         //Method to go back to LocationDetailActivity
         backbutton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Method to go back to LocationDetailActivity
+             * @param v The page
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DonationDetailsActivity.this,
@@ -50,23 +58,31 @@ public class DonationDetailsActivity extends AppCompatActivity {
 
         //Method to logout
         logoutButton.setOnClickListener(new View.OnClickListener() {
+            /**
+             * This is a method to log out
+             * @param v The page
+             */
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DonationDetailsActivity.this,
                         LoginActivity.class));
             }
         });
-
-
     }
 
+    /**
+     * This method displays the page to the user.
+     */
     @Override
     protected void onStart() {
         super.onStart();
 
         databaseDonations.addValueEventListener(new ValueEventListener() {
 
-
+            /**
+             * This method is to change data.
+             * @param dataSnapshot The data.
+             */
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 donationList.clear();
@@ -79,6 +95,10 @@ public class DonationDetailsActivity extends AppCompatActivity {
                 getIncomingIntent();
             }
 
+            /**
+             * This method is required to be implemented but is unused.
+             * @param databaseError error from database.
+             */
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -86,7 +106,9 @@ public class DonationDetailsActivity extends AppCompatActivity {
         });
     }
 
-    //Get information passed in from RecyclerViewAdapter
+    /**
+     * This method is to get information passed in from RecyclerViewAdapter
+     */
     private void getIncomingIntent(){
         //Log.d(TAG, "getIncomingIntent: Checking for incoming intent.");
         if(getIntent().hasExtra("donation_title")) {
@@ -98,7 +120,10 @@ public class DonationDetailsActivity extends AppCompatActivity {
         }
     }
 
-    //Set details from information passed in from RecyclerViewAdapter
+    /**
+     * This method is to set details from information passed in from RecyclerViewAdapter
+     * @param donationTitle The name of the donation.
+     */
     private void setDonationDetails(String donationTitle) {
         //Log.d(TAG, "setDonationDetails: Setting Donation name and details");
         int index = 0;
@@ -127,8 +152,5 @@ public class DonationDetailsActivity extends AppCompatActivity {
         value.setText("VALUE: $" + selected.value);
         type.setText("TYPE: " + selected.category);
         description.setText(selected.fulldescription);
-
-
-
     }
 }

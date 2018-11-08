@@ -1,3 +1,4 @@
+//This class is to display a list of donations.
 package cs2340.group61.doughnation.controller;
 
 import android.content.Context;
@@ -27,6 +28,12 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
 
     private Context mContext;
 
+    /**
+     * This is to instantiate the adapter.
+     * @param context The current state.
+     * @param donationDisplay The display of donations.
+     * @param donationTitles The names of the donations.
+     */
     public DonationViewAdapter(Context context, ArrayList<String> donationDisplay,
                                ArrayList<String> donationTitles){
         mdonationDisplay = donationDisplay;
@@ -34,6 +41,12 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
         mContext = context;
     }
 
+    /**
+     * Initializes ViewHolders.
+     * @param viewGroup The view group.
+     * @param i The position.
+     * @return The final ViewHolder.
+     */
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -43,6 +56,11 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
         return holder;
     }
 
+    /**
+     * This method is to display information at specified position.
+     * @param viewHolder The ViewHolder
+     * @param i The position.
+     */
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
 
@@ -65,14 +83,20 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
         });
     }
 
+    /**
+     * Displays the number of donations.
+     * @return the number of donations.
+     */
     @Override
     public int getItemCount() {
         Log.d(TAG, "donation display is of size " + mdonationDisplay.size());
         return mdonationDisplay.size();
     }
 
-    //Holds items in memory for each individual entry
-    //In this case, that would be the list items and the Donation Descriptions
+    /**
+     * This is a class to hold items in memory for each individual entry.
+     * In this case, that would be the list items and the Donation Descriptions.
+     */
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView donationText;
@@ -88,6 +112,11 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
         }
     }
 
+    /**
+     * This is a method to update the list of donations.
+     * @param newDisplayList The list to replace the current one.
+     * @param newTitlesList The list of donation names.
+     */
     public void updateList(ArrayList<String> newDisplayList, ArrayList<String> newTitlesList) {
         mdonationDisplay = new ArrayList<>();
         mdonationTitles = new ArrayList<>();

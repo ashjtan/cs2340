@@ -1,3 +1,4 @@
+//Method to view list of donations.
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
@@ -43,6 +44,10 @@ public class ViewDonationsActivity extends AppCompatActivity {
     public DatabaseReference databaseDonations;
     public DatabaseReference databaseLocations;
 
+    /**
+     * Method to create the page.
+     * @param savedInstanceState The previously saved state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -144,7 +149,12 @@ public class ViewDonationsActivity extends AppCompatActivity {
 
     }
 
-    //Helper method to see if location in spinner matches location of donation item in recyclerView
+    /**
+     * Helper method to see if location in spinner matches location of donation item in RecyclerView
+     * @param donation The donation.
+     * @param location_item the name of the location.
+     * @return true if the locations match; false otherwise.
+     */
     private boolean isLocationTrue(Donation donation, String location_item) {
         if (location_item.equals("ALL LOCATIONS")
                 || (donation.location.equals(location_item))) {
@@ -153,7 +163,12 @@ public class ViewDonationsActivity extends AppCompatActivity {
         return false;
     }
 
-    //Helper method to see if category in spinner matches category of donation item in recyclerView
+    /**
+     * Helper method to see if category in spinner matches category of donation item in RecyclerView
+     * @param donation The donation.
+     * @param category_item The category of the donation.
+     * @return true if the categories match; false otherwise.
+     */
     private boolean isCategoryTrue(Donation donation, String category_item) {
         if (category_item.equals("NO CATEGORY SELECTED")
                 || (donation.category.equals(category_item))) {
@@ -162,7 +177,12 @@ public class ViewDonationsActivity extends AppCompatActivity {
         return false;
     }
 
-    //Helper method to see if string in searchView matches title of donation item in recyclerView
+    /**
+     * Helper method to see if the string in searchView matches title of donation item in RecyclerView
+     * @param donation The donation
+     * @param chars The text entered for search.
+     * @return true if strings match; false otherwise.
+     */
     private boolean isSearchTrue(Donation donation, CharSequence chars){
         String tempString = chars.toString();
         if (chars.equals(null)) {
@@ -174,13 +194,19 @@ public class ViewDonationsActivity extends AppCompatActivity {
         return false;
     }
 
+    /**
+     * Displays the page to the user.
+     */
     @Override
     protected void onStart() {
         super.onStart();
 
         databaseDonations.addValueEventListener(new ValueEventListener() {
 
-
+            /**
+             * Allows data change.
+             * @param dataSnapshot the data.
+             */
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 donationList.clear();
@@ -190,10 +216,13 @@ public class ViewDonationsActivity extends AppCompatActivity {
 
                     donationList.add(donation);
                 }
-
                 initDonationDescriptions();
             }
 
+            /**
+             * Necessary for implementation; unused.
+             * @param databaseError The database error.
+             */
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -201,6 +230,10 @@ public class ViewDonationsActivity extends AppCompatActivity {
         });
         databaseLocations.addValueEventListener(new ValueEventListener() {
 
+            /**
+             * Allows data change.
+             * @param dataSnapshot The data.
+             */
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 locationList.clear();
@@ -223,7 +256,11 @@ public class ViewDonationsActivity extends AppCompatActivity {
 
                 }
 
-                @Override
+            /**
+             * Necessary for implementation; unused
+             * @param databaseError The database error.
+             */
+            @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
@@ -231,14 +268,17 @@ public class ViewDonationsActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Stops the page.
+     */
     @Override
     protected void onStop() {
         super.onStop();
     }
 
-
-    //Using this method to fill up my temporary array that holds Donation Descriptions
-    //These faux descriptions should be replaced with actual data
+    /**
+     * Method to fill up temporary array that holds Donation Descriptions.
+     */
     private void initDonationDescriptions() {
 
         for (Donation donation: donationList) {
@@ -248,7 +288,9 @@ public class ViewDonationsActivity extends AppCompatActivity {
             initRecyclerView();
     }
 
-    //Method to set up RecyclerView
+    /**
+     * Method to set up RecyclerView.
+     */
     public void initRecyclerView(){
         RecyclerView recyclerView = findViewById(R.id.donations_View);
         DonationViewAdapter adapter = new DonationViewAdapter(this, donationDesc,

@@ -1,3 +1,4 @@
+//This is a class that displays the login page to the user.
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
@@ -21,6 +22,10 @@ public class LoginActivity extends AppCompatActivity {
     String userText = "", passText = "";    //prevents null pointer
 
 
+    /**
+     * This class creates the login page.
+     * @param savedInstanceState The previously saved state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +45,10 @@ public class LoginActivity extends AppCompatActivity {
         actionbar.setTitle("DoughNation");
     }
 
-
-
-
-    //EVENT HANDLERS
+    /**
+     * This is a method to allow users to login to the app.
+     * @param v The page.
+     */
     public void login(View v) {
         //logs in if valid credentials
 //        if (validLogin()) {
@@ -57,14 +62,18 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This allows user to go to the registration page.
+     * @param v The page.
+     */
     public void switchToRegister(View v) {      //switches to register page
         startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
     }
 
-
-
-
-    //HELPER METHODS
+    /**
+     * This is a method to ensure the credentials of the user are correct.
+     * @return true if credentials are valid; false otherwise.
+     */
     private boolean validLogin() {
         userText = userField.getText().toString();
         passText = passField.getText().toString();
