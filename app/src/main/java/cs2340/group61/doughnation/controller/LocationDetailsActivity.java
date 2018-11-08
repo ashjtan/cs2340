@@ -1,9 +1,9 @@
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,11 +17,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import cs2340.group61.doughnation.controller.ViewLocationsActivity;
-
-import cs2340.group61.doughnation.model.Location;
-
 import cs2340.group61.doughnation.R;
+import cs2340.group61.doughnation.model.Location;
 
 public class LocationDetailsActivity extends AppCompatActivity {
 
@@ -114,13 +111,16 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
     //Set details from information passed in from RecyclerViewAdapter
     private void setLocationDetails(String locationName) {
-        Log.d(TAG, "setLocationDetails: Setting Location name and details");
+
         int index = 0;
+
         for (Location location: locationList) {
             if (location.name.equals(locationName)) {
                 index = locationList.indexOf(location);
             }
         }
+
+        //Setting location details in XML
         Location loc = locationList.get(index);
 
         TextView name = findViewById(R.id.location_name);
@@ -130,13 +130,11 @@ public class LocationDetailsActivity extends AppCompatActivity {
         type.setText(loc.type);
 
         TextView longitude = findViewById(R.id.longitude_description);
-        longitude.setText(loc.longitude + ", " + loc.latitude);
+        String longString = loc.longitude + ", " + loc.latitude;
+        longitude.setText(longString);
 
         TextView address = findViewById(R.id.address_description);
         address.setText(loc.address);
-
-        TextView addr = findViewById(R.id.address_description);
-        addr.setText(loc.address);
 
         TextView phone = findViewById(R.id.phone_description);
         phone.setText(loc.phone);

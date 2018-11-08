@@ -1,36 +1,31 @@
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Spinner;
-import android.widget.TextView;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.DatabaseReference;
+
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import cs2340.group61.doughnation.model.Location;
-import cs2340.group61.doughnation.model.Utils;
-import cs2340.group61.doughnation.model.domain.Donation;
-
 
 import java.util.ArrayList;
 
 import cs2340.group61.doughnation.R;
+import cs2340.group61.doughnation.model.Location;
+import cs2340.group61.doughnation.model.Utils;
+import cs2340.group61.doughnation.model.domain.Donation;
 
 public class ViewDonationsActivity extends AppCompatActivity {
-
-    private static final String TAG = "ViewDonationsActivity";
 
     //Temp arrays that hold example titles and descriptions
     //to go in donation recycler view at each location. These
@@ -58,7 +53,7 @@ public class ViewDonationsActivity extends AppCompatActivity {
         databaseLocations = FirebaseDatabase.getInstance().getReference("locations");
 
         //Creating array for donation categories to fill category spinner
-        ArrayList<String> cat_array = new ArrayList<String>();
+        ArrayList<String> cat_array = new ArrayList<>();
         cat_array.add("NO CATEGORY SELECTED");
         cat_array.add("Clothing");
         cat_array.add("Electronics");
@@ -68,20 +63,20 @@ public class ViewDonationsActivity extends AppCompatActivity {
         cat_array.add("Other");
 
         //Creating spinner for categories and filling it
-        ArrayAdapter<String> adapterCat = new ArrayAdapter<String>(
+        ArrayAdapter<String> adapterCat = new ArrayAdapter<>(
                 this, android.R.layout.simple_spinner_item, cat_array);
         adapterCat.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        final Spinner catItems = (Spinner) findViewById(R.id.sort_category_spinner);
+        final Spinner catItems = findViewById(R.id.sort_category_spinner);
         catItems.setAdapter(adapterCat);
 
         //Button to go back to locationDetailActivity page
-        Button backbutton = (Button) findViewById(R.id.back_view_location);
+        Button backButton = findViewById(R.id.back_view_location);
 
         //Button to logout
-        Button logoutButton = (Button) findViewById(R.id.return_login_Button);
+        Button logoutButton = findViewById(R.id.return_login_Button);
 
-        //Button to sort recyclerview
-        Button sortButton = (Button) findViewById(R.id.sort_button);
+        //Button to sort recyclerView
+        Button sortButton = findViewById(R.id.sort_button);
 
         //SearchView to sort RecyclerView
         final SearchView stringSearch = (SearchView) findViewById(R.id.string_searchView);
@@ -89,7 +84,7 @@ public class ViewDonationsActivity extends AppCompatActivity {
         //Creating onClick methods for views
 
         //Method to go back to LocationDetailActivity
-        backbutton.setOnClickListener(new View.OnClickListener() {
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ViewDonationsActivity.this,
@@ -111,7 +106,7 @@ public class ViewDonationsActivity extends AppCompatActivity {
             @Override
              public void onClick(View v) {
                 //Spinner for location Items
-                Spinner locationItems = (Spinner) findViewById(R.id.sort_location_spinner);
+                Spinner locationItems = findViewById(R.id.sort_location_spinner);
 
                 //New sorted arrays to go in recycler view
                 donationDesc = new ArrayList<>();
@@ -146,32 +141,20 @@ public class ViewDonationsActivity extends AppCompatActivity {
 
     //Helper method to see if location in spinner matches location of donation item in recyclerView
     private boolean isLocationTrue(Donation donation, String location_item) {
-        if (location_item.equals("ALL LOCATIONS")
-                || (donation.location.equals(location_item))) {
-            return true;
-        }
-        return false;
+        return location_item.equals("ALL LOCATIONS")
+                || (donation.location.equals(location_item));
     }
 
     //Helper method to see if category in spinner matches category of donation item in recyclerView
     private boolean isCategoryTrue(Donation donation, String category_item) {
-        if (category_item.equals("NO CATEGORY SELECTED")
-                || (donation.category.equals(category_item))) {
-            return true;
-        }
-        return false;
+        return category_item.equals("NO CATEGORY SELECTED")
+                || (donation.category.equals(category_item));
     }
 
     //Helper method to see if string in searchView matches title of donation item in recyclerView
     private boolean isSearchTrue(Donation donation, CharSequence chars){
         String tempString = chars.toString();
-        if (chars.equals(null)) {
-            return true;
-        }
-        if (tempString.equals("") || donation.title.contains(chars)) {
-            return true;
-        }
-        return false;
+        return tempString.equals("") || donation.title.contains(chars);
     }
 
     @Override
