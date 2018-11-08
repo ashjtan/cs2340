@@ -33,8 +33,8 @@ public class ViewDonationsActivity extends AppCompatActivity {
     //should be replaced with database
     private List<String> donationDesc = new ArrayList<>();
     private List<String> donationTitles = new ArrayList<>();
-    public ArrayList<Donation> donationList = new ArrayList<>();
-    public ArrayList<Location> locationList = new ArrayList<>();
+    public List<Donation> donationList = new ArrayList<>();
+    public List<Location> locationList = new ArrayList<>();
     public List<String> nameList = new ArrayList<>();
     public DatabaseReference databaseDonations;
     public DatabaseReference databaseLocations;
