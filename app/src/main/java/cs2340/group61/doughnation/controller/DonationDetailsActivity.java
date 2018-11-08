@@ -99,6 +99,7 @@ public class DonationDetailsActivity extends AppCompatActivity {
     }
 
     //Set details from information passed in from RecyclerViewAdapter
+    @SuppressWarnings("FeatureEnvy")
     private void setDonationDetails(String donationTitle) {
 
         int index = 0;

@@ -65,6 +65,7 @@ public class Donation {
         return shortdescription;
     }
 
+    @SuppressWarnings("TypeMayBeWeakened")
     public String getFulldescription() {
         return fulldescription;
     }
