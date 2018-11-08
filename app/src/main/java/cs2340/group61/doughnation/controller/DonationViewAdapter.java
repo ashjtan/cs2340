@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 import cs2340.group61.doughnation.R;
 
@@ -21,8 +23,8 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
 
     //ArrayList of strings that will hold the string information you want to display
     //Maybe a good display would be Timestamp: Short piece of the description.
-    private ArrayList<String> mDonationDisplay;
-    private ArrayList<String> mDonationTitles;
+    private List<String> mDonationDisplay;
+    private List<String> mDonationTitles;
 
     private Context mContext;
 
@@ -86,7 +88,7 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
         }
     }
 
-    void updateList(ArrayList<String> newDisplayList, ArrayList<String> newTitlesList) {
+    void updateList(Collection<String> newDisplayList, Collection<String> newTitlesList) {
         mDonationDisplay = new ArrayList<>();
         mDonationTitles = new ArrayList<>();
         mDonationDisplay.addAll(newDisplayList);

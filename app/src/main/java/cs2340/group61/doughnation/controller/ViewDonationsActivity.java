@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.Location;
@@ -30,11 +31,11 @@ public class ViewDonationsActivity extends AppCompatActivity {
     //Temp arrays that hold example titles and descriptions
     //to go in donation recycler view at each location. These
     //should be replaced with database
-    private ArrayList<String> donationDesc = new ArrayList<>();
-    private ArrayList<String> donationTitles = new ArrayList<>();
+    private List<String> donationDesc = new ArrayList<>();
+    private List<String> donationTitles = new ArrayList<>();
     public ArrayList<Donation> donationList = new ArrayList<>();
     public ArrayList<Location> locationList = new ArrayList<>();
-    public ArrayList<String> nameList = new ArrayList<>();
+    public List<String> nameList = new ArrayList<>();
     public DatabaseReference databaseDonations;
     public DatabaseReference databaseLocations;
 
@@ -234,8 +235,11 @@ public class ViewDonationsActivity extends AppCompatActivity {
     //Method to set up RecyclerView
     public void initRecyclerView(){
         RecyclerView recyclerView = findViewById(R.id.donations_View);
-        DonationViewAdapter adapter = new DonationViewAdapter(this, donationDesc,
-                donationTitles);
+
+        DonationViewAdapter adapter = new DonationViewAdapter(this,
+                (ArrayList<String>)donationDesc,
+                (ArrayList<String>) donationTitles);
+
         adapter.updateList(donationDesc,donationTitles);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

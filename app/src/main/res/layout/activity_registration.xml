@@ -132,6 +132,7 @@
             android:layout_width="239dp"
             android:layout_height="31dp"
             android:layout_alignParentTop="true"
+            android:contentDescription="Logo on Registration"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="33dp"
             app:srcCompat="@drawable/register_img" />

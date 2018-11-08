@@ -16,13 +16,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.Location;
 
 public class LocationDetailsActivity extends AppCompatActivity {
 
-    public ArrayList<Location> locationList = new ArrayList<>();
+    public List<Location> locationList = new ArrayList<>();
     public DatabaseReference databaseLocations;
     public String locationName;
 

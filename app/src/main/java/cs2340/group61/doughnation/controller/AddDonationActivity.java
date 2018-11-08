@@ -19,6 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.Location;
@@ -29,8 +30,8 @@ public class AddDonationActivity extends AppCompatActivity {
 
     private DatabaseReference databaseLocations;
     private DatabaseReference databaseDonations;
-    private ArrayList<Location> locationList = new ArrayList<>();
-    private ArrayList<String> nameList = new ArrayList<>();
+    private List<Location> locationList = new ArrayList<>();
+    private List<String> nameList = new ArrayList<>();
 
 
     @Override

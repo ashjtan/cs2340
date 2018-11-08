@@ -131,7 +131,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="22dp"
             android:background="@android:color/transparent"
-            android:gravity="right"
+            android:gravity="end"
             android:text="Back"
             android:textAllCaps="false"
             android:textColor="@color/primary"

@@ -74,11 +74,14 @@ public class RegistrationActivity extends AppCompatActivity {
 
         if (validForm()) {
             createUser();
-            Utils.showDialog("Successfully created account for " + emailText + ".", "Account Created", this);
+            Utils.showDialog("Successfully created account for "
+                    + emailText + ".", "Account Created", this);
             startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
         }
         else {
-            Utils.showDialog("One of the fields is invalid. Please check form before submitting.", "Unable to Create Account", this);
+            Utils.showDialog("One of the fields is invalid." +
+                            "Please check form before submitting.",
+                    "Unable to Create Account", this);
         }
     }
 

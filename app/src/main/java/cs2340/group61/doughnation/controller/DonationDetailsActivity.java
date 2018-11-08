@@ -15,13 +15,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.domain.Donation;
 
 public class DonationDetailsActivity extends AppCompatActivity {
 
-    private ArrayList<Donation> donationList = new ArrayList<>();
+    private List<Donation> donationList = new ArrayList<>();
     public DatabaseReference databaseDonations;
 
     @Override
@@ -33,13 +34,13 @@ public class DonationDetailsActivity extends AppCompatActivity {
 
 
         //Button to go back to donation recyclerView page
-        Button backbutton = findViewById(R.id.back_donation_view_button);
+        Button backButton = findViewById(R.id.back_donation_view_button);
 
         //Button to logout
         Button logoutButton = findViewById(R.id.return_login_Button);
 
         //Method to go back to LocationDetailActivity
-        backbutton.setOnClickListener(new View.OnClickListener() {
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DonationDetailsActivity.this,

@@ -93,8 +93,11 @@ public class MapViewActivity extends AppCompatActivity implements OnMapReadyCall
         GoogleMap gmap = googleMap;
         gmap.getUiSettings().setZoomControlsEnabled(true);
         gmap.getUiSettings().setRotateGesturesEnabled(true);
-        gmap.setMinZoomPreference(12);
-        LatLng atl = new LatLng(33.7490, -84.3880);
+        int zoomPref = 12;
+        double lat = 33.7490;
+        double lon = -84.3880;
+        gmap.setMinZoomPreference(zoomPref);
+        LatLng atl = new LatLng(lat, lon);
         gmap.moveCamera(CameraUpdateFactory.newLatLng(atl));
 
         // Add some markers to the map, and add a data object to each marker.
