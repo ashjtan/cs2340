@@ -1,22 +1,31 @@
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import cs2340.group61.doughnation.DatabaseAccess;
-import cs2340.group61.doughnation.controller.ViewLocationsActivity;
-import cs2340.group61.doughnation.model.Location;
+import java.util.ArrayList;
+import java.util.List;
 
 import cs2340.group61.doughnation.R;
+import cs2340.group61.doughnation.model.Location;
 
 public class LocationDetailsActivity extends AppCompatActivity {
+
+    private final List<Location> locationList = new ArrayList<>();
+    public DatabaseReference databaseLocations;
+    public String locationName;
 
     private static final String TAG = "LocationDetailActivity";
 
@@ -25,14 +34,16 @@ public class LocationDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_details);
 
+        databaseLocations = FirebaseDatabase.getInstance().getReference("locations");
+
         //Create button to go back to location list screen
-        Button backButton = (Button) findViewById(R.id.back_location_button);
+        Button backButton = findViewById(R.id.back_location_button);
 
         //Create button to logout
-        Button logout = (Button) findViewById(R.id.return_login_Button);
+        Button logout = findViewById(R.id.return_login_Button);
 
-        //Button to view Donation List
-        Button viewDonations = (Button) findViewById(R.id.view_donations_button);
+//        //Button to view Donation List
+//        Button viewDonations = (Button) findViewById(R.id.view_donations_button);
 
         //Click listener to go back to previous screen
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -52,16 +63,37 @@ public class LocationDetailsActivity extends AppCompatActivity {
             }
         });
 
-        //Click listener to go to view donations page
-        viewDonations.setOnClickListener(new View.OnClickListener() {
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        databaseLocations.addValueEventListener(new ValueEventListener() {
+
+
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LocationDetailsActivity.this,
-                        ViewDonationsActivity.class));
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                locationList.clear();
+
+                for(DataSnapshot locationSnapshot : dataSnapshot.getChildren()) {
+                    Location location = locationSnapshot.getValue(Location.class);
+
+                    locationList.add(location);
+                }
+                getIncomingIntent();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
+    }
 
-        getIncomingIntent();
+    @Override
+    protected void onStop() {
+        super.onStop();
     }
 
 
@@ -73,46 +105,40 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
             String locationName = getIntent().getStringExtra("location_name");
 
+            this.locationName = locationName;
             setLocationDetails(locationName);
         }
     }
 
-
     //Set details from information passed in from RecyclerViewAdapter
     private void setLocationDetails(String locationName) {
-        Log.d(TAG, "setLocationDetails: Setting Location name and details");
 
-        DatabaseAccess databaseAccess = DatabaseAccess.getInstance(this);
-        databaseAccess.open();
-        ArrayList<Location> locations = databaseAccess.getLocations();
         int index = 0;
-        for (Location location : locations) {
-            String foundName = location.Name;
-            if (foundName.equals(locationName)) {
-                index = locations.indexOf(location);
+
+        for (Location location: locationList) {
+            if (location.name.equals(locationName)) {
+                index = locationList.indexOf(location);
             }
         }
-        databaseAccess.close();
 
-        Location loc = locations.get(index);
+        //Setting location details in XML
+        Location loc = locationList.get(index);
 
         TextView name = findViewById(R.id.location_name);
         name.setText(locationName.toUpperCase());
 
         TextView type = findViewById(R.id.type_description);
-        type.setText(loc.Type);
+        type.setText(loc.type);
 
         TextView longitude = findViewById(R.id.longitude_description);
-        longitude.setText(loc.Longitude + ", " + loc.Latitude);
+        String longString = loc.longitude + ", " + loc.latitude;
+        longitude.setText(longString);
 
         TextView address = findViewById(R.id.address_description);
-        address.setText(loc.Address);
-
-        TextView addr = findViewById(R.id.address_description);
-        addr.setText(loc.Address);
+        address.setText(loc.address);
 
         TextView phone = findViewById(R.id.phone_description);
-        phone.setText(loc.Phone);
+        phone.setText(loc.phone);
 
     }
 }

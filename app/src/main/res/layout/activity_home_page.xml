@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,7 +19,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="86dp"
-            android:text="COMPANY NAME"
+            android:text="OPTIONS"
             android:theme="@style/TextView_for_title"
             android:layout_alignParentLeft="true" />
 
@@ -32,7 +31,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="21dp"
             android:background="@android:color/transparent"
-            android:gravity="right"
+            android:gravity="end"
             android:text="Logout"
             android:textAllCaps="false"
             android:textColor="@color/primary"
@@ -53,38 +52,38 @@
             android:layout_alignParentLeft="true" />
 
         <Button
-            android:id="@+id/option2Button"
+            android:id="@+id/add_donation_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="250dp"
             android:background="@drawable/round_button"
-            android:text="Option 2"
+            android:text="Add Donation"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:layout_alignParentLeft="true" />
 
         <Button
-            android:id="@+id/option3Button"
+            android:id="@+id/search_donations_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_marginTop="320dp"
             android:background="@drawable/round_button"
-            android:text="Option 3"
+            android:text="Search Donations"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:layout_alignParentLeft="true" />
 
         <Button
-            android:id="@+id/option4Button"
+            android:id="@+id/map_view_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_marginTop="390dp"
             android:background="@drawable/round_button"
-            android:text="Option 4"
+            android:text="Locations Map"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:layout_alignParentLeft="true" />

@@ -1,5 +1,6 @@
 package cs2340.group61.doughnation.controller;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -12,18 +13,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cs2340.group61.doughnation.R;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
-    private ArrayList<String> lTitles = new ArrayList<>();
+    private List<String> lTitles;
     private Context context;
 
 
 
-    public RecyclerViewAdapter(ArrayList<String> lTitles, Context context) {
+    public RecyclerViewAdapter(List<String> lTitles, Context context) {
         this.lTitles = lTitles;
         this.context = context;
     }
@@ -33,12 +35,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_list_item,
                 viewGroup, false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder,
+                                 @SuppressLint("RecyclerView") final int i) {
         //Log.d(TAG, "onBindViewHolder: called.");
 
         viewHolder.locName.setText(lTitles.get(i).toUpperCase());
@@ -64,12 +66,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     //Holds items in memory for each individual entry
     //In this case, that would be the list items and the Location Names
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView locName;
         RelativeLayout parentLayout;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             locName = itemView.findViewById(R.id.location_name);
             parentLayout = itemView.findViewById(R.id.ItemLayout);

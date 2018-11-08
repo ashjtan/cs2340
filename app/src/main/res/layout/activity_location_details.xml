@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,7 +20,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="21dp"
             android:background="@android:color/transparent"
-            android:gravity="right"
+            android:gravity="end"
             android:text="Logout"
             android:textAllCaps="false"
             android:textColor="@color/primary"
@@ -125,21 +123,6 @@
             android:layout_alignParentLeft="true" />
 
         <Button
-            android:id="@+id/view_donations_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="70dp"
-            android:background="@drawable/round_button"
-            android:text="View Donations"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <Button
             android:id="@+id/back_location_button"
             android:layout_width="wrap_content"
             android:layout_height="21dp"
@@ -147,7 +130,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="22dp"
             android:background="@android:color/transparent"
-            android:gravity="right"
+            android:gravity="end"
             android:text="Back"
             android:textAllCaps="false"
             android:textColor="@color/primary"

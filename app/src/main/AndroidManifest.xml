@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cs2340.group61.doughnation">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyALxXJcUOu1TdkLiLuFs0zK3U_X5ulky9s"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
         <activity android:name=".controller.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +34,16 @@
         <activity android:name=".controller.ViewLocationsActivity" />
         <activity android:name=".controller.LocationDetailsActivity" />
         <activity android:name=".controller.AddDonationActivity" />
-        <activity android:name=".controller.ViewDonationsActivity" />
-        <activity android:name=".controller.DonationDetailsActivity"></activity>
+        <activity
+            android:name=".controller.ViewDonationsActivity"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity android:name=".controller.DonationDetailsActivity" />
+        <activity android:name=".controller.MapViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

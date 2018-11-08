@@ -1,61 +1,61 @@
 package cs2340.group61.doughnation.model;
 
 public class Location {
-    public int Key;
-    public String Name;
-    public String Latitude;
-    public String Longitude;
-    public String Address;
-    public String City;
-    public String State;
-    public String Zip;
-    public String Type;
-    public String Phone;
-    public String Website;
+    private String id;
+    public String name;
+    public String latitude;
+    public String longitude;
+    public String address;
+    private String city;
+    public String state;
+    public String zip;
+    public String type;
+    public String phone;
+    public String website;
 
     public Location(){}
 
-    public void setKey(int key) {
-        Key = key;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public void setLatitude(String latitude) {
-        Latitude = latitude;
+        this.latitude = latitude;
     }
 
     public void setLongitude(String longitude) {
-        Longitude = longitude;
+        this.longitude = longitude;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
     public void setState(String state) {
-        State = state;
+        this.state = state;
     }
 
     public void setZip(String zip) {
-        Zip = zip;
+        this.zip = zip;
     }
 
     public void setType(String type) {
-        Type = type;
+        this.type = type;
     }
 
     public void setPhone(String phone) {
-        Phone = phone;
+        this.phone = phone;
     }
 
     public void setWebsite(String website) {
-        Website = website;
+        this.website = website;
     }
 }

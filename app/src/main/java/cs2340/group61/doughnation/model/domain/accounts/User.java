@@ -6,13 +6,14 @@ package cs2340.group61.doughnation.model.domain.accounts;
  */
 public class User {
     //Fields
-    protected String name;
-    protected String email;
-    protected String password;
-    protected boolean locked;
+    protected String id;
+    private final String name;
+    private String email;
+    private String password;
+    private boolean locked;
 
     //Default Constructor
-    public User() {
+    User() {
         this.name = "";
         this.email = "";
         this.password = "";
