@@ -6,7 +6,7 @@ import java.util.List;
 import cs2340.group61.doughnation.model.domain.accounts.User;
 
 public class AppData {
-    private static final List<User> accounts = new ArrayList<User>();
+    private static final List<User> accounts = new ArrayList<>();
 
     public static List<User> getAccounts() {
         return accounts;
