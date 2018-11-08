@@ -1,5 +1,6 @@
 package cs2340.group61.doughnation.controller;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -44,7 +45,8 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder,
+                                 @SuppressLint("RecyclerView") final int i) {
 
         //Here is where you can fill recycler view textfield.
         viewHolder.donationText.setText(mDonationDisplay.get(i));
