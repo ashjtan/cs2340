@@ -14,6 +14,7 @@ import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.AppData;
 import cs2340.group61.doughnation.model.domain.accounts.User;
 
+@SuppressWarnings("ChainedMethodCall")
 public class LoginActivity extends AppCompatActivity {
 
     private Button loginButton;

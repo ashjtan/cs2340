@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 import cs2340.group61.doughnation.R;
 
+@SuppressWarnings("ChainedMethodCall")
 public class ViewLocationsActivity extends AppCompatActivity {
 
     private static final String TAG = "ViewLocationsActivity";

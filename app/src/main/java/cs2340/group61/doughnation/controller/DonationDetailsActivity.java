@@ -20,6 +20,7 @@ import java.util.List;
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.domain.Donation;
 
+@SuppressWarnings("ChainedMethodCall")
 public class DonationDetailsActivity extends AppCompatActivity {
 
     private final List<Donation> donationList = new ArrayList<>();

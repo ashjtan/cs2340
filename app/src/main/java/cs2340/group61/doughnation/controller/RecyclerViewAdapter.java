@@ -17,6 +17,7 @@ import java.util.List;
 
 import cs2340.group61.doughnation.R;
 
+@SuppressWarnings("ChainedMethodCall")
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";

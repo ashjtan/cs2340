@@ -23,6 +23,7 @@ import cs2340.group61.doughnation.model.Utils;
 
 import static cs2340.group61.doughnation.model.Utils.isNotEmpty;
 
+@SuppressWarnings("ChainedMethodCall")
 public class RegistrationActivity extends AppCompatActivity {
 
     private Spinner acctType;

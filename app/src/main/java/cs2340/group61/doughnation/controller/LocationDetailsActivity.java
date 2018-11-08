@@ -21,6 +21,7 @@ import java.util.List;
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.Location;
 
+@SuppressWarnings("ChainedMethodCall")
 public class LocationDetailsActivity extends AppCompatActivity {
 
     private final List<Location> locationList = new ArrayList<>();
