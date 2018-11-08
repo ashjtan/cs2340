@@ -26,11 +26,11 @@ import cs2340.group61.doughnation.model.Location;
 import cs2340.group61.doughnation.model.Utils;
 import cs2340.group61.doughnation.model.domain.Donation;
 
-@SuppressWarnings("FeatureEnvy")
 public class AddDonationActivity extends AppCompatActivity {
 
     private DatabaseReference databaseLocations;
     private DatabaseReference databaseDonations;
+    @SuppressWarnings("TypeMayBeWeakened")
     private List<Location> locationList = new ArrayList<>();
     private List<String> nameList = new ArrayList<>();
 
@@ -153,6 +153,7 @@ public class AddDonationActivity extends AppCompatActivity {
     }
 
 
+    @SuppressWarnings("FeatureEnvy")
     public void addDonation() {
         String id = databaseDonations.push().getKey();
 

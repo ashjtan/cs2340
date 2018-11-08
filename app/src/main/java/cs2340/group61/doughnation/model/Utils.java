@@ -36,6 +36,7 @@ public class Utils {
      * @param title
      * @param activity Should always be called with "this" as param.
      */
+    @SuppressWarnings("TypeMayBeWeakened")
     public static void showDialog(String message, String title, AppCompatActivity activity) {
         AlertDialog.Builder alert  = new AlertDialog.Builder(activity);
         alert.setMessage(message);
