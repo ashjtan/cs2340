@@ -16,7 +16,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="21dp"
-            android:text="Location Map"
+            android:text="LOCATION MAP"
             android:theme="@style/TextView_for_title" />
 
         <com.google.android.gms.maps.MapView
