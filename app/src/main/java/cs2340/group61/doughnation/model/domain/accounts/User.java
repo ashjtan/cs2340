@@ -8,9 +8,9 @@ public class User {
     //Fields
     protected String id;
     private final String name;
-    private String email;
-    private String password;
-    private boolean locked;
+    private final String email;
+    private final String password;
+    private final boolean locked;
 
     //Default Constructor
     User() {

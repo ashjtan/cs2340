@@ -21,14 +21,14 @@ import java.util.ArrayList;
 
 import cs2340.group61.doughnation.R;
 
-@SuppressWarnings("ChainedMethodCall")
+@SuppressWarnings({"ChainedMethodCall", "EmptyMethod"})
 public class ViewLocationsActivity extends AppCompatActivity {
 
     private static final String TAG = "ViewLocationsActivity";
 
     //variables
-    private ArrayList<String> locationNames = new ArrayList<>();
-    private ArrayList<Location> locationList = new ArrayList<>();
+    private final ArrayList<String> locationNames = new ArrayList<>();
+    private final ArrayList<Location> locationList = new ArrayList<>();
     private DatabaseReference databaseLocations;
     
     @Override

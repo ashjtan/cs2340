@@ -3,6 +3,7 @@ package cs2340.group61.doughnation.model.domain.accounts;
 /**
  * Can add/remove users, add/remove locations, lock/unlock accounts.
  */
+@SuppressWarnings("unused")
 public class Admin extends User {
     public Admin() {
         super();

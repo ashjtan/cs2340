@@ -30,10 +30,10 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText firstName, lastName, email, pw, confirmPw;
 
     private String firstText;
-    String lastText;
-    String emailText;
-    String pwText;
-    String confPwText; //populated w/ form values
+    private String lastText;
+    private String emailText;
+    private String pwText;
+    private String confPwText; //populated w/ form values
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

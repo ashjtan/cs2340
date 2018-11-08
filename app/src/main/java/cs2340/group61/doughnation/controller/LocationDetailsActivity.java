@@ -21,12 +21,12 @@ import java.util.List;
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.Location;
 
-@SuppressWarnings("ChainedMethodCall")
+@SuppressWarnings({"ChainedMethodCall", "EmptyMethod"})
 public class LocationDetailsActivity extends AppCompatActivity {
 
     private final List<Location> locationList = new ArrayList<>();
-    public DatabaseReference databaseLocations;
-    public String locationName;
+    private DatabaseReference databaseLocations;
+    private String locationName;
 
     private static final String TAG = "LocationDetailActivity";
 

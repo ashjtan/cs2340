@@ -22,7 +22,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private static final String TAG = "RecyclerViewAdapter";
     private final List<String> lTitles;
-    private Context context;
+    private final Context context;
 
 
 
@@ -69,8 +69,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     //In this case, that would be the list items and the Location Names
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView locName;
-        RelativeLayout parentLayout;
+        final TextView locName;
+        final RelativeLayout parentLayout;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -5,6 +5,7 @@ import java.util.List;
 
 import cs2340.group61.doughnation.model.domain.accounts.User;
 
+@SuppressWarnings("ALL")
 public class AppData {
     private static final List<User> accounts = new ArrayList<>();
 
@@ -16,6 +17,7 @@ public class AppData {
         accounts.add(u);
     }
 
+    @SuppressWarnings("unused")
     public static void deleteAccount(User u) {
         accounts.remove(u);
     }

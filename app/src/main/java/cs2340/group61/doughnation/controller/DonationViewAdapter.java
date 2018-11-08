@@ -77,9 +77,9 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
     //In this case, that would be the list items and the Donation Descriptions
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView donationText;
-        TextView donationTitle;
-        RelativeLayout parentLayout;
+        final TextView donationText;
+        final TextView donationTitle;
+        final RelativeLayout parentLayout;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);

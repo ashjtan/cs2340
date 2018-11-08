@@ -30,9 +30,9 @@ import cs2340.group61.doughnation.model.domain.Donation;
 @SuppressWarnings("ChainedMethodCall")
 public class AddDonationActivity extends AppCompatActivity {
 
-    private DatabaseReference databaseLocations
+    private final DatabaseReference databaseLocations
             = FirebaseDatabase.getInstance().getReference("locations");
-    private DatabaseReference databaseDonations
+    private final DatabaseReference databaseDonations
             = FirebaseDatabase.getInstance().getReference("donations");
     @SuppressWarnings("TypeMayBeWeakened")
     private final List<Location> locationList = new ArrayList<>();

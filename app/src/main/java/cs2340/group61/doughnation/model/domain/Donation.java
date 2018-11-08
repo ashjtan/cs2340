@@ -45,9 +45,11 @@ public class Donation {
         this.category = category;
     }
 
-    public String getId() {
-        return id;
-    }
+// --Commented out by Inspection START (11/8/2018 12:31 AM):
+//    public String getId() {
+//        return id;
+//    }
+// --Commented out by Inspection STOP (11/8/2018 12:31 AM)
 
     public String getTitle() {
         return title;
