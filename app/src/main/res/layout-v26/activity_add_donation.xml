@@ -88,8 +88,7 @@
             android:padding="10dp"
             android:textColor="@android:color/black"
             android:autofillHints=""
-            android:inputType="text"
-            tools:targetApi="o" />
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/value_title"
@@ -116,8 +115,7 @@
             android:padding="10dp"
             android:textColor="@android:color/black"
             android:inputType="number|numberDecimal"
-            android:autofillHints=""
-            tools:targetApi="o" />
+            android:autofillHints="" />
 
         <TextView
             android:id="@+id/type_title"
@@ -176,8 +174,7 @@
                 android:padding="10dp"
                 android:textColor="@android:color/black"
                 android:autofillHints=""
-                android:inputType=""
-                tools:targetApi="o" />
+                android:inputType="" />
 
         </ScrollView>
 
