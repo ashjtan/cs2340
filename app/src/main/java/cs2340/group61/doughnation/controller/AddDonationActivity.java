@@ -20,6 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.Location;
@@ -30,8 +32,9 @@ public class AddDonationActivity extends AppCompatActivity {
 
     private DatabaseReference databaseLocations;
     private DatabaseReference databaseDonations;
-    private ArrayList<Location> locationList = new ArrayList<>();
-    private ArrayList<String> nameList = new ArrayList<>();
+    @SuppressWarnings("TypeMayBeWeakened")
+    private final List<Location> locationList = new ArrayList<>();
+    private final List<String> nameList = new ArrayList<>();
 
     /**
      * This method is what the add donation page looks like upon creation.
@@ -120,11 +123,9 @@ public class AddDonationActivity extends AppCompatActivity {
                     startActivity(new Intent(AddDonationActivity.this,
                             HomePageActivity.class));
                 } else {
-                    Utils.showDialog("Empty or invalid inputs somewhere.", "Invalid Donation", AddDonationActivity.this);
+                    Utils.showDialog("Empty or invalid inputs somewhere.",
+                            "Invalid Donation",AddDonationActivity.this);
                 }
-                //logic here to set credentials and add info to database
-                //startActivity(new Intent(AddDonationActivity.this,
-                //        HomePageActivity.class));
             }
         });
     }
@@ -156,6 +157,10 @@ public class AddDonationActivity extends AppCompatActivity {
                 }
 
                 ArrayAdapter<String> adapterLoc = new ArrayAdapter<String>(AddDonationActivity.this, android.R.layout.simple_spinner_item, nameList);
+
+                ArrayAdapter<String> adapterLoc
+                        = new ArrayAdapter<String>(AddDonationActivity.this,
+                        android.R.layout.simple_spinner_item, nameList);
                 adapterLoc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 Spinner locationItems = findViewById(R.id.location_selection_spinner);
                 locationItems.setAdapter(adapterLoc);
@@ -172,13 +177,12 @@ public class AddDonationActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * This method allows users to enter information in order to create a donation.
-     */
-    public void addDonation() {
+
+    @SuppressWarnings("FeatureEnvy")
+    private void addDonation() {
         String id = databaseDonations.push().getKey();
 
-        final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
+        final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss", Locale.US);
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         String time = sdf.format(timestamp);
@@ -199,7 +203,9 @@ public class AddDonationActivity extends AppCompatActivity {
         donation.setTimestamp(time);
         donation.setId(id);
 
-        databaseDonations.child(id).setValue(donation);
+        if (id != null) {
+            databaseDonations.child(id).setValue(donation);
+        }
     }
 
     /**

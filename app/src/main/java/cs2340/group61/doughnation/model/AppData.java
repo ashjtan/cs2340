@@ -6,7 +6,7 @@ import java.util.List;
 import cs2340.group61.doughnation.model.domain.accounts.User;
 
 public class AppData {
-    private static List<User> accounts = new ArrayList<User>();
+    private static final List<User> accounts = new ArrayList<User>();
 
     public static List<User> getAccounts() {
         return accounts;
@@ -17,9 +17,7 @@ public class AppData {
     }
 
     public static void deleteAccount(User u) {
-        if (accounts.contains(u)) {
-            accounts.remove(u);
-        }
+        accounts.remove(u);
     }
 
     public static User findUserByEmail(String email) {

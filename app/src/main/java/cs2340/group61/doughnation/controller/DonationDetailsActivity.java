@@ -2,9 +2,9 @@
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,16 +15,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import cs2340.group61.doughnation.controller.ViewDonationsActivity;
+import java.util.ArrayList;
+import java.util.List;
 
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.domain.Donation;
-import java.util.ArrayList;
 
 public class DonationDetailsActivity extends AppCompatActivity {
 
-    private ArrayList<Donation> donationList = new ArrayList<>();
-    public DatabaseReference databaseDonations;
+    private final List<Donation> donationList = new ArrayList<>();
+    private DatabaseReference databaseDonations;
 
     /**
      * This method is to create the page of the donation details.
@@ -37,18 +37,15 @@ public class DonationDetailsActivity extends AppCompatActivity {
 
         databaseDonations = FirebaseDatabase.getInstance().getReference("donations");
 
-        //Button to go back to donation recyclerview page
-        Button backbutton = (Button) findViewById(R.id.back_donation_view_button);
+
+        //Button to go back to donation recyclerView page
+        Button backButton = findViewById(R.id.back_donation_view_button);
 
         //Button to logout
-        Button logoutButton = (Button) findViewById(R.id.return_login_Button);
+        Button logoutButton = findViewById(R.id.return_login_Button);
 
         //Method to go back to LocationDetailActivity
-        backbutton.setOnClickListener(new View.OnClickListener() {
-            /**
-             * Method to go back to LocationDetailActivity
-             * @param v The page
-             */
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DonationDetailsActivity.this,
@@ -114,9 +111,9 @@ public class DonationDetailsActivity extends AppCompatActivity {
         if(getIntent().hasExtra("donation_title")) {
             //Log.d(TAG, "getIncomingIntent: Found intent extras");
 
-            String donationtitle = getIntent().getStringExtra("donation_title");
+            String donationTitle = getIntent().getStringExtra("donation_title");
 
-            setDonationDetails(donationtitle);
+            setDonationDetails(donationTitle);
         }
     }
 
@@ -125,32 +122,53 @@ public class DonationDetailsActivity extends AppCompatActivity {
      * @param donationTitle The name of the donation.
      */
     private void setDonationDetails(String donationTitle) {
-        //Log.d(TAG, "setDonationDetails: Setting Donation name and details");
+
         int index = 0;
+
         for (Donation donation: donationList) {
-            if (donation.title.equals(donationTitle)) {
+            if (donation.getTitle().equals(donationTitle)) {
                 index = donationList.indexOf(donation);
             }
         }
+
+        //Fetching donation items for found item from database
         Donation selected = donationList.get(index);
 
-        TextView name =(TextView) findViewById(R.id.location_name);
+        TextView name = findViewById(R.id.location_name);
 
-        TextView time =(TextView) findViewById(R.id.time_title);
+        TextView time = findViewById(R.id.time_title);
 
-        TextView location =(TextView) findViewById(R.id.location_title);
+        TextView location = findViewById(R.id.location_title);
 
-        TextView value =(TextView) findViewById(R.id.value_title);
+        TextView value = findViewById(R.id.value_title);
 
-        TextView type =(TextView) findViewById(R.id.type_title);
+        TextView type = findViewById(R.id.type_title);
 
-        TextView description =(TextView) findViewById(R.id.address_description);
+        TextView description = findViewById(R.id.address_description);
 
-        name.setText(selected.title);
-        time.setText("TIME: " + selected.timestamp);
-        location.setText("LOCATION: " + selected.location);
-        value.setText("VALUE: $" + selected.value);
-        type.setText("TYPE: " + selected.category);
-        description.setText(selected.fulldescription);
+        name.setText(selected.getTitle());
+
+        //Strings to setText of TextViews
+        String timeString = "TIME: " + selected.getTimestamp();
+
+        String locString = "LOCATION: " + selected.getLocation();
+
+        String valString = "VALUE: $" + selected.getValue();
+
+        String typeString = "TYPE: " + selected.getCategory();
+
+        //Setting TextViews
+        time.setText(timeString);
+
+        location.setText(locString);
+
+        value.setText(valString);
+
+        type.setText(typeString);
+
+        description.setText(selected.getFulldescription());
+
+
+
     }
 }

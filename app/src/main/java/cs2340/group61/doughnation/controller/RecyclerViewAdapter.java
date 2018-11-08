@@ -1,6 +1,7 @@
 //This is a class for the Recycler View.
 package cs2340.group61.doughnation.controller;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -13,21 +14,23 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import cs2340.group61.doughnation.R;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
-    private ArrayList<String> lTitles = new ArrayList<>();
+    private List<String> lTitles;
     private Context context;
+
 
     /**
      * Instantiates the Recycler View Adapter.
      * @param lTitles The location titles.
      * @param context The current state.
      */
-    public RecyclerViewAdapter(ArrayList<String> lTitles, Context context) {
+    public RecyclerViewAdapter(List<String> lTitles, Context context) {
         this.lTitles = lTitles;
         this.context = context;
     }
@@ -43,8 +46,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_list_item,
                 viewGroup, false);
-        ViewHolder holder = new ViewHolder(view);
-        return holder;
+        return new ViewHolder(view);
     }
 
     /**
@@ -53,7 +55,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
      * @param i The position.
      */
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, final int i) {
+    public void onBindViewHolder(@NonNull ViewHolder viewHolder,
+                                 @SuppressLint("RecyclerView") final int i) {
         //Log.d(TAG, "onBindViewHolder: called.");
 
         viewHolder.locName.setText(lTitles.get(i).toUpperCase());
@@ -89,16 +92,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
      * Holds items in memory for each individual entry.
      * In this case, that would be the list of items and the Location names.
      */
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView locName;
         RelativeLayout parentLayout;
 
-        /**
-         * Instantiates the viewholder.
-         * @param itemView The location view.
-         */
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             locName = itemView.findViewById(R.id.location_name);
             parentLayout = itemView.findViewById(R.id.ItemLayout);

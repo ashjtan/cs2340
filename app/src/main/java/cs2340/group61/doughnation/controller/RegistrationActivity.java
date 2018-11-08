@@ -26,12 +26,14 @@ import static cs2340.group61.doughnation.model.Utils.isNotEmpty;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private ActionBar actionbar;
-    private Button toLogin, register;
     private Spinner acctType;
     private EditText firstName, lastName, email, pw, confirmPw;
 
-    String firstText, lastText, emailText , pwText, confPwText; //populated w/ form values
+    private String firstText;
+    String lastText;
+    String emailText;
+    String pwText;
+    String confPwText; //populated w/ form values
 
     /**
      * Creates the registration page.
@@ -43,8 +45,8 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         //Instantiating xml elements
-        toLogin = findViewById(R.id.return_login_Button);
-        register = findViewById(R.id.register_Button);
+        //Button toLogin = findViewById(R.id.return_login_Button);
+        //Button register = findViewById(R.id.register_Button);
         acctType = findViewById(R.id.acctType_spinner);
 
         firstName = findViewById(R.id.firstName_editText);
@@ -55,13 +57,14 @@ public class RegistrationActivity extends AppCompatActivity {
 
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
-        actionbar = getSupportActionBar();
+        ActionBar actionbar = getSupportActionBar();
         actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
         actionbar.setTitle("DoughNation");
 
 
         //Populates spinner w/ account types
-        ArrayAdapter<String> acctTypeAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, AccountType.values());
+        ArrayAdapter<String> acctTypeAdapter = new ArrayAdapter(this,
+                android.R.layout.simple_spinner_item, AccountType.values());
         acctTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         acctType.setAdapter(acctTypeAdapter);
     }
@@ -81,17 +84,21 @@ public class RegistrationActivity extends AppCompatActivity {
      * Allows the user to create a new account.
      * @param v The page.
      */
+    @SuppressWarnings("FeatureEnvy")
     public void register(View v) {
         Utils.clearTextVals(firstText, lastText, emailText, pwText, confPwText);
         loadFormVals();
 
         if (validForm()) {
             createUser();
-            Utils.showDialog("Successfully created account for " + emailText + ".", "Account Created", this);
+            Utils.showDialog("Successfully created account for "
+                    + emailText + ".", "Account Created", this);
             startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
         }
         else {
-            Utils.showDialog("One of the fields is invalid. Please check form before submitting.", "Unable to Create Account", this);
+            Utils.showDialog("One of the fields is invalid." +
+                            "Please check form before submitting.",
+                    "Unable to Create Account", this);
         }
     }
 
@@ -108,15 +115,18 @@ public class RegistrationActivity extends AppCompatActivity {
      * @return true if none of the fields are empty; false otherwise.
      */
     private boolean allFieldsComplete() {
-        return isNotEmpty(firstText, lastText, emailText, pwText, confPwText); //&& !acctType.getSelectedItem().equals(null);
+        return isNotEmpty(firstText, lastText, emailText, pwText, confPwText);
+        //&& !acctType.getSelectedItem().equals(null);
     }
 
     /**
      * Ensures that at least one of the fields has information.
      * @return true if there's at least one filled field; false otherwise
      */
+    @SuppressWarnings("FeatureEnvy")
     private boolean anyFieldsComplete() {
-        return isNotEmpty(firstText) || isNotEmpty(lastText) || isNotEmpty(emailText) || isNotEmpty(pwText) || isNotEmpty(confPwText);
+        return isNotEmpty(firstText) || isNotEmpty(lastText) || isNotEmpty(emailText)
+                || isNotEmpty(pwText) || isNotEmpty(confPwText);
     }
 
     /**
@@ -146,6 +156,7 @@ public class RegistrationActivity extends AppCompatActivity {
     /**
      * Creates the account based on type.
      */
+    @SuppressWarnings("FeatureEnvy")
     private void createUser() {
         AccountType acctSelect = (AccountType) acctType.getSelectedItem();
         String name = firstText.trim() + " " + lastText.trim();
@@ -173,7 +184,9 @@ public class RegistrationActivity extends AppCompatActivity {
      * Displays an error message if registration is invalid.
      */
     private void showCreateAccountError() {
-        Utils.showDialog("One of the fields is invalid. Please check form before submitting.", "Unable to Create Account", this);
+        Utils.showDialog("One of the fields is invalid."
+                + " Please check form before submitting.",
+                "Unable to Create Account", this);
     }
 
     /**

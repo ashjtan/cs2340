@@ -1,12 +1,12 @@
 package cs2340.group61.doughnation.model;
 
 public class Location {
-    public String id;
+    private String id;
     public String name;
     public String latitude;
     public String longitude;
     public String address;
-    public String city;
+    private String city;
     public String state;
     public String zip;
     public String type;

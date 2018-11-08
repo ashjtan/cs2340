@@ -28,8 +28,8 @@ public class ViewLocationsActivity extends AppCompatActivity {
 
     //variables
     private ArrayList<String> locationNames = new ArrayList<>();
-    public ArrayList<Location> locationList = new ArrayList<>();
-    public DatabaseReference databaseLocations;
+    private ArrayList<Location> locationList = new ArrayList<>();
+    private DatabaseReference databaseLocations;
 
     /**
      * Creates the page.
@@ -46,10 +46,10 @@ public class ViewLocationsActivity extends AppCompatActivity {
         Log.d(TAG, "onCreate: Location Names added to array");
 
         //Back button to go to home screen
-        Button toMain = (Button) findViewById(R.id.back_Home_button);
+        Button toMain = findViewById(R.id.back_Home_button);
 
         //Back button to go to login screen
-        Button logout = (Button) findViewById(R.id.return_login_Button);
+        Button logout = findViewById(R.id.return_login_Button);
 
         //Method to return to homeScreen
         toMain.setOnClickListener(new View.OnClickListener() {
