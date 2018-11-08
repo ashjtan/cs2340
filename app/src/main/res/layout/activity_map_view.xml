@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".controller.HomePageActivity">
 
-    <RelativeLayout
-        android:layout_width="350sp"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        android:orientation="vertical">
-
         <TextView
             android:id="@+id/mapTextView"
             android:layout_width="match_parent"
@@ -38,6 +30,5 @@
             android:layout_marginLeft="0dp"
             android:layout_marginTop="60dp" />
 
-    </RelativeLayout>
 
 </RelativeLayout>

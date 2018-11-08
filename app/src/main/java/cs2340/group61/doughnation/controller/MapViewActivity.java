@@ -1,26 +1,25 @@
 package cs2340.group61.doughnation.controller;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
+import android.support.v7.app.AppCompatActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 
 import cs2340.group61.doughnation.R;
 
 public class MapViewActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private MapView mapView;
-    private GoogleMap gmap;
+
+    private static final LatLng goodWillLoc = new LatLng(33.777924, -84.382988);
+    private static final LatLng redCrossLoc = new LatLng(33.773678, -84.402611);
+    private static final LatLng carDonationLoc = new LatLng(33.784673, -84.382671);
 
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
@@ -90,9 +89,35 @@ public class MapViewActivity extends AppCompatActivity implements OnMapReadyCall
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        gmap = googleMap;
+
+        GoogleMap gmap = googleMap;
+        gmap.getUiSettings().setZoomControlsEnabled(true);
+        gmap.getUiSettings().setRotateGesturesEnabled(true);
         gmap.setMinZoomPreference(12);
-        LatLng ny = new LatLng(40.7143528, -74.0059731);
-        gmap.moveCamera(CameraUpdateFactory.newLatLng(ny));
+        LatLng atl = new LatLng(33.7490, -84.3880);
+        gmap.moveCamera(CameraUpdateFactory.newLatLng(atl));
+
+        // Add some markers to the map, and add a data object to each marker.
+        Marker goodWill = gmap.addMarker(new MarkerOptions()
+                .position(goodWillLoc)
+                .title("Good Will")
+                .snippet("Location Type: DROP"));
+        goodWill.setTag(0);
+
+        Marker redCross = gmap.addMarker(new MarkerOptions()
+                .position(redCrossLoc)
+                .title("Red Cross")
+                .snippet("Location Type: PICK UP"));
+        redCross.setTag(0);
+
+        Marker carDonation = gmap.addMarker(new MarkerOptions()
+                .position(carDonationLoc)
+                .title("Car Donation Center")
+                .snippet("Location Type: BLAH BLAH"));
+        carDonation.setTag(0);
+
+        // Set a listener for marker click.
+        //gmap.setOnMarkerClickListener(this);
+
     }
 }
