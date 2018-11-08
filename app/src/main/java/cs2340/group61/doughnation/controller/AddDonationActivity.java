@@ -154,7 +154,7 @@ public class AddDonationActivity extends AppCompatActivity {
 
 
     @SuppressWarnings("FeatureEnvy")
-    public void addDonation() {
+    private void addDonation() {
         String id = databaseDonations.push().getKey();
 
         final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");

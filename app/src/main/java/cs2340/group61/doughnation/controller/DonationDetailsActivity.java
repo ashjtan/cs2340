@@ -23,7 +23,7 @@ import cs2340.group61.doughnation.model.domain.Donation;
 public class DonationDetailsActivity extends AppCompatActivity {
 
     private List<Donation> donationList = new ArrayList<>();
-    public DatabaseReference databaseDonations;
+    private DatabaseReference databaseDonations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +104,7 @@ public class DonationDetailsActivity extends AppCompatActivity {
         int index = 0;
 
         for (Donation donation: donationList) {
-            if (donation.title.equals(donationTitle)) {
+            if (donation.getTitle().equals(donationTitle)) {
                 index = donationList.indexOf(donation);
             }
         }
@@ -124,16 +124,16 @@ public class DonationDetailsActivity extends AppCompatActivity {
 
         TextView description = findViewById(R.id.address_description);
 
-        name.setText(selected.title);
+        name.setText(selected.getTitle());
 
         //Strings to setText of TextViews
-        String timeString = "TIME: " + selected.timestamp;
+        String timeString = "TIME: " + selected.getTimestamp();
 
-        String locString = "LOCATION: " + selected.location;
+        String locString = "LOCATION: " + selected.getLocation();
 
-        String valString = "VALUE: $" + selected.value;
+        String valString = "VALUE: $" + selected.getValue();
 
-        String typeString = "TYPE: " + selected.category;
+        String typeString = "TYPE: " + selected.getCategory();
 
         //Setting TextViews
         time.setText(timeString);
@@ -144,7 +144,7 @@ public class DonationDetailsActivity extends AppCompatActivity {
 
         type.setText(typeString);
 
-        description.setText(selected.fulldescription);
+        description.setText(selected.getFulldescription());
 
 
 

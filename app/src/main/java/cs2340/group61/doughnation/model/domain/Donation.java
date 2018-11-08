@@ -1,14 +1,14 @@
 package cs2340.group61.doughnation.model.domain;
 
 public class Donation {
-    public String id;
-    public String title;
-    public String timestamp;
-    public String location;
-    public String shortdescription;
-    public String fulldescription;
-    public String value;
-    public String category;
+    private String id;
+    private String title;
+    private String timestamp;
+    private String location;
+    private String shortdescription;
+    private String fulldescription;
+    private String value;
+    private String category;
 
     public Donation() {
     }
@@ -45,4 +45,35 @@ public class Donation {
         this.category = category;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getShortdescription() {
+        return shortdescription;
+    }
+
+    public String getFulldescription() {
+        return fulldescription;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getCategory() {
+        return category;
+    }
 }
