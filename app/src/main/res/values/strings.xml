@@ -14,8 +14,7 @@
     <string name="location_here_is_an_example">Location: here is an example</string>
     <string name="value_xx_xx">Value: $XX.XX</string>
     <string name="category_put_category_here">Category: put category here</string>
-    <string name="description">Description:</string>
-    <string name="put_description_here_here_is_a_very_long_example_of_a_description_why_because_idk_maybe_some_people_want_to_write_a_super_long_description_who_knows_point_is_that_i_ve_cleverly_used_a_scrollbox_to_contain_someone_s_annoyingly_long_description_they_thought_that_they_could_beat_the_system_but_they_can_t_this_ain_t_the_matrix_babay_bye_ho">Put description here. Here is a very long example of a description. Why? Because IDK maybe some people want to write a super long description. Who knows. Point is that I\'ve cleverly used a scrollbox to contain someone\'s annoyingly long description. They thought that they could beat the system. But they can\'t. This ain\'t the matrix BABAY. Bye ho.</string>
+    <string name="don_desc">Put description here. Here is a very long example of a description. Why? Because IDK maybe some people want to write a super long description. Who knows. Point is that I\'ve cleverly used a scrollbox to contain someone\'s annoyingly long description. They thought that they could beat the system. But they can\'t. This ain\'t the matrix BABAY. Bye ho.</string>
     <string name="new_donation">NEW DONATION</string>
     <string name="location">Location:</string>
     <string name="title">Title:</string>
@@ -23,4 +22,8 @@
     <string name="value">Value:</string>
     <string name="enter_value">Enter value here. Ex; 24.50</string>
     <string name="type">Type:</string>
+    <string name="description">Description:</string>
+    <string name="donation_description_here">Donation Description here.</string>
+    <string name="add">Add</string>
+    <string name="back">Back</string>
 </resources>
