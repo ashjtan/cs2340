@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -76,7 +75,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     @SuppressWarnings("FeatureEnvy")
     public void register(View v) {
-        Utils.clearTextVals(firstText, lastText, emailText, pwText, confPwText);
+        Utils.clearTextValues(firstText, lastText, emailText, pwText, confPwText);
         loadFormVals();
 
         if (validForm()) {

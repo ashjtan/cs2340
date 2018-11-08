@@ -22,10 +22,10 @@ public class Utils {
 
     /**
      * Sets string values to empty.
-     * Primarily for setting String vars from EditText back to blank for rechecking vals.
+     * Primarily for setting String vars from EditText back to blank for rechecking values.
      * @param strings Strings to set to empty.
      */
-    public static void clearTextVals(String... strings) {
+    public static void clearTextValues(String... strings) {
         for (String s : strings) {
             s = "";
         }
