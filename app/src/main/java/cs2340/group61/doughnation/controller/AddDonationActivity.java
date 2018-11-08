@@ -177,7 +177,9 @@ public class AddDonationActivity extends AppCompatActivity {
         donation.setTimestamp(time);
         donation.setId(id);
 
-        databaseDonations.child(id).setValue(donation);
+        if (id != null) {
+            databaseDonations.child(id).setValue(donation);
+        }
     }
 
     //HELPER METHODS
