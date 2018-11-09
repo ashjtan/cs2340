@@ -26,7 +26,11 @@ import static cs2340.group61.doughnation.model.Utils.isNotEmpty;
 public class RegistrationActivity extends AppCompatActivity {
 
     private Spinner acctType;
-    private EditText firstName, lastName, email, pw, confirmPw;
+    private EditText firstName;
+    private EditText lastName;
+    private EditText email;
+    private EditText pw;
+    private EditText confirmPw;
 
     private String firstText;
     private String lastText;

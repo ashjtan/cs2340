@@ -13,7 +13,7 @@ public class Utils {
      */
     public static boolean isNotEmpty(String... strings) {
         for (String s : strings) {
-            if (s == null || s.trim().isEmpty()) {
+            if ((s == null) || s.trim().isEmpty()) {
                 return false;
             }
         }

@@ -75,6 +75,6 @@ public class LoginActivity extends AppCompatActivity {
 
         User user = AppData.findUserByEmail(userText);
 
-        return user!=null && passText.equals(user.getPassword());
+        return ((user != null) && passText.equals(user.getPassword()));
     }
 }

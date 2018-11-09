@@ -10,9 +10,6 @@ public class Donation {
     private String value;
     private String category;
 
-    public Donation() {
-    }
-
     public void setId(String id) {
         this.id = id;
     }

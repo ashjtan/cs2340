@@ -13,8 +13,6 @@ public class Location {
     public String phone;
     //public String website;
 
-    public Location(){}
-
 //    public void setId(String id) {
 //        this.id = id;
 //    }
