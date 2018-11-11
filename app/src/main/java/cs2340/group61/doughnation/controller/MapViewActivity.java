@@ -13,6 +13,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import cs2340.group61.doughnation.R;
 
+/**
+ * Allows users to view the map.
+ */
 @SuppressWarnings("ChainedMethodCall")
 public class MapViewActivity extends AppCompatActivity implements OnMapReadyCallback {
 

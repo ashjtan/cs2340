@@ -14,6 +14,9 @@ import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.AppData;
 import cs2340.group61.doughnation.model.domain.accounts.User;
 
+/**
+ * This is a class that displays the login page to the user.
+ */
 @SuppressWarnings("ChainedMethodCall")
 public class LoginActivity extends AppCompatActivity {
 
@@ -45,8 +48,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
-
+    /**
+     * This is a method to allow users to login to the app.
+     * @param v The page.
+     */
     //EVENT HANDLERS
     public void login(View v) {
         //logs in if valid credentials
@@ -61,6 +66,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This allows users to go to the registration page.
+     * @param v The page.
+     */
     public void switchToRegister(View v) {      //switches to register page
         startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
     }

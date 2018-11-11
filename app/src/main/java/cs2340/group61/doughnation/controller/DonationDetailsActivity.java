@@ -20,6 +20,9 @@ import java.util.List;
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.domain.Donation;
 
+/**
+ * This class is to display the details of the donation when it's clicked.
+ */
 @SuppressWarnings("ChainedMethodCall")
 public class DonationDetailsActivity extends AppCompatActivity {
 

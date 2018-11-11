@@ -18,6 +18,9 @@ import java.util.List;
 
 import cs2340.group61.doughnation.R;
 
+/**
+ * This class is to display a list of donations.
+ */
 public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapter.ViewHolder>{
 
     private static final String TAG = "DonationViewAdapter";

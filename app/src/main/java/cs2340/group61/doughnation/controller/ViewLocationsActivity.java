@@ -21,6 +21,9 @@ import java.util.ArrayList;
 
 import cs2340.group61.doughnation.R;
 
+/**
+ * This is a class to view the locations.
+ */
 @SuppressWarnings({"ChainedMethodCall", "EmptyMethod"})
 public class ViewLocationsActivity extends AppCompatActivity {
 

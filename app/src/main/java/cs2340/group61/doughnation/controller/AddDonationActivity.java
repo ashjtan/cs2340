@@ -27,6 +27,9 @@ import cs2340.group61.doughnation.model.Location;
 import cs2340.group61.doughnation.model.Utils;
 import cs2340.group61.doughnation.model.domain.Donation;
 
+/**
+ * This is a class to add a donation to the list of donations.
+ */
 @SuppressWarnings("ChainedMethodCall")
 public class AddDonationActivity extends AppCompatActivity {
 

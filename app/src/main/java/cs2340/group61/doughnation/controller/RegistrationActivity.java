@@ -22,6 +22,9 @@ import cs2340.group61.doughnation.model.Utils;
 
 import static cs2340.group61.doughnation.model.Utils.isNotEmpty;
 
+/**
+ * Allows users to register a new account.
+ */
 @SuppressWarnings("ChainedMethodCall")
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -69,6 +72,10 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * Allows the user to switch back to the login page.
+     * @param v The page.
+     */
     //EVENT HANDLERS
     public void switchToLogin(View v) {      //switches to login page
         if(anyFieldsComplete()) {
@@ -77,6 +84,10 @@ public class RegistrationActivity extends AppCompatActivity {
         startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
     }
 
+    /**
+     * Allows users to create a new account.
+     * @param v The page.
+     */
     @SuppressWarnings("FeatureEnvy")
     public void register(View v) {
         Utils.clearTextValues(firstText, lastText, emailText, pwText, confPwText);
