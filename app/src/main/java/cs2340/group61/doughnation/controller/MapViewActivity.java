@@ -94,30 +94,29 @@ public class MapViewActivity extends AppCompatActivity implements OnMapReadyCall
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        GoogleMap googleMap1 = googleMap;
-        googleMap1.getUiSettings().setZoomControlsEnabled(true);
-        googleMap1.getUiSettings().setRotateGesturesEnabled(true);
+        googleMap.getUiSettings().setZoomControlsEnabled(true);
+        googleMap.getUiSettings().setRotateGesturesEnabled(true);
         int zoomPref = 12;
         double lat = 33.7490;
         double lon = -84.3880;
-        googleMap1.setMinZoomPreference(zoomPref);
+        googleMap.setMinZoomPreference(zoomPref);
         LatLng atl = new LatLng(lat, lon);
-        googleMap1.moveCamera(CameraUpdateFactory.newLatLng(atl));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(atl));
 
         // Add some markers to the map, and add a data object to each marker.
-        Marker goodWill = googleMap1.addMarker(new MarkerOptions()
+        Marker goodWill = googleMap.addMarker(new MarkerOptions()
                 .position(goodWillLoc)
                 .title("Good Will")
                 .snippet("Location Type: DROP"));
         goodWill.setTag(0);
 
-        Marker redCross = googleMap1.addMarker(new MarkerOptions()
+        Marker redCross = googleMap.addMarker(new MarkerOptions()
                 .position(redCrossLoc)
                 .title("Red Cross")
                 .snippet("Location Type: PICK UP"));
         redCross.setTag(0);
 
-        Marker carDonation = googleMap1.addMarker(new MarkerOptions()
+        Marker carDonation = googleMap.addMarker(new MarkerOptions()
                 .position(carDonationLoc)
                 .title("Car Donation Center")
                 .snippet("Location Type: BLAH BLAH"));

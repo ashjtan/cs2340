@@ -119,6 +119,6 @@ public class ViewLocationsActivity extends AppCompatActivity {
     }
 
     protected ArrayList<Location> getLocationList() {
-        return locationList;
+        return this.locationList;
     }
 }
