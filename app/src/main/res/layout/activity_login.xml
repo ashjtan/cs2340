@@ -50,7 +50,7 @@
                     android:ems="10"
                     android:hint="email"
                     android:inputType="textEmailAddress"
-                    tools:ignore="TextFields" />
+                    tools:ignore="TextFields"/>
 
         <TextView
             android:id="@+id/password-textView"
@@ -76,7 +76,7 @@
             android:layout_marginTop="310dp"
             android:ems="10"
             android:hint="@string/password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"/>
 
         <Button
             android:id="@+id/login_button"
