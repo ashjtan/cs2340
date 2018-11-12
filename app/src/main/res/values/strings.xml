@@ -1,10 +1,7 @@
 <resources>
     <string name="app_name">DoughNation</string>
     <string name="title_activity_home_page">HomePageActivity</string>
-    <string name="password_here">password here</string>
     <string name="password">password</string>
-    <string name="username_here">username here</string>
-    <string name="username">username</string>
     <string name="login">Login</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="register_here">Register here</string>

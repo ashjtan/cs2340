@@ -15,7 +15,7 @@
 
         <Button
             android:id="@+id/return_login_Button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="21dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
@@ -171,7 +171,7 @@
 
         <Button
             android:id="@+id/back_button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="21dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
