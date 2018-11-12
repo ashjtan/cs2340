@@ -25,8 +25,7 @@
             android:text="@string/logout"
             android:textAllCaps="false"
             android:textColor="@color/primary"
-            android:textSize="15sp"
-            android:layout_alignParentRight="true" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/newDonation_textView"
@@ -36,17 +35,14 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="50dp"
             android:text="@string/new_donation"
-            android:theme="@style/TextView_for_title"
-            android:layout_alignParentLeft="true" />
+            android:theme="@style/TextView_for_title" />
 
         <TextView
             android:id="@+id/location_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
             android:layout_marginTop="100dp"
             android:padding="10dp"
             android:text="@string/location" />
@@ -56,9 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
             android:layout_marginTop="130dp">
 
         </android.support.v7.widget.AppCompatSpinner>
@@ -67,10 +61,8 @@
             android:id="@+id/name_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
             android:layout_marginTop="160dp"
             android:padding="10dp"
             android:text="@string/title" />
@@ -79,10 +71,8 @@
             android:id="@+id/add_name"
             style="@style/info_description_text"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
             android:layout_marginTop="190dp"
             android:hint="@string/write_title_here"
             android:padding="10dp"
@@ -94,10 +84,8 @@
             android:id="@+id/value_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
             android:layout_marginTop="220dp"
             android:padding="10dp"
             android:text="@string/value" />
@@ -106,10 +94,8 @@
             android:id="@+id/add_value"
             style="@style/info_description_text"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
             android:layout_marginTop="250dp"
             android:hint="@string/enter_value"
             android:padding="10dp"
@@ -121,10 +107,8 @@
             android:id="@+id/type_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
             android:layout_marginTop="290dp"
             android:padding="10dp"
             android:text="@string/type" />
@@ -134,9 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="31dp"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
             android:layout_marginTop="320dp">
 
         </android.support.v7.widget.AppCompatSpinner>
@@ -145,10 +127,8 @@
             android:id="@+id/description_title"
             style="@style/info_display_title"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
             android:layout_marginTop="350dp"
             android:padding="10dp"
             android:text="@string/description" />
@@ -160,15 +140,11 @@
             android:layout_below="@+id/description_title"
             android:layout_alignParentStart="true"
             android:layout_marginTop="0dp"
-            android:isScrollContainer="false"
-            android:layout_alignParentLeft="true">
+            android:isScrollContainer="false">
 
             <EditText
                 android:id="@+id/add_description"
                 style="@style/info_description_text"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
                 android:layout_marginTop="0dp"
                 android:hint="@string/donation_description_here"
                 android:padding="10dp"
@@ -184,7 +160,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="70dp"
             android:background="@drawable/round_button"
@@ -206,8 +181,7 @@
             android:text="@string/back"
             android:textAllCaps="false"
             android:textColor="@color/primary"
-            android:textSize="15sp"
-            android:layout_alignParentRight="true" />
+            android:textSize="15sp" />
 
 
     </RelativeLayout>
