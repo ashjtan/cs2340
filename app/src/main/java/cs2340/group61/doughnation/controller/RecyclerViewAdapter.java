@@ -16,6 +16,9 @@ import java.util.List;
 
 import cs2340.group61.doughnation.R;
 
+/**
+ * This is a class for the Recycler View.
+ */
 @SuppressWarnings("ChainedMethodCall")
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
@@ -24,7 +27,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private final Context context;
 
 
-
+    /**
+     * Creates the recycler view.
+     * @param lTitles The list of titles.
+     * @param context The context.
+     */
     public RecyclerViewAdapter(List<String> lTitles, Context context) {
         this.lTitles = lTitles;
         this.context = context;

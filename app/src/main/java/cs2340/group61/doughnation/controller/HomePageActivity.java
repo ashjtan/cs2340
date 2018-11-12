@@ -11,6 +11,9 @@ import android.widget.Button;
 
 import cs2340.group61.doughnation.R;
 
+/**
+ * This is a class to create and display the home page of the app.
+ */
 public class HomePageActivity extends AppCompatActivity {
 
     private ActionBar actionbar;
@@ -39,22 +42,43 @@ public class HomePageActivity extends AppCompatActivity {
     }
 
     //EVENT HANDLERS
+
+    /**
+     * Switches to login page.
+     * @param v The page.
+     */
     public void switchToLogin(View v) {             //switches to login page
         startActivity(new Intent(HomePageActivity.this, LoginActivity.class));
     }
 
+    /**
+     * Swithces to location page.
+     * @param v The page.
+     */
     public void switchToMyLocations(View v) {      //switches to my locations page
         startActivity(new Intent(HomePageActivity.this, ViewLocationsActivity.class));
     }
 
+    /**
+     * Switches to add donation page.
+     * @param v The page.
+     */
     public void switchToAddDonation(View v) {      //switches to add donation page
         startActivity(new Intent(HomePageActivity.this, AddDonationActivity.class));
     }
 
+    /**
+     * Switches to search donation page.
+     * @param v The page.
+     */
     public void switchToSearchDonations(View v) {  //switches to search donations page
         startActivity(new Intent(HomePageActivity.this, ViewDonationsActivity.class));
     }
 
+    /**
+     * Switches to location map page.
+     * @param v The page.
+     */
     public void switchToLocationsMap(View v) {      //switches to locations map
         startActivity(new Intent(HomePageActivity.this, MapViewActivity.class));
     }

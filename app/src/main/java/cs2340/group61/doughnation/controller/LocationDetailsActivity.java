@@ -21,6 +21,9 @@ import java.util.List;
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.Location;
 
+/**
+ * This class creates a page of the location's details.
+ */
 @SuppressWarnings({"ChainedMethodCall", "EmptyMethod"})
 public class LocationDetailsActivity extends AppCompatActivity {
 

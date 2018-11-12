@@ -1,5 +1,8 @@
 package cs2340.group61.doughnation.model;
 
+/**
+ * Represents a location object.
+ */
 public class Location {
     //private String id;
     public String name;
@@ -12,8 +15,6 @@ public class Location {
     public String type;
     public String phone;
     //public String website;
-
-    public Location(){}
 
 //    public void setId(String id) {
 //        this.id = id;

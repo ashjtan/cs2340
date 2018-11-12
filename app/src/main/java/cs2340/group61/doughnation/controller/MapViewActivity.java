@@ -13,6 +13,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import cs2340.group61.doughnation.R;
 
+/**
+ * Allows users to view the map.
+ */
 @SuppressWarnings("ChainedMethodCall")
 public class MapViewActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -91,37 +94,36 @@ public class MapViewActivity extends AppCompatActivity implements OnMapReadyCall
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        GoogleMap gmap = googleMap;
-        gmap.getUiSettings().setZoomControlsEnabled(true);
-        gmap.getUiSettings().setRotateGesturesEnabled(true);
+        googleMap.getUiSettings().setZoomControlsEnabled(true);
+        googleMap.getUiSettings().setRotateGesturesEnabled(true);
         int zoomPref = 12;
         double lat = 33.7490;
         double lon = -84.3880;
-        gmap.setMinZoomPreference(zoomPref);
+        googleMap.setMinZoomPreference(zoomPref);
         LatLng atl = new LatLng(lat, lon);
-        gmap.moveCamera(CameraUpdateFactory.newLatLng(atl));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(atl));
 
         // Add some markers to the map, and add a data object to each marker.
-        Marker goodWill = gmap.addMarker(new MarkerOptions()
+        Marker goodWill = googleMap.addMarker(new MarkerOptions()
                 .position(goodWillLoc)
                 .title("Good Will")
                 .snippet("Location Type: DROP"));
         goodWill.setTag(0);
 
-        Marker redCross = gmap.addMarker(new MarkerOptions()
+        Marker redCross = googleMap.addMarker(new MarkerOptions()
                 .position(redCrossLoc)
                 .title("Red Cross")
                 .snippet("Location Type: PICK UP"));
         redCross.setTag(0);
 
-        Marker carDonation = gmap.addMarker(new MarkerOptions()
+        Marker carDonation = googleMap.addMarker(new MarkerOptions()
                 .position(carDonationLoc)
                 .title("Car Donation Center")
                 .snippet("Location Type: BLAH BLAH"));
         carDonation.setTag(0);
 
         // Set a listener for marker click.
-        //gmap.setOnMarkerClickListener(this);
+        //googleMap1.setOnMarkerClickListener(this);
 
     }
 }

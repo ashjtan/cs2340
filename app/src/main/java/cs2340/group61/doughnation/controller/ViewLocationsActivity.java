@@ -21,6 +21,9 @@ import java.util.ArrayList;
 
 import cs2340.group61.doughnation.R;
 
+/**
+ * This is a class to view the locations.
+ */
 @SuppressWarnings({"ChainedMethodCall", "EmptyMethod"})
 public class ViewLocationsActivity extends AppCompatActivity {
 
@@ -107,7 +110,7 @@ public class ViewLocationsActivity extends AppCompatActivity {
 
     //Method to set up RecyclerView
     private void initRecyclerView() {
-        RecyclerView recyclerview = findViewById(R.id.mylocations_View);
+        RecyclerView recyclerview = findViewById(R.id.myLocations_View);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(locationNames, this);
         recyclerview.setAdapter(adapter);
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -116,6 +119,6 @@ public class ViewLocationsActivity extends AppCompatActivity {
     }
 
     protected ArrayList<Location> getLocationList() {
-        return locationList;
+        return this.locationList;
     }
 }

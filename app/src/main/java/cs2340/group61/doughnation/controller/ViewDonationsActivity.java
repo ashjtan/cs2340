@@ -127,7 +127,7 @@ public class ViewDonationsActivity extends AppCompatActivity {
                     if (isLocationTrue(donation, locationItems.getSelectedItem().toString())
                             & isCategoryTrue(donation, catItems.getSelectedItem().toString())
                             & isSearchTrue(donation, stringSearch.getQuery())){
-                        donationDesc.add(donation.getTimestamp() + " - " + donation.getShortdescription());
+                        donationDesc.add(donation.getTimestamp() + " - " + donation.getShortDescription());
                         donationTitles.add(donation.getTitle());
                     }
                 }
@@ -227,7 +227,7 @@ public class ViewDonationsActivity extends AppCompatActivity {
     private void initDonationDescriptions() {
 
         for (Donation donation: donationList) {
-            donationDesc.add(donation.getTimestamp() + " - " + donation.getShortdescription());
+            donationDesc.add(donation.getTimestamp() + " - " + donation.getShortDescription());
             donationTitles.add(donation.getTitle());
         }
             initRecyclerView();
