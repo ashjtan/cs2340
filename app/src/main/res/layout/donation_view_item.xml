@@ -5,13 +5,8 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="5dp"
-    android:id="@+id/DonationView">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/back">
+    android:id="@+id/DonationView"
+    android:background="@drawable/back">
 
         <TextView
             android:id="@+id/donation_title"
@@ -28,6 +23,5 @@
             android:padding="10dp"
             android:layout_marginTop="20dp"
             android:text="Category: Timestamp: Description Excerpt." />
-    </RelativeLayout>
 
 </RelativeLayout>

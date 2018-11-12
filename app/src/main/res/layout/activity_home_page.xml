@@ -1,97 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="300sp"
     android:layout_height="match_parent"
-    tools:context=".controller.HomePageActivity">
+    tools:context=".controller.HomePageActivity"
+    android:layout_gravity="center"
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="300sp"
-        android:layout_height="match_parent"
+    <TextView
+        android:id="@+id/coName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical">
+        android:layout_marginTop="86dp"
+        android:text="OPTIONS"
+        android:theme="@style/TextView_for_title"
+        android:layout_alignParentLeft="true" />
 
-        <TextView
-            android:id="@+id/coName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="86dp"
-            android:text="OPTIONS"
-            android:theme="@style/TextView_for_title"
-            android:layout_alignParentLeft="true" />
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="21dp"
+        android:background="@android:color/transparent"
+        android:gravity="end"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="@color/primary"
+        android:textSize="15sp" />
 
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="21dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="21dp"
-            android:background="@android:color/transparent"
-            android:gravity="end"
-            android:text="Logout"
-            android:textAllCaps="false"
-            android:textColor="@color/primary"
-            android:textSize="15sp" />
+    <Button
+        android:id="@+id/btnLocations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/round_button"
+        android:onClick="switchToMyLocations"
+        android:text="My Locations"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnLocations"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="180dp"
-            android:background="@drawable/round_button"
-            android:onClick="switchToMyLocations"
-            android:text="My Locations"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnAddDonations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/round_button"
+        android:onClick="switchToAddDonation"
+        android:text="Add Donation"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnAddDonations"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="250dp"
-            android:background="@drawable/round_button"
-            android:onClick="switchToAddDonation"
-            android:text="Add Donation"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnSearchDonations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="320dp"
+        android:background="@drawable/round_button"
+        android:onClick="switchToSearchDonations"
+        android:text="Search Donations"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnSearchDonations"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="320dp"
-            android:background="@drawable/round_button"
-            android:onClick="switchToSearchDonations"
-            android:text="Search Donations"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnLocationsMap"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="390dp"
-            android:background="@drawable/round_button"
-            android:onClick="switchToLocationsMap"
-            android:text="Locations Map"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
+    <Button
+        android:id="@+id/btnLocationsMap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="390dp"
+        android:background="@drawable/round_button"
+        android:onClick="switchToLocationsMap"
+        android:text="Locations Map"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
 </RelativeLayout>

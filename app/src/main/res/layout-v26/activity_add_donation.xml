@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="300sp"
     android:layout_height="match_parent"
     tools:context=".controller.HomePageActivity"
-    android:id="@+id/parent_layout">
-
-    <RelativeLayout
-        android:layout_width="300sp"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical">
+    android:id="@+id/parent_layout"
+    android:layout_gravity="center"
+    android:orientation="vertical">
 
         <Button
             android:id="@+id/return_login_Button"
@@ -183,7 +178,5 @@
             android:textColor="@color/primary"
             android:textSize="15sp" />
 
-
-    </RelativeLayout>
 
 </RelativeLayout>
