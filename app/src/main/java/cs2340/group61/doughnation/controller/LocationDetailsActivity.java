@@ -108,7 +108,6 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
             String locationName = getIntent().getStringExtra("location_name");
 
-            String locationName1 = locationName;
             setLocationDetails(locationName);
         }
     }
