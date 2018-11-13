@@ -4,7 +4,6 @@ package cs2340.group61.doughnation.model.domain;
  * This class represents a donation object.
  */
 public class Donation {
-    private String id;
     private String title;
     private String timestamp;
     private String location;
@@ -18,7 +17,7 @@ public class Donation {
      * @param id The id number.
      */
     public void setId(String id) {
-        this.id = id;
+        String id1 = id;
     }
 
     /**

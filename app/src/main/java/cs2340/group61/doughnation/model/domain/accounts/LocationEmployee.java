@@ -4,7 +4,6 @@ package cs2340.group61.doughnation.model.domain.accounts;
  * Represents a location employee object.
  */
 public class LocationEmployee extends User {
-//TODO: add Location obj field
 
     /**
      * Creates a location employee object.

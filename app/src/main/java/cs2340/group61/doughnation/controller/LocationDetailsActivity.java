@@ -29,7 +29,6 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
     private final List<Location> locationList = new ArrayList<>();
     private DatabaseReference databaseLocations;
-    private String locationName;
 
     private static final String TAG = "LocationDetailActivity";
 
@@ -109,18 +108,19 @@ public class LocationDetailsActivity extends AppCompatActivity {
 
             String locationName = getIntent().getStringExtra("location_name");
 
-            this.locationName = locationName;
+            String locationName1 = locationName;
             setLocationDetails(locationName);
         }
     }
 
     //Set details from information passed in from RecyclerViewAdapter
+    @SuppressWarnings("FeatureEnvy")
     private void setLocationDetails(String locationName) {
 
         int index = 0;
 
         for (Location location: locationList) {
-            if (location.name.equals(locationName)) {
+            if (location.getName().equals(locationName)) {
                 index = locationList.indexOf(location);
             }
         }
@@ -132,17 +132,17 @@ public class LocationDetailsActivity extends AppCompatActivity {
         name.setText(locationName.toUpperCase());
 
         TextView type = findViewById(R.id.type_description);
-        type.setText(loc.type);
+        type.setText(loc.getType());
 
         TextView longitude = findViewById(R.id.longitude_description);
-        String longString = loc.longitude + ", " + loc.latitude;
+        String longString = loc.getLongitude() + ", " + loc.getLatitude();
         longitude.setText(longString);
 
         TextView address = findViewById(R.id.address_description);
-        address.setText(loc.address);
+        address.setText(loc.getAddress());
 
         TextView phone = findViewById(R.id.phone_description);
-        phone.setText(loc.phone);
+        phone.setText(loc.getPhone());
 
     }
 }

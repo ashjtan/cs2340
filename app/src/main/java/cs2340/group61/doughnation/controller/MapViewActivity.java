@@ -96,10 +96,10 @@ public class MapViewActivity extends AppCompatActivity implements OnMapReadyCall
 
         googleMap.getUiSettings().setZoomControlsEnabled(true);
         googleMap.getUiSettings().setRotateGesturesEnabled(true);
-        int zoomPref = 12;
-        double lat = 33.7490;
-        double lon = -84.3880;
+        final int zoomPref = 12;
         googleMap.setMinZoomPreference(zoomPref);
+        final double lon = -84.3880;
+        final double lat = 33.7490;
         LatLng atl = new LatLng(lat, lon);
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(atl));
 

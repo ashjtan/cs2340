@@ -18,6 +18,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import cs2340.group61.doughnation.R;
 
@@ -30,8 +32,8 @@ public class ViewLocationsActivity extends AppCompatActivity {
     private static final String TAG = "ViewLocationsActivity";
 
     //variables
-    private final ArrayList<String> locationNames = new ArrayList<>();
-    private final ArrayList<Location> locationList = new ArrayList<>();
+    private final List<String> locationNames = new ArrayList<>();
+    private final List<Location> locationList = new ArrayList<>();
     private DatabaseReference databaseLocations;
     
     @Override
@@ -103,7 +105,7 @@ public class ViewLocationsActivity extends AppCompatActivity {
     //Method to fill recycler view with names
     private void fillLocationNames() {
         for (Location location: locationList) {
-            locationNames.add(location.name);
+            locationNames.add(location.getName());
         }
         initRecyclerView();
     }
@@ -118,7 +120,8 @@ public class ViewLocationsActivity extends AppCompatActivity {
         recyclerview.setLayoutManager(layoutManager);
     }
 
-    protected ArrayList<Location> getLocationList() {
-        return this.locationList;
+    @SuppressWarnings("unused")
+    protected List<Location> getLocationList() {
+        return Collections.unmodifiableList(this.locationList);
     }
 }

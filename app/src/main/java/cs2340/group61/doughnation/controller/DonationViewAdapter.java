@@ -21,6 +21,7 @@ import cs2340.group61.doughnation.R;
 /**
  * This class is to display a list of donations.
  */
+@SuppressWarnings({"ALL", "AssignmentOrReturnOfFieldWithMutableType"})
 public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapter.ViewHolder>{
 
     private static final String TAG = "DonationViewAdapter";
@@ -34,7 +35,9 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
 
     DonationViewAdapter(Context context, List<String> donationDisplay,
                         List<String> donationTitles){
+        //noinspection AssignmentOrReturnOfFieldWithMutableType
         mDonationDisplay = donationDisplay;
+        //noinspection AssignmentOrReturnOfFieldWithMutableType
         mDonationTitles = donationTitles;
         mContext = context;
     }
@@ -42,7 +45,8 @@ public class DonationViewAdapter extends RecyclerView.Adapter<DonationViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        @SuppressWarnings("ChainedMethodCall") View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.donation_view_item,
+        @SuppressWarnings("ChainedMethodCall")
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.donation_view_item,
                 viewGroup, false);
         return new ViewHolder(view);
     }

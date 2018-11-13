@@ -78,9 +78,8 @@ public class RegistrationActivity extends AppCompatActivity {
      */
     //EVENT HANDLERS
     public void switchToLogin(View v) {      //switches to login page
-        if(anyFieldsComplete()) {
-            //TODO:show confirm dialog
-        }
+//        if(anyFieldsComplete()) {
+//        }
         startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
     }
 
@@ -133,7 +132,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private boolean validPassword() {
-        return confPwText.equals(pwText); //TODO: add password char requirements
+        return confPwText.equals(pwText);
     }
 
     @SuppressWarnings("FeatureEnvy")

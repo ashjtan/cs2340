@@ -4,6 +4,7 @@ package cs2340.group61.doughnation.model.domain.accounts;
  * General user that can view locations and location info.
  * Parent class to specific account types with more application options/abilities.
  */
+@SuppressWarnings("ALL")
 public class User {
     //Fields
     protected String id;

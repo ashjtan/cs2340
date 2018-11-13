@@ -1,13 +1,9 @@
 package cs2340.group61.doughnation.controller;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
 import cs2340.group61.doughnation.R;
 
@@ -16,12 +12,12 @@ import cs2340.group61.doughnation.R;
  */
 public class HomePageActivity extends AppCompatActivity {
 
-    private ActionBar actionbar;
-    private Button toLogin;
-    private Button myLocations;
-    private Button toAddDonations;
-    private Button toSearchDonations;
-    private Button toMapView;
+//    private ActionBar actionbar;
+//    private Button toLogin;
+//    private Button myLocations;
+//    private Button toAddDonations;
+//    private Button toSearchDonations;
+//    private Button toMapView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +26,15 @@ public class HomePageActivity extends AppCompatActivity {
 
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
-        actionbar = getSupportActionBar();
-        actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
-        actionbar.setTitle("DoughNation");
-
-        toLogin = findViewById(R.id.btnLogout);
-        myLocations = findViewById(R.id.btnLocations);
-        toAddDonations = findViewById(R.id.btnAddDonations);
-        toSearchDonations = findViewById(R.id.btnSearchDonations);
-        toMapView = findViewById(R.id.btnLocationsMap);
+//        actionbar = getSupportActionBar();
+//        actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
+//        actionbar.setTitle("DoughNation");
+//
+//        toLogin = findViewById(R.id.btnLogout);
+//        myLocations = findViewById(R.id.btnLocations);
+//        toAddDonations = findViewById(R.id.btnAddDonations);
+//        toSearchDonations = findViewById(R.id.btnSearchDonations);
+//        toMapView = findViewById(R.id.btnLocationsMap);
     }
 
     //EVENT HANDLERS

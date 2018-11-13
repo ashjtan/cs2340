@@ -197,7 +197,7 @@ public class ViewDonationsActivity extends AppCompatActivity {
                 }
 
                 for (Location lo: locationList) {
-                    nameList.add(lo.name);
+                    nameList.add(lo.getName());
                 }
 
 

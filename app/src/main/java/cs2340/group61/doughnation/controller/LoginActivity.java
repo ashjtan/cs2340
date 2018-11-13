@@ -20,12 +20,8 @@ import cs2340.group61.doughnation.model.domain.accounts.User;
 @SuppressWarnings("ChainedMethodCall")
 public class LoginActivity extends AppCompatActivity {
 
-    private Button loginButton;
-    private Button registerButton;
     private EditText userField;
     private EditText passField;
-    private String userText = "";
-    private String passText = "";    //prevents null pointer
 
 
     @Override
@@ -34,8 +30,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //Instantiating xml elements
-        loginButton = findViewById(R.id.login_button);
-        registerButton = findViewById(R.id.register_Button);
+        Button loginButton = findViewById(R.id.login_button);
+        Button registerButton = findViewById(R.id.register_Button);
         userField = findViewById(R.id.email);
         passField = findViewById(R.id.password);
 
@@ -43,7 +39,9 @@ public class LoginActivity extends AppCompatActivity {
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
         ActionBar actionbar = getSupportActionBar();
-        actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
+        if (actionbar != null) {
+            actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
+        }
         actionbar.setTitle("DoughNation");
     }
 
@@ -56,7 +54,6 @@ public class LoginActivity extends AppCompatActivity {
     public void login(View v) {
         //logs in if valid credentials
 //        if (validLogin()) {
-//            //TODO: needs to custom load for specific acct
 //            startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
 //        }
 //        else {
@@ -79,8 +76,9 @@ public class LoginActivity extends AppCompatActivity {
 
     //HELPER METHODS
     private boolean validLogin() {
-        userText = userField.getText().toString();
-        passText = passField.getText().toString();
+        String userText = userField.getText().toString();
+        //prevents null pointer
+        String passText = passField.getText().toString();
 
         User user = AppData.findUserByEmail(userText);
 

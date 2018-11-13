@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 /**
  * Has basic methods used throughout the app.
  */
-@SuppressWarnings("ChainedMethodCall")
+@SuppressWarnings({"ChainedMethodCall", "UtilityClass"})
 public class Utils {
 
     /**

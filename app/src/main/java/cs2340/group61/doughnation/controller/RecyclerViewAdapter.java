@@ -19,7 +19,7 @@ import cs2340.group61.doughnation.R;
 /**
  * This is a class for the Recycler View.
  */
-@SuppressWarnings("ChainedMethodCall")
+@SuppressWarnings({"ChainedMethodCall", "AssignmentOrReturnOfFieldWithMutableType"})
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
@@ -33,6 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
      * @param context The context.
      */
     public RecyclerViewAdapter(List<String> lTitles, Context context) {
+        //noinspection AssignmentOrReturnOfFieldWithMutableType
         this.lTitles = lTitles;
         this.context = context;
     }
