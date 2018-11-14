@@ -48,7 +48,7 @@ public class HomePageActivity extends AppCompatActivity {
     }
 
     /**
-     * Swithces to location page.
+     * Switches to location page.
      * @param v The page.
      */
     public void switchToMyLocations(View v) {      //switches to my locations page

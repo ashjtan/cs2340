@@ -128,7 +128,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private boolean validEmail() {
-        return emailText.contains("@");
+        return emailText.contains("@") ^ emailText.contains(".com");
     }
 
     private boolean validPassword() {
