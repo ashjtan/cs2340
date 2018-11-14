@@ -50,7 +50,6 @@ public class RegistrationActivity extends AppCompatActivity {
         //Button toLogin = findViewById(R.id.return_login_Button);
         //Button register = findViewById(R.id.register_Button);
         acctType = findViewById(R.id.acctType_spinner);
-
         firstName = findViewById(R.id.firstName_editText);
         lastName = findViewById(R.id.lastName_editText);
         email = findViewById(R.id.email_editText);

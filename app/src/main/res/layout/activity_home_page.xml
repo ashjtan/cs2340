@@ -29,6 +29,7 @@
         android:background="@android:color/transparent"
         android:gravity="end"
         android:text="Logout"
+        android:onClick="switchToLogin"
         android:textAllCaps="false"
         android:textColor="@color/primary"
         android:textSize="15sp" />
