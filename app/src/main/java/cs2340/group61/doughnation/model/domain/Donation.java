@@ -12,10 +12,10 @@ public class Donation {
     private String value;
     private String category;
 
-    /**
-     * Setter method to set the id.
-     * @param id The id number.
-     */
+//    /**
+//     * Setter method to set the id.
+//     * @param id The id number.
+//     */
 //    public void setId(String id) {
 //        String id1 = id;
 //    }

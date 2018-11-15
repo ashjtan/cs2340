@@ -7,7 +7,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import cs2340.group61.doughnation.R;
@@ -41,7 +40,9 @@ public class LoginActivity extends AppCompatActivity {
         if (actionbar != null) {
             actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
         }
-        actionbar.setTitle("DoughNation");
+        if (actionbar != null) {
+            actionbar.setTitle("DoughNation");
+        }
     }
 
 

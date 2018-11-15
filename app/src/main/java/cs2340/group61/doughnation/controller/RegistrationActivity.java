@@ -65,12 +65,15 @@ public class RegistrationActivity extends AppCompatActivity {
         //Setting some actionbar characteristics
         //Changes color and text in the actionbar
         ActionBar actionbar = getSupportActionBar();
-        actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
+        if (actionbar != null) {
+            actionbar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF4A4A")));
+        }
+        assert actionbar != null;
         actionbar.setTitle("DoughNation");
 
 
         //Populates spinner w/ account types
-        ArrayAdapter<String> acctTypeAdapter = new ArrayAdapter(this,
+        ArrayAdapter acctTypeAdapter = new ArrayAdapter(this,
                 android.R.layout.simple_spinner_item, AccountType.values());
         acctTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         acctType.setAdapter(acctTypeAdapter);
@@ -103,8 +106,10 @@ public class RegistrationActivity extends AppCompatActivity {
             alertDialog.setTitle("Account Created");
             alertDialog.setMessage("Success!");
             alertDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    Intent myIntent = new Intent(((Dialog) dialog).getContext(), LoginActivity.class);
+                    Intent myIntent = new Intent(((Dialog) dialog).getContext(),
+                            LoginActivity.class);
                     startActivity(myIntent);
                 }
             });
