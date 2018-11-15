@@ -1,15 +1,21 @@
 package cs2340.group61.doughnation.controller;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import java.util.regex.Pattern;
 
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.domain.AccountType;
@@ -93,13 +99,22 @@ public class RegistrationActivity extends AppCompatActivity {
 
         if (validForm()) {
             createUser();
-            Utils.showDialog("Successfully created account for "
-                    + emailText + ".", "Account Created", this);
-            startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+                    new ContextThemeWrapper(this, R.style.AppTheme));
+            alertDialog.setTitle("Account Created");
+            alertDialog.setMessage("Success!");
+            alertDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent myIntent = new Intent(((Dialog) dialog).getContext(), LoginActivity.class);
+                    startActivity(myIntent);
+                    return;
+                }
+            });
+            alertDialog.show();
         }
         else {
-            Utils.showDialog("One of the fields is invalid." +
-                            "Please check form before submitting.",
+            Utils.showDialog("Account not created." +
+                            " Please check all forms before submitting.",
                     "Unable to Create Account", this);
         }
     }
@@ -111,9 +126,9 @@ public class RegistrationActivity extends AppCompatActivity {
         return allFieldsComplete() && validName() && validEmail() && validPassword();
     }
 
-    private boolean allFieldsComplete() {
+    private boolean allFieldsComplete(){
         return isNotEmpty(firstText, lastText, emailText, pwText, confPwText);
-        //&& !acctType.getSelectedItem().equals(null);
+//        && !acctType.getSelectedItem().equals(null);
     }
 
     @SuppressWarnings("FeatureEnvy")
@@ -127,7 +142,16 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private boolean validEmail() {
-        return emailText.contains("@") ^ emailText.contains(".com");
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+
+        Pattern pat = Pattern.compile(emailRegex);
+        if (emailText == null) {
+            return false;
+        }
+        return pat.matcher(emailText).matches();
     }
 
     private boolean validPassword() {

@@ -23,4 +23,5 @@
     <string name="donation_description_here">Donation Description here.</string>
     <string name="add">Add</string>
     <string name="back">Back</string>
+    <string name="invalid_dialog">One of the fields is invalid. Please check form before submitting.</string>
 </resources>
