@@ -180,7 +180,6 @@ public class AddDonationActivity extends AppCompatActivity {
         donation.setShortDescription(description.getText().toString());
         donation.setValue(value.getText().toString());
         donation.setTimestamp(time);
-        donation.setId(id);
 
         if (id != null) {
             databaseDonations.child(id).setValue(donation);

@@ -82,9 +82,8 @@ public class RegistrationActivity extends AppCompatActivity {
      * @param v The page.
      */
     //EVENT HANDLERS
-    public void switchToLogin(View v) {      //switches to login page
-//        if(anyFieldsComplete()) {
-//        }
+    public void switchToLogin(View v) {
+        //switches to login page
         startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
     }
 
@@ -107,7 +106,6 @@ public class RegistrationActivity extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
                     Intent myIntent = new Intent(((Dialog) dialog).getContext(), LoginActivity.class);
                     startActivity(myIntent);
-                    return;
                 }
             });
             alertDialog.show();
@@ -129,12 +127,6 @@ public class RegistrationActivity extends AppCompatActivity {
     private boolean allFieldsComplete(){
         return isNotEmpty(firstText, lastText, emailText, pwText, confPwText);
 //        && !acctType.getSelectedItem().equals(null);
-    }
-
-    @SuppressWarnings("FeatureEnvy")
-    private boolean anyFieldsComplete() {
-        return isNotEmpty(firstText) || isNotEmpty(lastText) || isNotEmpty(emailText)
-                || isNotEmpty(pwText) || isNotEmpty(confPwText);
     }
 
     private boolean validName() {

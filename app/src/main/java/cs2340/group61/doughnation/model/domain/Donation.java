@@ -16,9 +16,9 @@ public class Donation {
      * Setter method to set the id.
      * @param id The id number.
      */
-    public void setId(String id) {
-        String id1 = id;
-    }
+//    public void setId(String id) {
+//        String id1 = id;
+//    }
 
     /**
      * Sets the title of the donation.

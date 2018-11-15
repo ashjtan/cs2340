@@ -12,6 +12,7 @@ import android.widget.EditText;
 
 import cs2340.group61.doughnation.R;
 import cs2340.group61.doughnation.model.AppData;
+import cs2340.group61.doughnation.model.Utils;
 import cs2340.group61.doughnation.model.domain.accounts.User;
 
 /**
@@ -30,8 +31,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //Instantiating xml elements
-        Button loginButton = findViewById(R.id.login_button);
-        Button registerButton = findViewById(R.id.register_Button);
         userField = findViewById(R.id.email);
         passField = findViewById(R.id.password);
 
@@ -53,13 +52,12 @@ public class LoginActivity extends AppCompatActivity {
     //EVENT HANDLERS
     public void login(View v) {
         //logs in if valid credentials
-//        if (validLogin()) {
-//            startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
-//        }
-//        else {
-//            Utils.showDialog("Wrong username or password.", "Invalid Login", this);
-//        }
-        startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+        if (validLogin()) {
+            startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
+        }
+        else {
+            Utils.showDialog("Wrong username or password.", "Invalid Login", this);
+        }
 
     }
 
