@@ -29,17 +29,23 @@ public class EmptyStringTest {
         String oneString = new String("computer");
         String secondString = new String("food");
         String thirdString = new String("money");
+        String spaceString = new String("   ");
+        String spaceAroundString = new String("  name  ");
 
         boolean testStringArray = isNotEmpty(stringArray);
         boolean testEmptyArray = isNotEmpty(emptyArray);
         boolean testEmptyString = isNotEmpty(emptyString);
         boolean testOneString = isNotEmpty(oneString);
         boolean testMultipleParams = isNotEmpty(oneString, secondString, thirdString);
+        boolean testSpaceString = isNotEmpty(spaceString);
+        boolean testSpaceAroundString = isNotEmpty(spaceAroundString);
 
         assertEquals(true, testStringArray);
         assertEquals(false, testEmptyArray);
         assertEquals(false, testEmptyString);
         assertEquals(true, testOneString);
         assertEquals(true, testMultipleParams);
+        assertEquals(false, testSpaceString);
+        assertEquals(true, testSpaceAroundString);
     }
 }
