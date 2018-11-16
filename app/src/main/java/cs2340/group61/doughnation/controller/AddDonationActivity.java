@@ -1,9 +1,13 @@
 package cs2340.group61.doughnation.controller;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -109,8 +114,19 @@ public class AddDonationActivity extends AppCompatActivity {
                 EditText description = findViewById(R.id.add_description);
                 if (validDonation(name, value, description)) {
                     addDonation();
-                    startActivity(new Intent(AddDonationActivity.this,
-                            HomePageActivity.class));
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(
+                            new ContextThemeWrapper(AddDonationActivity.this, R.style.AppTheme));
+                    alertDialog.setTitle("Donation Added");
+                    alertDialog.setMessage("Success! Donation Added!");
+                    alertDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent myIntent = new Intent(AddDonationActivity.this,
+                                    HomePageActivity.class);
+                            startActivity(myIntent);
+                        }
+                    });
+                    alertDialog.show();
                 } else {
                     Utils.showDialog("Empty or invalid inputs somewhere.",
                             "Invalid Donation",AddDonationActivity.this);
@@ -191,11 +207,32 @@ public class AddDonationActivity extends AppCompatActivity {
         String nameInput = name.getText().toString();
         String valueInput = value.getText().toString();
         String descriptionInput = description.getText().toString();
-
+        char[] characters = valueInput.toCharArray();
 
         boolean validName = (!nameInput.isEmpty());
         boolean validLength = valueInput.length() >= 4;
-        boolean validValue = valueInput.contains(".");
+        String last3 = new String();
+        String last2 = new String();
+        if (validLength) {
+            last3 = valueInput.substring(valueInput.length() - 3);
+        }
+        if (last3.length() >= 3) {
+            last2 = last3.substring(last3.length() - 2);
+        }
+
+        boolean validValue = last3.contains(".");
+        if (last2.contains(".")) {
+            validValue = false;
+        }
+
+//        if (validValue) {
+//            for (char c: characters) {
+//                if ((!(c >= '0' && c <= '9')) && (!(c == '.'))) {
+//                    validValue = false;
+//                }
+//            }
+//        }
+
         boolean validDescription = (!descriptionInput.isEmpty());
         return validName && validLength && validValue && validDescription;
     }

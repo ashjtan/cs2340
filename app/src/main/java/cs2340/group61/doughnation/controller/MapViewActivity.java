@@ -21,9 +21,12 @@ public class MapViewActivity extends AppCompatActivity implements OnMapReadyCall
 
     private MapView mapView;
 
-    private static final LatLng goodWillLoc = new LatLng(33.777924, -84.382988);
-    private static final LatLng redCrossLoc = new LatLng(33.773678, -84.402611);
-    private static final LatLng carDonationLoc = new LatLng(33.784673, -84.382671);
+    private static final LatLng location2 = new LatLng(33.73182, -84.43971);
+    private static final LatLng location1 = new LatLng(33.75416, -84.377742);
+    private static final LatLng location3 = new LatLng(33.70866, -84.41853);
+    private static final LatLng location4 = new LatLng(33.80129, -84.25537);
+    private static final LatLng location5 = new LatLng(33.71747, -84.2521);
+    private static final LatLng location6 = new LatLng(33.96921, -84.3688);
 
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
@@ -96,7 +99,7 @@ public class MapViewActivity extends AppCompatActivity implements OnMapReadyCall
 
         googleMap.getUiSettings().setZoomControlsEnabled(true);
         googleMap.getUiSettings().setRotateGesturesEnabled(true);
-        final int zoomPref = 12;
+        final int zoomPref = 11;
         googleMap.setMinZoomPreference(zoomPref);
         final double lon = -84.3880;
         final double lat = 33.7490;
@@ -104,23 +107,41 @@ public class MapViewActivity extends AppCompatActivity implements OnMapReadyCall
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(atl));
 
         // Add some markers to the map, and add a data object to each marker.
-        Marker goodWill = googleMap.addMarker(new MarkerOptions()
-                .position(goodWillLoc)
-                .title("Good Will")
-                .snippet("Location Type: DROP"));
-        goodWill.setTag(0);
+        Marker location22 = googleMap.addMarker(new MarkerOptions()
+                .position(location2)
+                .title("Boys & Girls Club W.W. Woolfolk")
+                .snippet("(404) 555 -1234"));
+        location22.setTag(0);
 
-        Marker redCross = googleMap.addMarker(new MarkerOptions()
-                .position(redCrossLoc)
-                .title("Red Cross")
-                .snippet("Location Type: PICK UP"));
-        redCross.setTag(0);
+        Marker location11 = googleMap.addMarker(new MarkerOptions()
+                .position(location1)
+                .title("AFD Station 4")
+                .snippet("(404) 555 -3456"));
+        location11.setTag(0);
 
-        Marker carDonation = googleMap.addMarker(new MarkerOptions()
-                .position(carDonationLoc)
-                .title("Car Donation Center")
-                .snippet("Location Type: BLAH BLAH"));
-        carDonation.setTag(0);
+        Marker location33 = googleMap.addMarker(new MarkerOptions()
+                .position(location3)
+                .title("Pathway Upper Room Christian Ministries")
+                .snippet("(404) 555 -5432"));
+        location33.setTag(0);
+
+        Marker location44 = googleMap.addMarker(new MarkerOptions()
+                .position(location4)
+                .title("Pavilion of Hope, INC")
+                .snippet("(404) 555 -8765"));
+        location44.setTag(0);
+
+        Marker location55 = googleMap.addMarker(new MarkerOptions()
+                .position(location5)
+                .title("D&D Convenience Store")
+                .snippet("(404) 555 -9876"));
+        location55.setTag(0);
+
+        Marker location66 = googleMap.addMarker(new MarkerOptions()
+                .position(location6)
+                .title("Keep North Fulton Beautiful")
+                .snippet("(770) 555 -7321"));
+        location66.setTag(0);
 
         // Set a listener for marker click.
         //googleMap1.setOnMarkerClickListener(this);
